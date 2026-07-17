@@ -993,11 +993,30 @@ ul.features { list-style: none; margin-bottom: 40px; }
         flex-direction: column !important;
         width: 100% !important;
     }
+    
 
      .desktop-menu { display: none; } /* Скрываем обычное меню */
     .mobile-menu { display: block; }  /* Показываем мобильное */
      .desktop-menu { display: flex; gap: 20px; } /* Обычное меню в строку */
     .mobile-menu { display: none; }             /* Скрываем мобильное */
+
+    /* Скрытое состояние меню */
+.hidden-menu { display: none; flex-direction: column; align-items: center; }
+
+/* Состояние, когда меню открыто */
+.visible-menu { display: flex; }
+
+/* Оформление кнопки */
+.mobile-menu-btn { 
+    background: none; border: none; font-size: 16px; cursor: pointer; padding: 10px; 
+}
+
+/* На всякий случай: выравнивание текста по левому краю для блока "Аренда..." */
+.hero-title { text-align: left; padding: 20px; }
+
+
+
+
 
     .service-card, .advantage-card {
         width: 90% !important;
