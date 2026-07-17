@@ -1027,6 +1027,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
     gap: 10px; /* Уменьшаем расстояние между логотипом и телефоном */
     padding: 10px 5px; /* Немного уменьшаем отступы по краям */
 }
+    .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Уменьшаем расстояние между иконкой и текстом */
+    font-size: 14px; /* Можно немного уменьшить шрифт названия, если оно длинное */
+}
 
 
 
