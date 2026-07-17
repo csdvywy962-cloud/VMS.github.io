@@ -311,6 +311,13 @@
     </div>
 </footer>
 <script>
+function toggleMenu() {
+    const nav = document.getElementById("mobile-nav");
+    nav.classList.toggle("hidden-menu");
+    nav.classList.toggle("visible-menu");
+}
+</script>
+<script>
 function togglePhone() {
     document.querySelector('.phone-dropdown').classList.toggle('active');
 }
