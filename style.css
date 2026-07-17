@@ -1014,18 +1014,14 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* На всякий случай: выравнивание текста по левому краю для блока "Аренда..." */
 .hero-title { text-align: left; padding: 20px; }
 
-    .phone-dropdown {
-         font-size: 13px; /* Уменьшаем размер шрифта, чтобы он стал компактнее */
-    white-space: nowrap; /* Запрещаем перенос текста на новую строку */
-    flex-shrink: 0; /* Запрещаем номеру сжиматься, если места мало */
-    }
 
     .header-container {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between;
     align-items: center;
-    gap: 10px; /* Уменьшаем расстояние между логотипом и телефоном */
-    padding: 10px 5px; /* Немного уменьшаем отступы по краям */
+    width:100%;
+    padding: 10px; /* Немного уменьшаем отступы по краям */
 }
     .logo-container {
     display: flex;
@@ -1034,9 +1030,24 @@ ul.features { list-style: none; margin-bottom: 40px; }
     font-size: 14px; /* Можно немного уменьшить шрифт названия, если оно длинное */
 }
 
+    /* Уменьшаем логотип, чтобы он не занимал много места */
+.logo-container img {
+    height: 30px; /* Задайте фиксированную высоту */
+    width: auto;
+}
 
+/* Уменьшаем текст названия компании */
+.logo-text {
+    font-size: 14px;
+    white-space: nowrap; /* Чтобы не переносилось на вторую строку */
+}
 
-
+/* Уменьшаем кнопку телефона */
+.phone-dropdown {
+    font-size: 12px;
+    white-space: nowrap; /* Не дает номеру переноситься */
+    padding: 5px;
+}
 
     .service-card, .advantage-card {
         width: 90% !important;
