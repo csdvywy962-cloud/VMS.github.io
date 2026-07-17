@@ -1020,6 +1020,14 @@ ul.features { list-style: none; margin-bottom: 40px; }
     flex-shrink: 0; /* Запрещаем номеру сжиматься, если места мало */
     }
 
+    .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* Уменьшаем расстояние между логотипом и телефоном */
+    padding: 10px 5px; /* Немного уменьшаем отступы по краям */
+}
+
 
 
 
