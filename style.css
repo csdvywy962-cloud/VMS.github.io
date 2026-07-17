@@ -1014,6 +1014,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* На всякий случай: выравнивание текста по левому краю для блока "Аренда..." */
 .hero-title { text-align: left; padding: 20px; }
 
+    .phone-dropdown {
+         font-size: 13px; /* Уменьшаем размер шрифта, чтобы он стал компактнее */
+    white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+    flex-shrink: 0; /* Запрещаем номеру сжиматься, если места мало */
+    }
+
 
 
 
