@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ООО «ВМС-груп»</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-container"> <div class="logo-container">
+            <img src="logo.png" alt="Лого">
+            <span class="logo-text">ООО «ВМС-груп»</span>
+        </div>
+        <div class="desktop-menu">
+        <nav class="nav-links">
+            <a href="index.html" class="active">Главная</a>
+            <a href="#catalog">Техника</a>
+            <a href="#services">Услуги</a>
+            <a href="#about">О компании</a>
+            <a href="#advantages">Преимущества</a>
+        </nav>
+        </div>
+        <div class="mobile-menu">
+    <button class="menu-toggle" onclick="toggleMenu()">Главная ^</button>
+    <nav id="mobile-nav" class="hidden">
+        <a href="#">Техника</a>
+        <a href="#">Услуги</a>
+        <a href="#">О компании</a>
+        <a href="#">Преимущества</a>
+    </nav>
+</div>
+        <div class="phone-dropdown" onclick="togglePhone()">
+    <div class="phone-header">
+        <img src="phone.png" class="phone-icon" alt="тел">
+        <strong>+7 (915) 909-06-07</strong>
+        <img src="стрелка.png" class="arrow" alt="стрелка">
+    </div>
+    
+    <!-- Серая линия, которая появится плавно -->
+    <div class="separator"></div>
+    
+      <div class="phone-list">
+        <div style="margin: 5px 0;">+7 (920) 384 55-55</div>
+        <div style="margin: 5px 0;">+7 (910) 806 88-48</div>
+    </div>
+</div>
+
+
+
+
+    </div>
+</header>
+
+<main class="hero-wrapper">
+    <!-- Желтый фон вынесен в независимый слой -->
+    <section class="hero-yellow-bg"></section>
+    
+    <div class="content-container">
+        <div class="hero-left">
+            <div class="badge">
+                <span class="red-dot">●</span> АРЕНДА СПЕЦТЕХНИКИ С 2014 ГОДА</div>
+            <h1>Аренда <br>автокранов <br><span>и спецтехники</span></h1>
+            <ul class="features">
+                <li><span>✔</span> Консультация по аренде автокрана и спецтехники — бесплатно</li>
+                <li><span>✔</span> Широкий ассортимент современной техники</li>
+                <li><span>✔</span> Предоставляем в аренду на любой срок</li>
+                <li><span>✔</span> Выгодные условия долгосрочного сотрудничества</li>
+            </ul>
+            
+            <!-- Кнопки теперь лежат прямо под текстом -->
+            <div class="buttons">
+                <a href="#contacts" class="btn-red">Оставить заявку →</a>
+                <a href="catalog.html" class="btn-white">Смотреть технику</a>
+            </div>
+        </div>
+        
+        <!-- Плашка техники -->
+        <div class="crane-card">
+            <div class="photo-placeholder"></div>
+            <div class="separator"></div>
+            <div class="crane-info">
+                <div class="text-info">
+                    <h3>SANY STC300T5</h3>
+                    <p>Автокран, 30 т · стрела 40 м</p>
+                </div>
+                <button class="price-btn">От 2 500 ₽ / час</button>
+            </div>
+        </div>
+    </div>
+    
+    <section class="stats-white">
+        <div class="stat-item"><strong>12+</strong> ЛЕТ НА РЫНКЕ</div>
+        <div class="stat-item"><strong>40+</strong> ЕДИНИЦ ТЕХНИКИ</div>
+        <div class="stat-item"><strong>2 000+</strong> ВЫПОЛНЕННЫХ ЗАКАЗОВ</div>
+    </section>
+</main>
+
+<section id="catalog" class="catalog-section">
+    <div class="catalog-header">
+        <div class="header-left">
+            <div class="badge-mini">НАША ТЕХНИКА</div>
+            <h2>Парк современных автокранов</h2>
+        </div>
+        <div class="header-right">
+            <a href="catalog.html" class="btn-outline">Весь парк →</a>
+        </div>
+    </div>
+    <div id="cranes-container" class="cards-grid"></div>
+
+</section>
+
+<section id="services" class="usage-section">
+    <div class="badge-mini">ПРИМЕНЕНИЕ</div>
+    <h2 class="usage-title">Где мы работаем</h2>
+    <p class="usage-desc">От бытового монтажа до промышленных объектов — подбираем технику под задачу.</p>
+
+
+    <div class="slider-wrapper" style="position: relative;margin: 0 auto;">
+    <!-- Здесь будет наш слайдер с карточками -->
+        <div id="cards-container">
+            <div class="slider-page active" >
+    <!-- Карточка 1 -->
+            <div class="tech-card">
+            <div class="icon-box"><img src="услуги.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Услуги в строительстве</h3>
+            <p>Монтаж плит, ферм, панелей и других элементов на объектах любой сложности.</p>
+        </div>
+    </div>
+    
+    <!-- Карточка 2 -->
+    <div class="tech-card">
+        <div class="icon-box"><img src="погрузки.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Погрузочно-разгрузочные работы</h3>
+            <p>Работа с крупногабаритными и тяжёлыми грузами на складах и промплощадках.</p>
+        </div>
+    </div>
+    
+    <!-- Карточка 3 -->
+    <div class="tech-card">
+        <div class="icon-box"><img src="монтаж.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Монтаж конструкций</h3>
+            <p>Установка металлоконструкций, оборудования, рекламных и инженерных сооружений.</p>
+        </div>
+    </div>
+    
+    <!-- Карточка 4 -->
+    <div class="tech-card">
+        <div class="icon-box"><img src="прокладка.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Прокладка инженерных коммуникаций</h3>
+            <p>Укладка труб, кабелей и работа с элементами инфраструктуры на высоте.</p>
+        </div>
+    </div>
+            </div>
+    </div>
+    <div class="slider-page" >
+    <!-- Карточка 5 -->
+    <div class="tech-card">
+        <div class="icon-box"><img src="дорога.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Выполнение дорожных работ</h3>
+            <p>Укладка покрытий, разметка и подготовка дорожного полотна.</p>
+        </div>
+    </div>
+    
+    <!-- Карточка 6 -->
+    <div class="tech-card ">
+        <div class="icon-box"><img src="на высоте.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Ремонтные работы на высоте</h3>
+            <p>Восстановление фасадов, кровель и высотных элементов.</p>
+        </div>
+    </div>
+    
+    <!-- Карточка 7 -->
+    <div class="tech-card">
+        <div class="icon-box"><img src="высокиеконстр.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Демонтаж высотных конструкций</h3>
+            <p>Безопасный разбор и удаление строительных объектов на высоте.</p>
+        </div>
+    </div>
+    
+    <!-- Карточка 8 -->
+    <div class="tech-card">
+        <div class="icon-box"><img src="вспомогательные.png" alt="icon"></div>
+        <div class="text-box">
+            <h3>Вспомогательные работы</h3>
+            <p>Обеспечение деятельности на строительных площадках любого типа.</p>
+        </div>
+    </div>
+    </div>
+    <button id="toggle-btn" class="floating-btn">→</button>
+</div>
+</section>
+
+<section id="contacts" class="consultation-block">
+    <div class="consultation-content">
+        <span class="badge2">готовы помочь</span>
+        <h2>Расскажите о <br>задаче — подберём <br>технику за 15 минут</h2>
+        <p>Бесплатная консультация, честный расчёт стоимости и подача техники в <br>удобное время.</p>
+    </div>
+    <div class="consultation-actions">
+        <button class="btn-call">Позвонить</button>
+        <button class="btn-whatsapp">Написать в ...</button>
+    </div>
+</section>
+
+<section id="about" class="about-company">
+    <div class="about-text">
+        <span class="badge-mini">О КОМПАНИИ</span>
+        <h2>Надёжная <br>техника — <br><span class="text-red">точный <br>результат.</span></h2>
+        <p>Наша задача — предоставить в аренду надёжные краны и <br>спецтехнику, обеспечивая безопасность, оперативность и <br>высокое качество работ на вашем объекте.</p>
+    </div>
+    <div class="about-description">
+        <p>Работаем с 2014 года. Ведем деятельность по широкому набору строительных и смежных направлений, осуществляем весь цикл строительных работ - от копки котлованов до благоустройства территории.</p>
+        <p>Имеем широкий автопарк собственной строительной техники: сваебойные установки, автокраны, экскаваторы, автовышки, самосвалы и т.д</p>
+    </div>
+    <div class="about-image">
+        <img src="crane.jpg" alt="Монтаж металлоконструкций">
+        <div class="image-label">Монтаж <br>металлоконструкций</div>
+    </div>
+</section>
+
+<section id="advantages" class="advantages-section">
+    <div class="container">
+        <div class="container-2">
+        <span class="badge-black">ПРЕИМУЩЕСТВА</span>
+        <h2>Почему выбирают нас</h2>
+        <p class="subtitle">Четыре причины, по которым клиенты возвращаются к нам снова и рекомендуют коллегам.</p>
+        </div>
+
+        <div class="cards-grid2">
+            <!-- Карточка 1 -->
+            <div class="card">
+                <div class="icon">
+                    <img src="операторы.png" alt="Операторы">
+                </div>
+                <h3>Профессиональные операторы</h3>
+                <p>Опытные крановщики с допусками и многолетней практикой на объектах любой сложности.</p>
+            </div>
+            <!-- Карточка 2 -->
+            <div class="card">
+                <div class="icon">
+                    <img src="сервис.png" alt="Сервис">
+                </div>
+                <h3>Первоклассный сервис</h3>
+                <p>Подберём модель с учётом задачи, веса груза и условий площадки. Полное сопровождение.</p>
+            </div>
+            <!-- Карточка 3 -->
+            <div class="card">
+                <div class="icon">
+                    <img src="экономия.png" alt="Экономия">
+                </div>
+                <h3>Экономия бюджета</h3>
+                <p>Не нужно тратить средства на покупку и содержание собственной техники. Прозрачные тарифы.</p>
+            </div>
+            <!-- Карточка 4 -->
+            <div class="card">
+                <div class="icon">
+                    <img src="срок.png" alt="Подача">
+                </div>
+                <h3>Подача в срок</h3>
+                <p>Доставка техники на объект точно в оговорённое время. Работаем 7 дней в неделю.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <!-- Лого и описание -->
+        <div class="footer-col">
+            <div class="footer-logo-box">
+                <img src="logo.png" alt="Лого" class="footer-logo">
+                <h3>Автокран-Профи</h3>
+            </div>
+            <p>Аренда автокранов и спецтехники. Работаем с 2014 года.</p>
+        </div>
+        
+        <!-- Меню -->
+        <div class="footer-col">
+            <h4>Меню</h4>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Техника</a></li>
+                <li><a href="#">Применение</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Преимущества</a></li>
+            </ul>
+        </div>
+        
+        <!-- Контакты -->
+        <div class="footer-col">
+            <h4>Контакты</h4>
+            <p>+7 (915) 909-06-07</p>
+            <p>+7 (920) 384 55-55</p>
+            <p>+7 (910) 806 88-48</p>
+            <p>vms.vms007@yandex.ru</p>
+        </div>
+        
+        <!-- Кнопка -->
+        <div class="footer-col">
+            <h4>Заявка</h4>
+            <a href="#" class="btn-red">Написать нам →</a>
+        </div>
+    </div>
+</footer>
+<script>
+function togglePhone() {
+    document.querySelector('.phone-dropdown').classList.toggle('active');
+}
+</script>
+<script type="module" src="data.js"></script>
+<script type="module">
+    import { renderCranes } from './data.js';
+    // Вызываем функцию для отображения ВСЕГО контента
+    renderCranes('cranes-container', true, null, 3);
+</script>
+</body>
+</html>

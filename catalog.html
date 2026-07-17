@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Весь парк техники | ООО «ВМС-груп»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header class="header">
+    <div class="header-container"> <div class="logo-container">
+            <img src="logo.png" alt="Лого">
+            <span class="logo-text">ООО «ВМС-груп»</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html" class="active">Техника</a>
+            <a href="#">Услуги</a>
+            <a href="#">О компании</a>
+            <a href="#">Преимущества</a>
+        </nav>
+        <div class="phone-dropdown" onclick="togglePhone()">
+    <div class="phone-header">
+        <img src="phone.png" class="phone-icon" alt="тел">
+        <strong>+7 (915) 909-06-07</strong>
+        <img src="стрелка.png" class="arrow" alt="стрелка">
+    </div>
+    
+    <!-- Серая линия, которая появится плавно -->
+    <div class="separator"></div>
+    
+      <div class="phone-list">
+        <div style="margin: 5px 0;">+7 (920) 384 55-55</div>
+        <div style="margin: 5px 0;">+7 (910) 806 88-48</div>
+    </div>
+</div>
+    </div>
+</header>
+<main>
+    <!-- Желтый блок -->
+    <section class="catalog-hero">
+    <div class="catalog-content">
+        <a href="index.html" class="back-link">← На главную</a>
+        <div class="badge">
+            <span class="red-dot">•</span>  КАТАЛОГ ТЕХНИКИ</div>
+        <h1>Весь парк <span>техники</span></h1>
+        <p>Более 40 единиц собственной техники: автокраны от 25 до 100 тонн, <br>гусеничные краны, автовышки и вспомогательная спецтехникв. Подберем <br>модель под вашу задачу.</p>
+    </div>
+</section>
+
+    <!-- Фильтры -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="автокран">Автокраны</button>
+        <button class="filter-btn" data-filter="гусеничный">Гусеничные</button>
+        <button class="filter-btn" data-filter="спецтехника">Спецтехника</button>
+    </div>
+
+    <!-- Сюда JS выведет карточки -->
+    <div id="cranes-container" class="cards-grid"></div>
+
+    <!-- Черный баннер -->
+    <section class="consultation-block">
+    <div class="consultation-content">
+        <span class="badge2">готовы помочь</span>
+        <h2>Не нашли подходящую <br>модель?</h2>
+        <p>Позвоните — подберём технику под вашу задачу за 15 минут.</p>
+    </div>
+    <div class="consultation-actions">
+        <button class="btn-call">Позвонить</button>
+        <button class="btn-whatsapp">Написать в WhatsApp</button>
+    </div>
+</section>
+</main>
+
+
+
+<script type="module">
+    import { renderCranes } from './data.js';
+
+    const containerId = 'cranes-container';
+
+    // 1. Загружаем всё при открытии страницы
+    renderCranes(containerId);
+
+    // 2. Вешаем слушатели на все кнопки
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter');
+            const category = (filterValue === 'all') ? null : filterValue;
+            
+            // Вызываем рендер с выбранной категорией
+            renderCranes(containerId, false, category);
+        });
+    });
+</script>
+
+<script>
+function togglePhone() {
+    document.querySelector('.phone-dropdown').classList.toggle('active');
+}
+</script>
+</body>
+</html>

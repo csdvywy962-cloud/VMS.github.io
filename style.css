@@ -1,0 +1,1067 @@
+html {
+    scroll-behavior: smooth; /* Включает плавную прокрутку по всему сайту */
+    overflow-y: scroll;
+    height: 100%;
+}
+
+/* Добавьте это, чтобы заголовок секции не прилипал к самому верху экрана */
+section {
+    scroll-margin-top: 100px; /* Настройте это число под высоту вашего меню */
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width: 100%; }
+
+/* Хедер */
+/* 1. Фон и плашка */
+.header {
+    width: 100%;
+    background-color: #FFD600; /* Цвет твоей плашки (желтый) */
+    padding: 15px 0; /* Высота самой плашки */
+}
+/* 3. Элементы */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container img { height: 50px; }
+.logo-text { font-size: 20px; font-weight: bold; }
+.nav-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center; /* Ссылки всегда в центре */
+    flex: 2; /* Занимает центральную часть */
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: #333; 
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+ }
+
+ .nav-links a.active {
+    border-bottom: 2px solid red;
+ }
+
+ .nav-links a:hover {
+    border-bottom: 2px solid red;
+ }
+/* 2. Контейнер, который держит элементы вместе */
+.header-container {
+    max-width: 1370px;
+    margin: 0 auto; /* Центрирует плашку на экране */
+    display: flex;
+    justify-content: space-between; /* Раскидывает лого и телефон по краям */
+    align-items: center;
+}
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+/* -------------------------------------- */
+/* ОСНОВНАЯ СЕТКА                         */
+/* -------------------------------------- */
+
+.hero-wrapper {
+    position: relative; /* Точка отсчета для желтого фона */
+}
+
+/* Это просто желтый прямоугольник на заднем плане */
+.hero-yellow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 460px; /* МЕНЯЙТЕ ЭТО ЗНАЧЕНИЕ, ЧТОБЫ ПОДНЯТЬ ИЛИ ОПУСТИТЬ ЛИНИЮ */
+    background: #FFD700;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    z-index: 0; /* Он позади контента */
+}
+
+/* Контейнер с контентом */
+.content-container {
+    position: relative;
+    z-index: 1; /* Контент всегда поверх желтого фона */
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.catalog-hero {
+    margin: 0 !important;
+    padding-left:  0 !important;
+    width: 100%;
+    border-top-left-radius: 0 !important;
+    padding-left: 50px;
+    padding: 11.5px 200px 10px 200px;
+    background-color: #FFD600;
+    border-radius: 0 0 60px 60px;
+    box-sizing: border-box;
+}
+
+.catalog-hero > * {
+    margin-left: 77px !important;
+}
+
+.catalog-content {
+    max-width: 800px;
+}
+
+.hero-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------------------- */
+/* ТЕКСТ И КНОПКИ                         */
+/* -------------------------------------- */
+
+.badge { 
+    background: rgba(0,0,0,0.1); 
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    display: inline-block; 
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+h1 { font-size: 50px; line-height: 1.1; margin-bottom: 30px; }
+h1 span { border-bottom: 4px solid #FF3333; display: inline-block; }
+
+ul.features { list-style: none; margin-bottom: 40px; }
+.features li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
+.features li span { 
+    background: black; 
+    color: #FFD700; 
+    border-radius: 50%; 
+    padding: 2px 6px; 
+    margin-right: 10px; 
+    font-size: 10px; 
+}
+
+/* Кнопки теперь стоят ровно в потоке */
+/* Общие свойства для всех кнопок внутри .buttons */
+.buttons a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box; /* Это критически важно для одинакового размера! */
+}
+
+/* Только уникальные цвета и рамки */
+.buttons .btn-red {
+    background: #FF3333;
+    color: white;
+    border: none;
+    border: 1.5px solid #ff3333;
+    font-size: 14px;
+}
+
+.buttons .btn-white {
+    background: transparent;
+    border: 1.5px solid #777777;
+    color: #333333;
+    padding: 15px 30px;
+    font-size: 14px;
+}
+
+/* -------------------------------------- */
+/* КАРТОЧКА КРАНА                         */
+/* -------------------------------------- */
+
+.crane-card {
+    width: 45%;
+    max-width: 450px;
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.photo-placeholder { 
+    background: #f4f4f4; /* Чуть серый для видимости */
+    height: 300px; 
+    border-radius: 20px; 
+    margin-bottom: 20px; 
+}
+
+.separator { height: 1px; background: rgba(0,0,0,0.1); margin: 20px 0; }
+.crane-info { display: flex; justify-content: space-between; align-items: center; }
+.text-info { display: flex; flex-direction: column; gap: 5px; }
+.text-info h3 { font-size: 20px; }
+.text-info p { color: #555; font-size: 14px; }
+.price-btn { 
+    background: #FF3333; color: white; padding: 12px 25px; 
+    border: none; border-radius: 20px; cursor: pointer; font-weight: bold;
+}
+
+/* -------------------------------------- */
+/* СТАТИСТИКА                             */
+/* -------------------------------------- */
+
+.stats-white { 
+    position: relative;
+    z-index: 1; /* Тоже поверх желтого фона */
+    display: flex; 
+    gap: 80px; 
+    padding: 40px 5% 50px; /* Верхний паддинг 80px отодвигает текст от кнопок */
+}
+
+.stat-item { line-height: 1.4; color: #555; font-size: 12px; }
+.stat-item strong { font-size: 30px; display: block; color: black; margin-bottom: 5px; }
+
+.red-dot {
+    color: #FF3333;
+
+}
+
+.phone-icon {
+    width: 20px;            /* Установите размер, какой вам нужен */
+    height: 20px;
+    vertical-align: middle; /* Чтобы иконка стояла ровно по центру строки */
+    margin-right: 8px;      /* Отступ от номера телефона */
+    
+    /* Это превращает любую цветную PNG-картинку в черную */
+    filter: brightness(0) saturate(100%);
+}
+
+.catalog-section { padding: 80px 5%; background: #ffffff; }
+
+/* Родителю задаем выравнивание по нижней линии */
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Кнопка и заголовок прижимаются к одной линии низа */
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.header-right {
+    margin-right: 15px;
+}
+
+/* Левому блоку запрещаем растягиваться */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Отменяет растягивание плашки */
+    flex: 0 0 auto;          /* Запрещает блоку расти */
+}
+
+/* Принудительно ограничиваем плашку */
+.badge-mini {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #FFF9C4;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    flex: 0 0 auto;          /* Плашка не растет */
+}
+
+/* Заголовок тоже не должен тянуться */
+.header-left h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.catalog-header h2 {
+    font-size: 48px;
+    line-height: 1;
+    color: #000;
+    margin: 0;
+    max-width: 600px;
+    white-space: nowrap;
+}
+
+.cards-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    max-width: 1420px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* Карточка нового типа */
+.crane-card2 {
+    width: 400px;
+    margin: 10px;
+    background: #ffffff;
+    border-radius: 20px; /* Более мягкие, современные углы */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    height: 600px; /* Увеличили высоту, чтобы карточка стала вытянутой */
+    transition: transform 0.3s ease;
+}
+
+.card-header2 {
+    background: #FFF9C4;
+    padding: 20px;
+    height: 325px; /* Фиксированная высота "желтой зоны" */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body {
+    padding: 25px; /* Больше "воздуха" для текста */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-box {
+    background: #ffffff; /* Белая плашка для фото */
+    border-radius: 5px; /* Скругление углов */
+    padding: 5px;       /* Расстояние от фото до краев белой плашки */
+    width: 97%;          /* Чтобы плашка не была впритык к желтым краям */
+    height: 90%;       /* Высота белой плашки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Чтобы картинка не обрезалась */
+}
+
+.category-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+
+
+
+
+.btn-red-small { 
+    background: #FF3333; color: white; padding: 10px 20px; 
+    border: none; border-radius: 15px; cursor: pointer; 
+    
+}
+
+.badge-mini {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(255, 215, 0, 0.4); /* Полупрозрачный желтый */
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Убираем галочки из текста и добавляем их через CSS */
+.specs {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.specs li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.specs li::before {
+    content: "✓";
+    color: #FF5252;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Серая полупрозрачная линия */
+.divider {
+    height: 1.5px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Настройка заголовка и цены */
+.card-body h3 {
+    font-size: 22px;
+    font-weight: 800; /* Жирный */
+    color: #000;
+    margin: 0;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 800; /* Жирный */
+    color: #000;
+}
+
+/* Чтобы цена и кнопка встали по краям */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-outline {
+    background: transparent;      /* Прозрачный фон */
+    border: 1.5px solid #000000;       /* Тонкая серая обводка */
+    padding: 10px 25px;           /* Отступы внутри кнопки */
+    border-radius: 30px;          /* Сильное скругление */
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-block;                /* Для выравнивания текста и стрелки */
+    align-items: center;
+    gap: 8px;                     /* Расстояние между текстом и стрелкой */
+    transition: all 0.3s;
+    position: relative;
+    z-index: 10;
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.btn-outline:hover {
+    background: #f8f8f8;          /* Легкое затемнение при наведении */
+}
+
+/* Желтый блок */
+
+
+.back-link { display: block; margin-bottom: 20px; text-decoration: none; color: #000; }
+
+/* Фильтры */
+.filter-bar { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 75px;
+    box-sizing: border-box;
+ }
+.filter-btn { 
+    background-color: transparent;
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    border: 1px solid black;
+    color: black; 
+    transition: 0.3s;
+    cursor: pointer; 
+    box-sizing: border-box;
+}
+
+.filter-btn.active { 
+    background-color: #FF3333;
+    border: 1px solid #FF3333;
+    color: #fff; }
+
+/* Черный баннер */
+.contact-banner {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 20px 0 20px;
+    max-width: 1370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-banner h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-banner p{
+    font-size: 14px;
+    opacity: 0.8;
+}
+.banner-actions { display: flex; gap: 10px; }
+.btn-phone { background: #ff3333; color: white; padding: 15px 30px; border: none; border-radius: 20px; }
+.btn-whatsapp { background: white; color: black; padding: 15px 30px; border: none; border-radius: 20px; }
+
+/* Подсветка активной ссылки */
+.nav-links a.active {
+    border-bottom: 2px solid red; /* Красная линия снизу */
+    padding-bottom: 5px;          /* Чуть отступаем от текста */
+    font-weight: bold;            /* Делаем текст жирнее */
+}
+
+.test-catalog{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#tech-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+#tech-list th, #tech-list td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+.usage-section {
+    padding: 50px 20px;
+    max-width: 1355px;
+    margin: 0 auto;
+    text-align: left; /* Текст слева */
+}
+
+.usage-label {
+    display: inline-block;
+    background-color: #fce58b; /* Тот самый желтый цвет плашки */
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.usage-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.usage-desc {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+
+.tech-card {
+    background-color: #ffd700; /* Твой основной желтый */
+    padding: 25px;
+    border-radius: 30px; /* Сильное закругление */
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 140px;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin-left: -20px;
+}
+
+.text-box h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.text-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.hidden-page {
+    display: none; /* Скрываем по умолчанию */
+}
+
+.icon-box {
+    width: 50px;           /* Размер кружка */
+    height: 50px;
+    background-color: #000; /* Черный фон */
+    border-radius: 50%;    /* Круглая форма */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.icon-box img {
+    width: 25px;           /* Сама иконка внутри будет чуть меньше */
+    height: 25px;
+    object-fit: contain;
+    filter: invert(75%) sepia(90%) saturate(1450%) hue-rotate(10deg) brightness(105%) contrast(105%);
+}
+
+/* Добавляем ограничение по высоте для самой карточки */
+
+
+
+.slider-page {
+    display: none;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    padding: 0 20px !important;
+}
+
+/* 1. Заставляем сетку занять всю ширину */
+.slider-page.active {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+    width: 100% !important;
+    max-width: none !important; /* Увеличь это значение, если нужно еще шире */
+    margin: 0 auto !important;
+}
+
+
+/* Удали старые стили для .floating-btn и замени на эти */
+.floating-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px; /* Поднимаем кнопку на половину её высоты */
+    right: 15px;      /* Справа от блока */
+    background: #000;
+    color: #ffd700;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.4s ease;
+}
+
+.floating-btn.rotated {
+    transform: rotate(180deg);
+}
+
+.consultation-block {
+    /* 30% — это радиус круга. Чем меньше число, тем четче круг */
+    background: 
+        radial-gradient(circle at 5% 80%, #8b0000 0%, #8b0000 1%, transparent 15%), 
+        radial-gradient(circle at 95% 15%, #d4af37 0%, #d4af37 1%, transparent 15%),
+        #000000;
+    
+    padding: 30px 40px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin: 40px 0;
+    /* Важно добавить overflow, чтобы круги не вылезали за скругленные углы блока */
+    overflow: hidden; 
+    text-align: left;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 115px;
+
+}
+
+.consultation-content {
+    max-width: 50%;
+}
+
+.badge2 {
+    background: #333;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.consultation-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    max-width: 600px;
+    margin: 15px 0;
+    line-height: 1;
+}
+
+.consultation-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-call, .btn-whatsapp {
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-call { background: #ff3333; color: white; }
+.btn-whatsapp { background: #fff; color: #000; }
+
+.about-company {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.6fr; /* Три колонки: текст, описание, картинка */
+    gap: 40px;
+    align-items: start;
+    padding: 60px 0;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 115px;
+}
+
+.about-description {
+    display: grid;
+    grid-template-columns: 2fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 49px;
+}
+
+
+.about-text h2 {
+    font-size: 48px;
+    line-height: 0.9;
+    margin: 20px 0;
+    margin-top: 0px;
+}
+
+.text-red { color: #ff3333; }
+
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 49px;
+    aspect-ratio: 16 / 13.5;
+}
+
+.about-image img { width: 100%; display: block; height: 100%; object-fit: cover;}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Основной контейнер блока */
+.advantages-section {
+    background: #ffcc00;
+    padding: 60px 0;
+    border-radius: 40px;
+    margin: -50px;
+    margin-left: 100px;
+    margin-right: 115px;
+    margin-top: 10px !important;
+
+}
+
+/* Общий контейнер для выравнивания */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+}
+
+.container-2 {
+    text-align: left; /* Текст внутри станет по левому краю */
+    margin-left: 0;   /* Убеждаемся, что нет отступов слева */
+    padding-left: 0;  /* Убираем внутренние отступы */
+}
+
+/* Чтобы текст не упирался в самый край желтого блока, 
+   добавь отступ для самого контейнера-2 */
+.advantages-section .container-2 {
+    margin-left: -100px; /* Это сдвинет текст от левого края желтой секции */
+    margin-top: -20px;
+    max-width: 600px;  /* Ограничиваем ширину, чтобы текст не растягивался */
+}
+/* Текстовые элементы */
+.badge-black {
+    background: #000;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.advantages-section h2 { 
+    font-size: 48px; 
+    margin: 15px 0; 
+    line-height: 1.1;
+}
+
+.subtitle { margin-bottom: 40px; max-width: 500px; }
+
+/* Сетка карточек */
+.cards-grid2 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(293px, 1fr));
+    gap: 15px;
+    margin-left: -100px;
+    margin-top: -10px;
+}
+
+/* Стили карточки */
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Стили для кружка-контейнера */
+.card .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #fdf5b0; /* Светло-желтый цвет фона кружка */
+    border-radius: 50%;        /* Делает блок идеально круглым */
+    display: flex;             /* Включаем flex, чтобы отцентрировать иконку */
+    align-items: center;       /* Центрирование по вертикали */
+    justify-content: center;   /* Центрирование по горизонтали */
+    margin-bottom: 20px;
+}
+
+/* Стили для самой картинки внутри кружка */
+.card .icon img {
+    width: 24px;   /* Размер самой иконки (сделай чуть меньше кружка) */
+    height: 24px;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    line-height: 1.2;
+}
+
+.card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.footer {
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    width: 30px;
+}
+
+.footer-col h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #ccc;
+    margin: 5px 0;
+}
+
+.btn-red {
+    display: inline-block;
+    background: #e62e2e;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.phone-dropdown {
+    border: 1px solid #000;
+    border-radius: 60px;
+    padding: 10px 20px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease; /* Плавность для всей плашки */
+    display: inline-flex;
+    flex-direction: column; /* Элементы идут друг под другом при раскрытии */
+    align-items: center;
+    width: 250px; /* Фиксируем начальную ширину */
+}
+
+.phone-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.separator {
+    height: 1px;
+    background: #000000; /* Серая линия */
+    width: 0; /* Изначально скрыта */
+    margin: 0;
+    transition: all 0.4s ease;
+}
+
+.phone-list {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+/* Состояние при открытии */
+.phone-dropdown.active {
+    border-radius: 30px; /* Можно немного менять форму */
+}
+
+.phone-dropdown.active .separator {
+    width: 100%; /* Линия растягивается */
+    margin: 10px 0;
+}
+
+.phone-dropdown.active .phone-list {
+    max-height: 100px;
+    opacity: 1;
+}
+
+.phone-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+.arrow {
+    width: 12px;
+    transition: transform 0.4s;
+}
+/* По умолчанию скрываем мобильное меню */
+.mobile-menu { display: none; }
+
+/* Стили для экранов шириной до 768px (планшеты и телефоны) */
+@media (max-width: 768px) {
+    .services-grid .about-container, .advantages-container {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+     .desktop-menu { display: none; } /* Скрываем обычное меню */
+    .mobile-menu { display: block; }  /* Показываем мобильное */
+     .desktop-menu { display: flex; gap: 20px; } /* Обычное меню в строку */
+    .mobile-menu { display: none; }             /* Скрываем мобильное */
+
+    .service-card, .advantage-card {
+        width: 90% !important;
+        margin: 10px auto !important;
+    }
+
+    .consultation-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-call, .btn-whatsapp {
+        width: 80%;
+    }
+    /* Например, делаем элементы вертикальными вместо горизонтальных */
+    .header-container, .consultation-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    /* Уменьшаем отступы, чтобы элементы не вылезали за экран */
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Делаем картинки адаптивными */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+     .header-container { flex-direction: column; gap: 15px; display: flex; justify-content: space-between; align-items: center; padding: 20px;}
+    .nav-links { flex-direction: column; gap: 10px; align-items: center; display: flex; }
+    
+    /* 2. Hero-блок (первый экран): делаем всё вертикально */
+    .content-container { flex-direction: column; align-items: center; text-align: center; }
+    .hero-left, .crane-card { width: 100% !important; max-width: 100%; }
+    h1 { font-size: 32px; }
+    .buttons { flex-direction: column; width: 100%; }
+    
+    /* 3. Сетка карточек (техника и преимущества) */
+    .cards-grid, .cards-grid2 { grid-template-columns: 1fr !important; }
+    
+    /* 4. Блок О компании и Преимущества: сбрасываем сложные отступы */
+    .about-company, .advantages-section { 
+        margin-left: 20px !important; 
+        margin-right: 20px !important; 
+        padding: 20px !important; 
+    }
+    .about-company { grid-template-columns: 1fr; }
+    
+    /* 5. Консультационный блок */
+    .consultation-block { 
+        flex-direction: column; 
+        margin-left: 20px !important; 
+        margin-right: 20px !important; 
+        text-align: center; 
+    }
+    .consultation-content { max-width: 100%; }
+    
+    /* 6. Футер */
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        button { padding: 10px 20px; background: #FF3333; color: white; border: none; cursor: pointer; }
+    </style>
+    <style>
+        #tech-list {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #tech-list th, #tech-list td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        #tech-list th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-overlay">
+        <div class="login-box">
+            <h3>Вход в админку</h3>
+            <input type="password" id="pass-input" placeholder="Пароль">
+            <button onclick="checkPassword()">Войти</button>
+        </div>
+    </div>
+    <div id="admin-content" style="filter: blur(8px); pointer-events: none;">
+    <h1>Добавление техники</h1>
+    <form id="add-tech-form">
+        <div class="form-group"><input type="file" id="image-upload" accept="image/*"></div>
+        <div class="form-group"><input type="text" id="tech-name" placeholder="Название модели"></div>
+        <div class="form-group"><input type="text" id="tech-type" placeholder="Вид техники (например: Автокран)"></div>
+        <div class="form-group"><textarea id="tech-desc" placeholder="Описание"></textarea></div>
+        <div class="form-group"><label><input type="checkbox" id="tech-show-home">Добавить на главную страницу</label></div>
+        <div class="form-group"><input type="number" id="tech-price" placeholder="Цена"><small>Цена будет отображаться как «руб./час»</small></div>
+        <button type="submit">Опубликовать</button>
+    </form>
+
+    <div id="admin-list-container" style="margin-top: 30px;">
+        <h3>Список техники:</h3>
+        <table id="tech-list" style="width: 100%; border-collapse: collapse;">
+
+        </table>
+    </div>
+    </div>
+
+
+
+    <script type="module">
+    import { db } from './firebase-init.js';
+    import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+    let editID = null;
+
+    window.checkPassword = function() {
+        const pass = document.getElementById('pass-input').value;
+        if (pass === "VMS_Secure_2828") {
+            document.getElementById('login-overlay').style.display = 'none';
+            document.getElementById('admin-content').style.filter = 'blur(0)';
+            document.getElementById('admin-content').style.pointerEvents = 'auto';
+            renderAdminList();
+        }
+        else {
+            alert("Неверный пароль!");
+        }
+    }
+
+    const form = document.getElementById('add-tech-form');
+
+    function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // отменяем перезагрузку страницы
+
+        try {
+            const fileInput = document.getElementById('image-upload');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                alert("Пожалуйста, выберите фото!");
+                return;
+            }
+
+            const base64Image = await getBase64(file); // Превращаем фото в текст
+
+            if (editID) {
+                await updateDoc(doc(db, "tech", editID), {
+                    name: document.getElementById('tech-name').value,
+        type: document.getElementById('tech-type').value,
+        desc: document.getElementById('tech-desc').value,
+        showOnHome: document.getElementById('tech-show-home').checked,
+        price: document.getElementById('tech-price').value,
+        // image пока не трогаем, чтобы не сбрасывать старое фото
+        timestamp: new Date()
+    });
+    alert("Успешно обновлено!");
+    editId = null; // Сбрасываем ID
+} else {
+
+            await addDoc(collection(db, "tech"), {
+                name: document.getElementById('tech-name').value,
+                type: document.getElementById('tech-type').value,
+                desc: document.getElementById('tech-desc').value,
+                showOnHome: document.getElementById('tech-show-home').checked,
+                price: document.getElementById('tech-price').value,
+                image: base64Image,
+                timestamp: new Date()
+            });
+            
+            alert("Успешно добавлено!");
+        }
+            form.reset(); // очищаем форму после отправки
+            renderAdminList();
+        } catch (e) {
+            console.error("Ошибка при добавлении: ", e);
+            alert("Ошибка! Проверь консоль.");
+        }
+    });
+
+    // Функция удаления
+window.deleteCrane = async function(id) {
+    if (confirm("Вы уверены, что хотите удалить этот кран?")) {
+        await deleteDoc(doc(db, "tech", id));
+        alert("Кран удален!");
+        renderAdminList(); // Обновляем список после удаления
+    }
+};
+
+// Функция отрисовки списка
+window.renderAdminList = async function() {
+    console.log("Запуск отприсовки списка...")
+    const container = document.getElementById('tech-list');
+    const querySnapshot = await getDocs(collection(db, "tech"));
+
+    console.log("Найдено документов:", querySnapshot.size);
+    
+    container.innerHTML = "<tr><th>Название</th><th>Тип</th><th>Действия</th></tr>";
+
+    querySnapshot.forEach((doc) => {
+        const crane = doc.data();
+        const rowStyle = crane.showOnHome ? 'style="background-color: rgba(0, 255, 0, 0.2);"':'';
+        container.innerHTML += `
+            <tr ${rowStyle}>
+                <td>${crane.name}</td>
+                <td>${crane.type}</td>
+                <td>
+                    <button onclick="toggleHome('${doc.id}', ${crane.showOnHome})">
+                        ${crane.showOnHome ? 'С главной' : 'На главную'}
+                    </button>
+                    <button onclick="deleteCrane('${doc.id}')">Удалить</button>
+                </td>
+            </tr>
+        `;
+    });
+};
+
+window.toggleHome = async function(id, currentState) {
+    const querySnapshot = await getDocs(collection(db, "tech"));
+    let homeCount = 0;
+    
+    // Считаем, сколько уже на главной
+    querySnapshot.forEach((doc) => {
+        if (doc.data().showOnHome) homeCount++;
+    });
+
+    // Если хотим включить, а их уже 3 — ругаемся
+    if (!currentState && homeCount >= 3) {
+        alert("На главной странице может быть только 3 крана! Сначала уберите один с главной.");
+        return;
+    }
+
+    // Обновляем статус в базе
+    await updateDoc(doc(db, "tech", id), {
+        showOnHome: !currentState
+    });
+    
+    renderAdminList(); // Перерисовываем список
+};
+
+window.editCrane = function(id, name, type, desc, price, showHome) {
+    // 1. Запоминаем ID того крана, который правим
+    window.editId = id; 
+
+    // 2. Заполняем поля формы данными из таблицы
+    document.getElementById('tech-name').value = name;
+    document.getElementById('tech-type').value = type;
+    document.getElementById('tech-desc').value = desc;
+    document.getElementById('tech-price').value = price;
+    document.getElementById('tech-show-home').checked = (showHome === true);
+
+    // 3. Прокручиваем страницу наверх к форме
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 4. Меняем текст кнопки, чтобы заказчик видел, что он в режиме редактирования
+    const submitBtn = document.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.innerText = "Сохранить изменения";
+};
+</script>
+
+</body>
+</html>
