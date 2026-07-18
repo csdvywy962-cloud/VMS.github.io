@@ -1027,7 +1027,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     display: flex;
     align-items: center;
     gap: 5px; /* Уменьшаем расстояние между иконкой и текстом */
-    font-size: 28px; /* Можно немного уменьшить шрифт названия, если оно длинное */
+    font-size: 40px; /* Можно немного уменьшить шрифт названия, если оно длинное */
 }
 
     /* Уменьшаем логотип, чтобы он не занимал много места */
@@ -1038,7 +1038,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Уменьшаем текст названия компании */
 .logo-text {
-    font-size: 28px;
+    font-size: 40px;
     white-space: nowrap; /* Чтобы не переносилось на вторую строку */
 }
 
