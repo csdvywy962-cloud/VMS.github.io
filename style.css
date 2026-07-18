@@ -1012,7 +1012,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     /* Hero-блок */
-    .content-container { flex-direction: column; align-items: center; text-align: center; }
+    .content-container { flex-direction: column; align-items: left; text-align: left; }
     h1 { font-size: 32px; }
     .buttons { flex-direction: column; width: 100%; gap: 10px; }
     
