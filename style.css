@@ -996,7 +996,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
         align-items: center !important;    /* Центрируем горизонтально */
         justify-content: center !important;
         padding: 15px !important;
-        gap: 10px !important;
+        gap: 5px !important;
+        padding-bottom: 5px !important;
     }
 
     /* Логотип и телефон в одну ширину */
@@ -1018,6 +1019,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         flex-direction: column !important;
         align-items: flex-start !important; /* Это прижмет текст и список влево */
         padding-left: 20px !important; /* Отступ от левого края */
+        margin-top:5px
     }
 
     /* Исправляем список, чтобы галочки тоже были слева */
