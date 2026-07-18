@@ -1012,8 +1012,20 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     /* Hero-блок */
-    .content-container { flex-direction: column; align-items: left; text-align: left; }
-    h1 { font-size: 32px; }
+     .content-container, .hero-left {
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Это прижмет текст и список влево */
+        padding-left: 20px !important; /* Отступ от левого края */
+    }
+
+    /* Исправляем список, чтобы галочки тоже были слева */
+    .features {
+        align-items: flex-start !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
     .buttons { flex-direction: column; width: 100%; gap: 10px; }
     
     /* Сетка и секции */
