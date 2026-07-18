@@ -1017,21 +1017,22 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     .header-container {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between;
+    flex-direction: column !important;
     align-items: center;
+    gap: 10px;
     width:100%;
-    padding: 10px; /* Немного уменьшаем отступы по краям */
+    padding: 15px; /* Немного уменьшаем отступы по краям */
 }
     .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px; /* Уменьшаем расстояние между иконкой и текстом */
+    justify-content: center;
+    gap: 10px; /* Уменьшаем расстояние между иконкой и текстом */
 }
 
     /* Уменьшаем логотип, чтобы он не занимал много места */
 .logo-container img {
-    height: 35px; /* Задайте фиксированную высоту */
+    height: 40px; /* Задайте фиксированную высоту */
     width: auto;
 }
 
@@ -1043,9 +1044,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Уменьшаем кнопку телефона */
 .phone-dropdown {
-    font-size: 12px;
-    white-space: nowrap; /* Не дает номеру переноситься */
-    padding: 2px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
     .service-card, .advantage-card {
