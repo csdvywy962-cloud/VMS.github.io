@@ -1025,12 +1025,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
     padding: 20px;
     width: 100%;
 }
-    .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Центрирует иконку и текст внутри блока */
-    gap: 10px;
+    .logo-container, .phone-dropdown {
+    width: auto !important;
+    display: flex !important;
+    justify-content: center !important;
 }
+    
 
     /* Уменьшаем логотип, чтобы он не занимал много места */
 .logo-container img {
@@ -1044,13 +1044,6 @@ ul.features { list-style: none; margin-bottom: 40px; }
     font-weight: bold;
 }
 
-/* Уменьшаем кнопку телефона */
-.phone-dropdown {
-    display: flex;
-    justify-content: center;
-    width: auto;             /* Кнопка не растягивается на всю ширину */
-    max-width: 90%;          /* Чтобы кнопка не была слишком широкой */
-}
 
     .service-card, .advantage-card {
         width: 90% !important;
