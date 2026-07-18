@@ -1026,20 +1026,19 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .logo-container {
     display: flex;
     align-items: center;
-    gap: 5px; /* Уменьшаем расстояние между иконкой и текстом */
-    font-size: 40px; /* Можно немного уменьшить шрифт названия, если оно длинное */
+    gap: 8px; /* Уменьшаем расстояние между иконкой и текстом */
 }
 
     /* Уменьшаем логотип, чтобы он не занимал много места */
 .logo-container img {
-    height: 40px; /* Задайте фиксированную высоту */
+    height: 35px; /* Задайте фиксированную высоту */
     width: auto;
 }
 
 /* Уменьшаем текст названия компании */
 .logo-text {
-    font-size: 40px;
-    white-space: nowrap; /* Чтобы не переносилось на вторую строку */
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Уменьшаем кнопку телефона */
