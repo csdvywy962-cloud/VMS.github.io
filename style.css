@@ -1045,7 +1045,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .phone-dropdown {
     font-size: 12px;
     white-space: nowrap; /* Не дает номеру переноситься */
-    padding: 5px;
+    padding: 2px;
 }
 
     .service-card, .advantage-card {
