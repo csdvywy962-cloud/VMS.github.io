@@ -1015,19 +1015,21 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .hero-title { text-align: left; padding: 20px; }
 
 
-    .header-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center;
-    gap: 10px;
-    width:100%;
-    padding: 15px; /* Немного уменьшаем отступы по краям */
+    /* Основной контейнер шапки */
+.header-container {
+    display: flex !important;          /* Включаем Flexbox */
+    flex-direction: column !important; /* Строим элементы друг ПОД другом */
+    align-items: center;               /* Центрируем всё горизонтально */
+    justify-content: center;           /* Центрируем по вертикали */
+    gap: 15px;                         /* Расстояние между логотипом и телефоном */
+    padding: 20px;
+    width: 100%;
 }
     .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px; /* Уменьшаем расстояние между иконкой и текстом */
+    justify-content: center; /* Центрирует иконку и текст внутри блока */
+    gap: 10px;
 }
 
     /* Уменьшаем логотип, чтобы он не занимал много места */
@@ -1044,8 +1046,10 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Уменьшаем кнопку телефона */
 .phone-dropdown {
-    width: fit-content;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: auto;             /* Кнопка не растягивается на всю ширину */
+    max-width: 90%;          /* Чтобы кнопка не была слишком широкой */
 }
 
     .service-card, .advantage-card {
