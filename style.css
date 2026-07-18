@@ -1019,7 +1019,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
         flex-direction: column !important;
         align-items: flex-start !important; /* Это прижмет текст и список влево */
         padding-left: 20px !important; /* Отступ от левого края */
-        margin-top:5px;
+        margin-top: -10px !important; /* Поднимаем блок вверх */
+        padding-top: 0 !important;
     }
 
     /* Исправляем список, чтобы галочки тоже были слева */
@@ -1041,8 +1042,14 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     /* Уменьшаем отступы внутри желтого блока, чтобы он был компактнее */
-    .hero-yellow-bg {
-        padding: 15px !important; 
+      .hero-wrapper, .hero-yellow-bg {
+        margin-top: 0 !important; /* Убираем отступ сверху */
+        padding-top: 10px !important; /* Немного отступаем от границы */
+        border-top: none !important; /* Убираем любую границу, если она есть */
+    }
+
+    .badge {
+        margin-top: 0 !important;
     }
     .buttons { flex-direction: column; width: 100%; gap: 10px; }
     
