@@ -1012,6 +1012,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
         display: none !important; 
     }
 
+    .content-container {
+        margin-top: -10px !important; /* Поднимаем блок вверх */
+        padding-top: 0 !important;
+    }
+
     /* Hero-блок */
      .content-container, .hero-left {
         text-align: left !important;
@@ -1019,8 +1024,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         flex-direction: column !important;
         align-items: flex-start !important; /* Это прижмет текст и список влево */
         padding-left: 20px !important; /* Отступ от левого края */
-        margin-top: -10px !important; /* Поднимаем блок вверх */
-        padding-top: 0 !important;
+        
     }
 
     /* Исправляем список, чтобы галочки тоже были слева */
