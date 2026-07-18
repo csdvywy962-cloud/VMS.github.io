@@ -989,134 +989,35 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Стили для экранов шириной до 768px (планшеты и телефоны) */
 @media (max-width: 768px) {
-    .services-grid .about-container, .advantages-container {
-        flex-direction: column !important;
+    /* 1. Настройка шапки: Центрируем всё в колонку */
+    .header-container {
+        display: flex !important;
+        flex-direction: column !important; /* Лого над телефоном */
+        align-items: center !important;    /* Центрируем горизонтально */
+        justify-content: center !important;
+        padding: 15px !important;
+        gap: 10px !important;
+    }
+
+    /* Логотип и телефон в одну ширину */
+    .logo-container, .phone-dropdown {
+        display: flex !important;
+        justify-content: center !important;
         width: 100% !important;
     }
-    
 
-     .desktop-menu { display: none; } /* Скрываем обычное меню */
-    .mobile-menu { display: block; }  /* Показываем мобильное */
-     .desktop-menu { display: flex; gap: 20px; } /* Обычное меню в строку */
-    .mobile-menu { display: none; }             /* Скрываем мобильное */
-
-    /* Скрытое состояние меню */
-.hidden-menu { display: none; flex-direction: column; align-items: center; }
-
-/* Состояние, когда меню открыто */
-.visible-menu { display: flex; }
-
-/* Оформление кнопки */
-.mobile-menu-btn { 
-    background: none; border: none; font-size: 16px; cursor: pointer; padding: 10px; 
-}
-
-/* На всякий случай: выравнивание текста по левому краю для блока "Аренда..." */
-.hero-title { text-align: left; padding: 20px; }
-
-
-    /* Основной контейнер шапки */
-.header-container {
-    display: flex !important;          /* Включаем Flexbox */
-    flex-direction: column !important; /* Строим элементы друг ПОД другом */
-    align-items: center;               /* Центрируем всё горизонтально */
-    justify-content: center;           /* Центрируем по вертикали */
-    gap: 15px;                         /* Расстояние между логотипом и телефоном */
-    padding: 20px;
-    width: 100%;
-}
-    .logo-container, .phone-dropdown {
-    width: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-}
-    
-
-    /* Уменьшаем логотип, чтобы он не занимал много места */
-.logo-container img {
-    height: 40px; /* Задайте фиксированную высоту */
-    width: auto;
-}
-
-/* Уменьшаем текст названия компании */
-.logo-text {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-    .service-card, .advantage-card {
-        width: 90% !important;
-        margin: 10px auto !important;
-    }
-
-    .consultation-actions {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .btn-call, .btn-whatsapp {
-        width: 80%;
-    }
-    /* Например, делаем элементы вертикальными вместо горизонтальных */
-    .header-container, .consultation-content {
-        flex-direction: column; 
-        text-align: center;
-    }
-
-    /* Уменьшаем отступы, чтобы элементы не вылезали за экран */
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Делаем картинки адаптивными */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-      .header-container {
-        display: flex !important; /* Принудительно включаем Flex */
-        flex-direction: row !important; /* Ставим в ряд */
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-    
-    /* Скрываем список ссылок, если хотим кнопку-бургер */
-    .nav-links {
+    /* Скрываем компьютерное меню */
+    .desktop-menu, .nav-links { 
         display: none !important; 
     }
-    
-    /* 2. Hero-блок (первый экран): делаем всё вертикально */
+
+    /* Hero-блок */
     .content-container { flex-direction: column; align-items: center; text-align: center; }
-    .hero-left, .crane-card { width: 100% !important; max-width: 100%; }
     h1 { font-size: 32px; }
-    .buttons { flex-direction: column; width: 100%; }
+    .buttons { flex-direction: column; width: 100%; gap: 10px; }
     
-    /* 3. Сетка карточек (техника и преимущества) */
+    /* Сетка и секции */
     .cards-grid, .cards-grid2 { grid-template-columns: 1fr !important; }
-    
-    /* 4. Блок О компании и Преимущества: сбрасываем сложные отступы */
-    .about-company, .advantages-section { 
-        margin-left: 20px !important; 
-        margin-right: 20px !important; 
-        padding: 20px !important; 
-    }
-    .about-company { grid-template-columns: 1fr; }
-    
-    /* 5. Консультационный блок */
-    .consultation-block { 
-        flex-direction: column; 
-        margin-left: 20px !important; 
-        margin-right: 20px !important; 
-        text-align: center; 
-    }
-    .consultation-content { max-width: 100%; }
-    
-    /* 6. Футер */
-    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+    .about-company, .advantages-section { margin: 20px !important; padding: 20px !important; }
+    .consultation-block { flex-direction: column; text-align: center; }
 }
