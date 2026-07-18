@@ -1026,6 +1026,23 @@ ul.features { list-style: none; margin-bottom: 40px; }
         padding-left: 0 !important;
         margin-left: 0 !important;
     }
+
+    h1 {
+        font-size: 24px !important; /* Уменьшили размер */
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Уменьшаем пункты списка */
+    .features li {
+        font-size: 14px !important; /* Размер текста в списке */
+        margin-bottom: 8px !important;
+    }
+
+    /* Уменьшаем отступы внутри желтого блока, чтобы он был компактнее */
+    .hero-yellow-bg {
+        padding: 15px !important; 
+    }
     .buttons { flex-direction: column; width: 100%; gap: 10px; }
     
     /* Сетка и секции */
