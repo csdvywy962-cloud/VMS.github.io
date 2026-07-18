@@ -1032,13 +1032,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     /* Уменьшаем логотип, чтобы он не занимал много места */
 .logo-container img {
-    height: 30px; /* Задайте фиксированную высоту */
+    height: 40px; /* Задайте фиксированную высоту */
     width: auto;
 }
 
 /* Уменьшаем текст названия компании */
 .logo-text {
-    font-size: 14px;
+    font-size: 28px;
     white-space: nowrap; /* Чтобы не переносилось на вторую строку */
 }
 
