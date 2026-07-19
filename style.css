@@ -140,7 +140,7 @@ h1 span { border-bottom: 4px solid #FF3333; display: inline-block; }
 
 ul.features { list-style: none; margin-bottom: 40px; }
 .features li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
-.features li span { 
+.yelow-dot { 
     background: black; 
     color: #FFD700; 
     border-radius: 50%; 
