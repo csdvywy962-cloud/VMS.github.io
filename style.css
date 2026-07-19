@@ -1050,7 +1050,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     /* Более точный выбор текста в списке */
     .features li {
         font-size: 14px !important;
-        line-height: 1.5 !important;
+        line-height: 5 !important;
         display: flex;
         align-items: flex-start;
         margin-bottom: 12px;
