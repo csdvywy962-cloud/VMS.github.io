@@ -1117,7 +1117,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         display: flex !important;
         flex-direction: column !important;
         gap: 5px !important;
-        margin-top: 0px !important;
+        margin-top: -10px !important;
         margin-bottom: 20px !important;
     }
     
