@@ -155,6 +155,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 }
 
 .check-img {
+    background: black;
+    color: #FFD700 !important;
     width: 12px;
     height: 12px;
 }
