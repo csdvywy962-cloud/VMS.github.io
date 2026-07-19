@@ -226,6 +226,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: scale(1.2) !important;
     }
 
 .separator { height: 1px; background: rgba(0,0,0,0.1); margin: 20px 0; }
