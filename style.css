@@ -1116,8 +1116,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .buttons {
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important;
-        margin-top: 20px !important;
+        gap: 5px !important;
+        margin-top: 40px !important;
         margin-bottom: 20px !important;
     }
     
