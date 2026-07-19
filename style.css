@@ -1035,7 +1035,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .hero-left h1 {
-        font-size: 48px !important;
+        font-size: 60px !important;
         line-height: 1.1 !important;
     }
 
@@ -1055,11 +1055,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .badge {
          display: inline-flex !important;    /* Используем flex для управления контентом */
         white-space: nowrap !important;    /* Текст строго в одну строку */
-        width: auto !important;            /* Подстраиваем ширину под содержимое */
-        max-width: 90% !important;         /* Ограничиваем, чтобы не вылезало за края */
-        padding: 5px 15px !important;      /* Добавляем внутренние отступы */
-        font-size: 12px !important;        /* Немного уменьшаем шрифт, чтобы влезло */
-        overflow: hidden;                  /* Обрезаем, если все же не влезает */
+        width: fit-content !important;            /* Подстраиваем ширину под содержимое */
+        max-width: 95% !important;         /* Ограничиваем, чтобы не вылезало за края */
+        padding: 5px 10px !important;      /* Добавляем внутренние отступы */
+        font-size: 12px !important;        /* Немного уменьшаем шрифт, чтобы влезло */ 
+        
         text-overflow: ellipsis;           /* Добавляем многоточие, если обрезали */
     }
     .buttons { flex-direction: column; width: 100%; gap: 10px; }
