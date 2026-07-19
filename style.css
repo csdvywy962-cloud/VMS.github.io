@@ -1034,6 +1034,15 @@ ul.features { list-style: none; margin-bottom: 40px; }
         text-decoration: none !important;
     }
 
+    .phone-list div a {
+        color: #000000 !important;
+        text-decjration: none !important;
+    }
+
+    .phone-list div  {
+        color: #000000 !important;
+    }
+
     /* Скрываем компьютерное меню */
     .desktop-menu, .nav-links { 
         display: none !important; 
