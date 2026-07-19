@@ -1035,8 +1035,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .hero-left h1 {
-        font-size: 40px !important;
-        line-height: 0.7 !important;
+        font-size: 44px !important;
+        line-height: 0.9 !important;
     }
 
     /* Более точный выбор текста в списке */
