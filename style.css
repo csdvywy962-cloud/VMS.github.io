@@ -1042,7 +1042,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     /* Более точный выбор текста в списке */
     .hero-left .features li {
-        font-size: 14px !important;
+        font-size: 25px !important;
         line-height: 1.3 !important;
         display: flex;
         align-items: flex-start;
