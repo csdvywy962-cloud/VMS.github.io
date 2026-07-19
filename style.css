@@ -1057,7 +1057,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         white-space: nowrap !important;   /* Обязательно разрешаем перенос слов */
         width: auto !important;           /* Снимаем жесткую ширину */
         max-width: 100% !important;       /* Плашка может занимать всю ширину */
-        min-width: 200px !important;      /* Минимальная ширина, чтобы не была узкой */
+        min-width: 100px !important;      /* Минимальная ширина, чтобы не была узкой */
         padding: auto !important;     /* Увеличиваем отступы, чтобы текст не прилипал */
         font-size: 11px !important;       /* Чуть крупнее, чтобы читалось */
         line-height: 1.4 !important;      /* Добавляем межстрочный интервал */
