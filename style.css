@@ -154,9 +154,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
         font-size: 10px;
 }
 
-.check-img {
+.yelow-dot img {
     background: black;
-    filter:invert(86%) sepia(94%) saturate(738%) hue-rotate(357/deg) brightness(103%) contrast(102%) !important;
+    filter: invert(75%) sepia(90%) saturate(1450%) hue-rotate(10deg) brightness(105%) contrast(105%);
     width: 12px;
     height: 12px;
 }
