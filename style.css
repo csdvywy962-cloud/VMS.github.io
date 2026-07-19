@@ -1035,8 +1035,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .hero-left h1 {
-        font-size: 60px !important;
-        line-height: 1.1 !important;
+        font-size: 48px !important;
+        line-height: 0.9 !important;
     }
 
     /* Более точный выбор текста в списке */
@@ -1052,15 +1052,17 @@ ul.features { list-style: none; margin-bottom: 40px; }
         border-top: none !important; /* Убираем любую границу, если она есть */
     }
 
-    .badge {
-         display: inline-flex !important;    /* Используем flex для управления контентом */
-        white-space: nowrap !important;    /* Текст строго в одну строку */
-        width: fit-content !important;            /* Подстраиваем ширину под содержимое */
-        max-width: 95% !important;         /* Ограничиваем, чтобы не вылезало за края */
-        padding: 5px 10px !important;      /* Добавляем внутренние отступы */
-        font-size: 12px !important;        /* Немного уменьшаем шрифт, чтобы влезло */ 
-        
-        text-overflow: ellipsis;           /* Добавляем многоточие, если обрезали */
+     .badge {
+        display: inline-block !important; /* Меняем с flex на block для корректного переноса */
+        white-space: normal !important;   /* Обязательно разрешаем перенос слов */
+        width: auto !important;           /* Снимаем жесткую ширину */
+        max-width: 100% !important;       /* Плашка может занимать всю ширину */
+        min-width: 200px !important;      /* Минимальная ширина, чтобы не была узкой */
+        padding: 5px 15px !important;     /* Увеличиваем отступы, чтобы текст не прилипал */
+        font-size: 13px !important;       /* Чуть крупнее, чтобы читалось */
+        line-height: 1.4 !important;      /* Добавляем межстрочный интервал */
+        height: auto !important;          /* Высота подстраивается сама */
+        text-align: left !important;      /* Выравниваем текст по левому краю */
     }
     .buttons { flex-direction: column; width: 100%; gap: 10px; }
     
