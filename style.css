@@ -149,6 +149,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
     font-size: 10px; 
 }
 
+.check-img {
+    width: 12px;
+    height: 12px;
+}
+
 /* Кнопки теперь стоят ровно в потоке */
 /* Общие свойства для всех кнопок внутри .buttons */
 .buttons a {
@@ -1071,6 +1076,10 @@ ul.features { list-style: none; margin-bottom: 40px; }
         font-size: 10px;
         
     }
+    .check-img {
+    width: 12px;
+    height: 12px;
+}
 
     /* Уменьшаем отступы внутри желтого блока, чтобы он был компактнее */
       .hero-wrapper, .hero-yellow-bg {
