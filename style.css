@@ -1035,8 +1035,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .hero-left h1 {
-        font-size: 42px !important;
-        line-height: 0.5 !important;
+        font-size: 40px !important;
+        line-height: 0.7 !important;
     }
 
     /* Более точный выбор текста в списке */
@@ -1053,9 +1053,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
      .badge {
-        display: inline-block !important; /* Меняем с flex на block для корректного переноса */
+        display: inline-table !important; /* Меняем с flex на block для корректного переноса */
         white-space: nowrap !important;   /* Обязательно разрешаем перенос слов */
-        width: max-content !important;           /* Снимаем жесткую ширину */
+        width: auto !important;           /* Снимаем жесткую ширину */
         max-width: 100% !important;       /* Плашка может занимать всю ширину */
         min-width: 200px !important;      /* Минимальная ширина, чтобы не была узкой */
         padding: 4px 10px !important;     /* Увеличиваем отступы, чтобы текст не прилипал */
