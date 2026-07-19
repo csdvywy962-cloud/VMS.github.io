@@ -1057,7 +1057,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: 100%;
     }
 
-    .features li span {
+    .yelow-dot {
         background: black;
         color: #FFD700 !important;
         borden-radius: 50%;
