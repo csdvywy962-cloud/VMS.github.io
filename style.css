@@ -141,9 +141,8 @@ h1 span { border-bottom: 4px solid #FF3333; display: inline-block; }
 ul.features { list-style: none; margin-bottom: 40px; }
 .features li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
 .yelow-dot { 
-    background: black;
-        color: #FFD700 !important;
-        borden-radius: 50%;
+    background-color: black;
+        border-radius: 50%;
         padding: 4px 4px;
         width: 18px;
         height: 18px;
@@ -156,7 +155,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 .check-img {
     background: black;
-    color: #FFD700 !important;
+    filter:invert(86%) sepia(94%) saturate(738%) hue-rotate(357/deg) brightness(103%) contrast(102%) !important;
     width: 12px;
     height: 12px;
 }
