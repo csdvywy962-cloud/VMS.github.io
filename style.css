@@ -1113,7 +1113,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
         height: auto !important;          /* Высота подстраивается сама */
         text-align: left !important;      /* Выравниваем текст по левому краю */
     }
-    .buttons { flex-direction: column; width: 100%; gap: 10px; }
+    .buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
     
     /* Сетка и секции */
     .cards-grid, .cards-grid2 { grid-template-columns: 1fr !important; }
