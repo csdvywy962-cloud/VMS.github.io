@@ -140,7 +140,7 @@ h1 span { border-bottom: 4px solid #FF3333; display: inline-block; }
 
 ul.features { list-style: none; margin-bottom: 40px; }
 .features li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
-.yelow-dot { 
+.yellow-dot { 
     background-color: black;
     color: #FFD700;
         border-radius: 50%;
@@ -154,7 +154,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         font-size: 10px;
 }
 
-.yelow-dot img {
+.yellow-dot img {
     background: black;
     filter: invert(75%) sepia(90%) saturate(1450%) hue-rotate(10deg) brightness(105%) contrast(105%);
     width: 12px;
