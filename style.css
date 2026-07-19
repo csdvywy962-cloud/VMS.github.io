@@ -1059,7 +1059,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     .features li span {
         background: black;
-        color: #FFD700;
+        color: #FFD700 !important;
         borden-radius: 50%;
         padding: 4px 4px;
         width: 18px;
