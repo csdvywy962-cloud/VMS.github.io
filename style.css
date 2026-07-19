@@ -1021,6 +1021,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: 100% !important;
     }
 
+    meta[name="format-detection"]{
+        content: "telephone=no";
+    }
+
+    
+
     .phone-header strong {
         color: #000000 !important;
         text-decoration: none !important;
