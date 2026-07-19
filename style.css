@@ -1058,7 +1058,14 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .features li span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        color: #FFD600;
+        margin-right: 10px;
         
     }
 
