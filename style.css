@@ -211,7 +211,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
     height: 300px; 
     border-radius: 20px; 
     margin-bottom: 20px; 
-    width: 100%;
+    width: 110%;
+    max-width:110%;
+    transform: scale(1.2) !important;
         overflow: hidden;
         display: flex;
         align-items: center;
