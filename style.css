@@ -1036,11 +1036,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     .phone-list div a {
         color: #000000 !important;
-        text-decjration: none !important;
+        text-decoration: none !important;
     }
 
     .phone-list div  {
         color: #000000 !important;
+        text-decoration: none !important;
     }
 
     /* Скрываем компьютерное меню */
