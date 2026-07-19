@@ -141,12 +141,11 @@ h1 span { border-bottom: 4px solid #FF3333; display: inline-block; }
 ul.features { list-style: none; margin-bottom: 40px; }
 .features li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
 .yellow-dot { 
-    background-color: black;
-    color: #FFD700;
-        border-radius: 50%;
+    background-color: black !important;
+        border-radius: 50% !important;
         padding: 4px 4px;
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -155,10 +154,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
 }
 
 .yellow-dot img {
-    background: black;
-    filter: invert(75%) sepia(90%) saturate(1450%) hue-rotate(10deg) brightness(105%) contrast(105%);
-    width: 12px;
-    height: 12px;
+    filter: none;
+    filter: brightness(0) saturate(100%) invert(75%) sepia(94%) saturate(738%) hue-rotate(357deg) brightness(103%) contrast(102%) !important;
+    width:12px !important;
+    height:12px !important;
+    display: block !important;
+    background: none !important;
+    
 }
 
 /* Кнопки теперь стоят ровно в потоке */
