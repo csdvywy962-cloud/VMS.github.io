@@ -142,6 +142,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .features li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
 .yelow-dot { 
     background-color: black;
+    color: #FFD700;
         border-radius: 50%;
         padding: 4px 4px;
         width: 18px;
