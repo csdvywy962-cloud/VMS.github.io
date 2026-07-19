@@ -1050,7 +1050,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     /* Более точный выбор текста в списке */
     .features li {
         font-size: 14px !important;
-        line-height: 5 !important;
+        line-height: 1 !important;
         display: flex;
         align-items: flex-start;
         margin-bottom: 12px;
@@ -1058,14 +1058,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .features li span {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        width: 20px !important;
-        height: 20px !important;
-        color: #FFD600 !important;
-        margin-right: 10px !important;
+        background: black; 
+    color: #FFD700; 
+    border-radius: 50%; 
+    padding: 2px 6px; 
+    margin-right: 10px; 
+    font-size: 10px; 
         
     }
 
