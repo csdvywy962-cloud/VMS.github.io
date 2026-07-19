@@ -1021,6 +1021,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: 100% !important;
     }
 
+    .phone-header strong {
+        color: #000000 !important;
+        text-decoration: none !important;
+        font-weight: boll !important;
+    }
+
     /* Скрываем компьютерное меню */
     .desktop-menu, .nav-links { 
         display: none !important; 
