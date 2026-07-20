@@ -211,11 +211,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     height: 3000px; 
     border-radius: 20px; 
     margin-bottom: 20px; 
-    width: 100%;
-    display: flex;
-        align-items: center;
-        justify-content: center;
-    padding: 0;
+    
    
 }
 
