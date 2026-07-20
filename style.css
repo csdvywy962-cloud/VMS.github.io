@@ -1160,9 +1160,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .crane-card {
-        width: 90% !important;
+        width: 95% !important;
+        max-width: none !important;
         margin: 0 auto 20px auto !important;
         padding: 15px !important;
+        box-sizing: border-box;
     }
 
     /* Исправляем положение кнопки с ценой */
