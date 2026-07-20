@@ -236,6 +236,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         max-width: none;
         height: auto;
         object-fit: contain;
+        z-index: 2;
     }
 
 .separator { height: 1px; background: rgba(0,0,0,0.1); margin: 20px 0; }
