@@ -221,12 +221,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .photo-placeholder::before {
     content: '';
     position: absolute;
-    width: 200px;   /* Размер круга */
-    height: 200px;  /* Размер круга */
+    width: 300px;   /* Размер круга */
+    height: 300px;  /* Размер круга */
     background: #FFD700; /* Ярко-желтый цвет */
     border-radius: 50%; /* Делаем круг */
-    filter: blur(40px); /* Главная магия: размываем края для эффекта свечения */
-    opacity: 0.6;       /* Делаем его полупрозрачным */
+    filter: blur(70px); /* Главная магия: размываем края для эффекта свечения */
+    opacity: 0.85;       /* Делаем его полупрозрачным */
     z-index: 1;         /* Чтобы круг был под краном */
 }
 
