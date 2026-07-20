@@ -208,17 +208,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 .photo-placeholder { 
     background: #f4f4f4; /* Чуть серый для видимости */
-    height: 250px; 
+    height: 3000px; 
     border-radius: 20px; 
     margin-bottom: 20px; 
     width: 100%;
-    max-width: 100%;
-    transform: scale(1.4) !important;
     display: flex;
         align-items: center;
         justify-content: center;
-    position: relative;
-    z-index: 10;
     padding: 0;
    
 }
