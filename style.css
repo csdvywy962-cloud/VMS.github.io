@@ -1160,7 +1160,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
 
     .crane-card {
-        width: 98% !important;
+        width: 100% !important;
         margin-top: 50px !important;
         padding: 20px !important;
         box-sizing: border-box;
