@@ -1206,8 +1206,10 @@ ul.features { list-style: none; margin-bottom: 40px; }
 }
 
     .photo-placeholder::before {
-        width: 100px !important;
-        height: 10px !important;
+        width: 250px !important;
+        height: 50px !important;
+        background: #FFD700;
+    filter: blur(50px); 
     }
 
 
