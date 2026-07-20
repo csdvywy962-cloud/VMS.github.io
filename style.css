@@ -222,9 +222,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
     content: '';
     position: absolute;
     width: 350px;   /* Размер круга */
-    height: 150px;  /* Размер круга */
+    height: 100px;  /* Размер круга */
     background: #FFD700;
-    filter: blur(80px); /* Главная магия: размываем края для эффекта свечения */
+    filter: blur(90px); /* Главная магия: размываем края для эффекта свечения */
     border-radius: 50%; /* Делаем круг */
     opacity: 1;       /* Делаем его полупрозрачным */
     z-index: 1;         /* Чтобы круг был под краном */
