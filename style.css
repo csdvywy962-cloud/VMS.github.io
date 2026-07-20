@@ -1205,6 +1205,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
    
 }
 
+    .photo-placeholder::before {
+        width: 200px;
+        height: 50px;
+    }
+
 
     .crane-image1 {
         width: 120%;
