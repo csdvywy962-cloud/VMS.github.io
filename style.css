@@ -221,8 +221,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .photo-placeholder::before {
     content: '';
     position: absolute;
-    width: 300px;   /* Размер круга */
-    height: 200px;  /* Размер круга */
+    width: 350px;   /* Размер круга */
+    height: 150px;  /* Размер круга */
     background: #FFD700;
     filter: blur(80px); /* Главная магия: размываем края для эффекта свечения */
     border-radius: 50%; /* Делаем круг */
