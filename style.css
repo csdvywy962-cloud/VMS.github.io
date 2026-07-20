@@ -221,15 +221,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .photo-placeholder::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, #FFD700 0%, transparent 70%); /* Радиальный градиент */
-    opacity: 0.6;
-    border-radius: 20px; /* Повторяем скругление плашки */
-    z-index: 1;
-    pointer-events: none; /* Чтобы свет не мешал кликам */
+    width: 250px;   /* Размер круга */
+    height: 150px;  /* Размер круга */
+    background: #FFD700; /* Ярко-желтый цвет */
+    border-radius: 50%; /* Делаем круг */
+    filter: blur(70px); /* Главная магия: размываем края для эффекта свечения */
+    opacity: 1;       /* Делаем его полупрозрачным */
+    z-index: 1;         /* Чтобы круг был под краном */
 }
 
 
