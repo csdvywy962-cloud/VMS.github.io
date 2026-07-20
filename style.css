@@ -1209,7 +1209,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         content: '';
     position: absolute;
     width: 250px;   /* Размер круга */
-    height: 150px;  /* Размер круга */
+    height: 100px;  /* Размер круга */
     background: #FFD700;
     filter: blur(40px); /* Главная магия: размываем края для эффекта свечения */
     border-radius: 50%; /* Делаем круг */
