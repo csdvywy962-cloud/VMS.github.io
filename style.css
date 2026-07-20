@@ -1206,10 +1206,15 @@ ul.features { list-style: none; margin-bottom: 40px; }
 }
 
     .photo-placeholder::before {
-        width: 250px !important;
-        height: 50px !important;
-        background: #FFD700;
-    filter: blur(50px); 
+        content: '';
+    position: absolute;
+    width: 250px;   /* Размер круга */
+    height: 50px;  /* Размер круга */
+    background: #FFD700;
+    filter: blur(50px); /* Главная магия: размываем края для эффекта свечения */
+    border-radius: 50%; /* Делаем круг */
+    opacity: 1;       /* Делаем его полупрозрачным */
+    z-index: 1;   
     }
 
 
