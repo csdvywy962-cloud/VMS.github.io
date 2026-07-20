@@ -216,8 +216,18 @@ ul.features { list-style: none; margin-bottom: 40px; }
     align-items: center;
     justify-content: center;
     padding: 0;
-    
-   
+}
+
+.photo-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 200px;   /* Размер круга */
+    height: 200px;  /* Размер круга */
+    background: #FFD700; /* Ярко-желтый цвет */
+    border-radius: 50%; /* Делаем круг */
+    filter: blur(60px); /* Главная магия: размываем края для эффекта свечения */
+    opacity: 0.6;       /* Делаем его полупрозрачным */
+    z-index: 1;         /* Чтобы круг был под краном */
 }
 
 
