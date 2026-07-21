@@ -1264,6 +1264,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
         display: block !important;
         margin-bottom: 5px !important;
         text-align: left !important;
+        align-self: flex-start !important;
+        
     }
 
 
