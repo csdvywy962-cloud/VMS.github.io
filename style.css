@@ -1234,7 +1234,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin-top: 30px !important; 
         
         /* Делаем ширину ровно 98% (как карточка) и центрируем */
-        width: 50% !important;
+        width: 80% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         
