@@ -1229,9 +1229,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
         display: flex !important;
         justify-content: space-around !important; /* Равномерно распределяет блоки */
         align-items: flex-start !important;
-        margin-top: 50px !important; /* Отступ от карточки с краном */
+        margin-top: 30px !important; /* Отступ от карточки с краном */
         padding: 0 10px !important;
-        width: 90% !important;
+        width: 80% !important;
         box-sizing: border-box !important;
     }
 
