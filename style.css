@@ -1237,7 +1237,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        gap: 20px !important;
+        gap: 10px !important;
         
         /* Никаких лишних padding, чтобы не раздувать блок */
         padding: 20px !important; 
