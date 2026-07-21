@@ -1244,12 +1244,19 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
     }
 
-    .stat-item {
-        flex: 0 0 auto !important;
-        font-size: 14px !important; 
+     .stat-item {
+        flex: 1 !important;
         text-align: center !important;
-        padding: 0 !important;
-        white-space: pre-line !important;
+        padding: 0 4px !important;
+        
+        /* Превращаем колонку в вертикальный блок */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        
+        /* Включаем перенос длинных слов, чтобы они не слипались и не улетали */
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
     }
 
 
