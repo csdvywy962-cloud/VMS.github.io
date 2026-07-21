@@ -1225,28 +1225,49 @@ ul.features { list-style: none; margin-bottom: 40px; }
         object-fit: contain;
     }
 
-    .stats-white {
+     .stats-white {
         display: flex !important;
-        justify-content: space-around !important; /* Равномерно распределяет блоки */
+        justify-content: space-between !important;
         align-items: flex-start !important;
-        margin-top: 30px !important; /* Отступ от карточки с краном */
-        padding: 0 20px important;
-        width: 100% !important;
+        
+        /* Возвращаем нормальный отступ сверху */
+        margin-top: 15px !important; 
+        
+        /* Делаем ширину ровно 98% (как карточка) и центрируем */
+        width: 98% !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        
+        /* Никаких лишних padding, чтобы не раздувать блок */
+        padding: 0 !important; 
         box-sizing: border-box !important;
     }
 
-    /* Каждый блок с цифрой и текстом */
     .stat-item {
         flex: 1 !important;
-        text-align: center !important; /* Текст по центру */
-        padding: 0 2px !important;
+        font-size: inherit !important; 
+        padding: 0 !important;
+        
+        /* Выравниваем текст: левую колонку по левому краю, правую по правому, центр по центру */
+        text-align: left !important;
     }
 
-    /* Увеличиваем размер самих цифр (strong), чтобы они выделялись */
+    /* Делаем так, чтобы первая цифра прижалась к левому краю карточки, а последняя — к правому */
+    .stat-item:first-child {
+        text-align: left !important;
+    }
+
+    .stat-item:nth-child(2) {
+        text-align: center !important;
+    }
+
+    .stat-item:last-child {
+        text-align: right !important;
+    }
+
     .stat-item strong {
         display: block !important;
+        font-size: 20px !important;
         margin-bottom: 5px !important;
     }
 
