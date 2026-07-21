@@ -1231,7 +1231,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         align-items: flex-start !important;
         margin-top: 30px !important; /* Отступ от карточки с краном */
         padding: 0 !important;
-        width: 98% !important;
+        width: 90% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         box-sizing: border-box !important;
