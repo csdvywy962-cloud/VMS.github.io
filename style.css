@@ -1246,7 +1246,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     .stat-item {
         flex: 0 0 auto !important;
-        font-size: inherit !important; 
+        font-size: 14px !important; 
+        text-align: center !important;
         padding: 0 !important;
     }
 
@@ -1254,6 +1255,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .stat-item strong {
         display: block !important;
         margin-bottom: 5px !important;
+        text-align: center !important;
     }
 
 
