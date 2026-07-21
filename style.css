@@ -1231,7 +1231,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         align-items: flex-start !important;
         margin-top: 50px !important; /* Отступ от карточки с краном */
         padding: 0 10px !important;
-        width: 100% !important;
+        width: 90% !important;
         box-sizing: border-box !important;
     }
 
@@ -1239,14 +1239,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .stat-item {
         flex: 1 !important;
         text-align: center !important; /* Текст по центру */
-        font-size: 10px !important;   /* Уменьшаем шрифт, чтобы все влезло */
         padding: 0 2px !important;
     }
 
     /* Увеличиваем размер самих цифр (strong), чтобы они выделялись */
     .stat-item strong {
         display: block !important;
-        font-size: 18px !important;
         margin-bottom: 5px !important;
     }
 
