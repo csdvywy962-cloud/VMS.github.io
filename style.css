@@ -1234,12 +1234,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin-top: 30px !important; 
         
         /* Делаем ширину ровно 98% (как карточка) и центрируем */
-        width: 80% !important;
+        width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         
         /* Никаких лишних padding, чтобы не раздувать блок */
-        padding: 0 !important; 
+        padding: 20px !important; 
         box-sizing: border-box !important;
     }
 
