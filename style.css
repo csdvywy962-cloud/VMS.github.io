@@ -1249,7 +1249,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         font-size: 14px !important; 
         text-align: center !important;
         padding: 0 !important;
-        word-break: pre-line !important;
+        white-space: pre-line !important;
     }
 
 
