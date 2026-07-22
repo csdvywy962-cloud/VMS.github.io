@@ -1275,20 +1275,25 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
      
 
-    #catalog.catalog-section,
+     #catalog.catalog-section,
     .catalog-header {
+        width: 100% !important;
+        max-width: 100% !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
-        width: 100% !important;
         box-sizing: border-box !important;
+        overflow-x: hidden !important;
     }
 
-    /* На всякий случай проверяем, чтобы заголовок тоже не вылезал */
+    /* Жестко ограничиваем заголовок, чтобы он не растягивал экран */
     .catalog-header h2 {
-        font-size: 44px !important;
+        font-size: 40px !important;
         line-height: 1.1 !important;
         white-space: normal !important;
+        width: 100% !important;
         max-width: 100% !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important; /* На всякий случай перенос длинных слов */
     }
     
 
