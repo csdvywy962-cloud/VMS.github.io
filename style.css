@@ -1275,22 +1275,20 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
      
 
-    #catalog.catalog-section {
+    #catalog.catalog-section,
+    .catalog-header {
         padding-left: 15px !important;
         padding-right: 15px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* На всякий случай проверяем шапку, чтобы она не сбрасывала отступы родителя */
-    .catalog-header {
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
+    /* На всякий случай проверяем, чтобы заголовок тоже не вылезал */
     .catalog-header h2 {
         font-size: 44px !important;
         line-height: 1.1 !important;
         white-space: normal !important;
+        max-width: 100% !important;
     }
     
 
