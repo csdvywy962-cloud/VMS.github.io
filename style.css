@@ -1331,7 +1331,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin: 0 !important;
     }
 
-    /* 1. Отступы секции по 20px с боков */
+    /* 1. Отступы всей секции по 20px с боков */
     #services.usage-section {
         width: 100% !important;
         padding-left: 20px !important;
@@ -1350,12 +1350,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
         line-height: 1.3 !important;
     }
 
-    /* 2. Компактное расстояние между карточками (12px) */
+    /* 2. Настройка сетки карточек в слайдере для мобилок */
     #services .slider-wrapper,
     #services .slider-page {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important; /* Уменьшили расстояние */
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 !important;
@@ -1363,7 +1363,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
     }
 
-    /* Ширина карточек */
+    /* Карточки внутри слайдера */
     #services .tech-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -1371,45 +1371,34 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin: 0 !important;
     }
 
-    /* 3. Логика скрытия карточек для постраничного просмотра (по 4 штуки) */
-    /* По умолчанию показываем только первые 4 карточки внутри контейнера */
-    #services .tech-card {
+    /* 3. Логика переключения страниц по 4 карточки (как на ПК) */
+    /* По умолчанию показываем только первую страницу (карточки 1-4) */
+    #services .slider-page:nth-child(2) {
         display: none !important;
     }
-    #services .tech-card:nth-child(1),
-    #services .tech-card:nth-child(2),
-    #services .tech-card:nth-child(3),
-    #services .tech-card:nth-child(4) {
-        display: flex !important;
-    }
-
-    /* Когда активирована вторая страница (класс .page-2 у обертки), показываем следующие 4 */
-    #services.page-2-active .tech-card:nth-child(1),
-    #services.page-2-active .tech-card:nth-child(2),
-    #services.page-2-active .tech-card:nth-child(3),
-    #services.page-2-active .tech-card:nth-child(4) {
+    #services.page-2-active .slider-page:nth-child(1) {
         display: none !important;
     }
-    #services.page-2-active .tech-card:nth-child(5),
-    #services.page-2-active .tech-card:nth-child(6),
-    #services.page-2-active .tech-card:nth-child(7),
-    #services.page-2-active .tech-card:nth-child(8) {
-        display: flex !important;
+    #services.page-2-active .slider-page:nth-child(2) {
+        display: grid !important;
     }
 
-    /* Стили для кнопки переключения */
-    #toggle-btn {
-        display: block !important;
+    /* 4. Возвращаем нормальную кнопку переключения (стрелочку или текст), чтобы она была под карточками, а не посередине */
+    #toggle-btn,
+    #services .floating-btn {
+        display: flex !important;
+        position: static !important;
         width: 100% !important;
         margin-top: 15px !important;
+        justify-content: center !important;
+        align-items: center !important;
         padding: 12px !important;
         background: #000 !important;
         color: #fff !important;
         border: none !important;
-        border-radius: 8px !important;
+        border-radius: 12px !important;
         font-size: 16px !important;
         cursor: pointer !important;
-        text-align: center !important;
     }
 
     
