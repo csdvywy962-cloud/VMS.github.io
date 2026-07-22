@@ -1331,7 +1331,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin: 0 !important;
     }
 
-    /* 1. Отступы всей секции по 20px с боков и относительное позиционирование для кнопки */
+    /* 1. Общие отступы секции и относительное позиционирование */
     #services.usage-section {
         position: relative !important;
         width: 100% !important;
@@ -1350,52 +1350,49 @@ ul.features { list-style: none; margin-bottom: 40px; }
         line-height: 1.3 !important;
     }
 
-    /* 2. Выстраиваем карточки в вертикальную колонку с отступом 12px */
+    /* 2. Контейнер слайдера */
     #services .slider-wrapper {
         position: relative !important;
-        display: flex !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Страницы слайдера: по умолчанию видна только первая, вторая скрыта */
+    #services .slider-page {
+        display: none !important;
         flex-direction: column !important;
         gap: 12px !important;
         width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
         margin: 0 !important;
-        box-sizing: border-box !important;
+        padding: 0 !important;
     }
 
-    /* Убираем старое разбиение на страницы, если оно мешает */
-    #services .slider-page {
-        display: contents !important;
-    }
-
-    /* Карточки на всю ширину */
-    #services .tech-card {
+    #services .slider-page:first-of-type {
         display: flex !important;
+    }
+
+    /* Когда активна вторая страница — показываем её, а первую скрываем */
+    #services .slider-wrapper.page-2-active .slider-page:first-of-type {
+        display: none !important;
+    }
+    #services .slider-wrapper.page-2-active .slider-page:last-of-type {
+        display: flex !important;
+    }
+
+    /* Карточки внутри страниц */
+    #services .tech-card {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
         margin: 0 !important;
     }
 
-    /* 3. Скрываем карточки с 5 по 8 по умолчанию (первая страница) */
-    #services .tech-card:nth-child(n+5) {
-        display: none !important;
-    }
-
-    /* Если активна вторая страница — показываем карточки с 5 по 8, а первые 4 скрываем */
-    #services .slider-wrapper.page-2-active .tech-card:nth-child(-n+4) {
-        display: none !important;
-    }
-    #services .slider-wrapper.page-2-active .tech-card:nth-child(n+5) {
-        display: flex !important;
-    }
-
-    /* 4. Превращаем вашу кнопку #toggle-btn в круглую и ставим справа между 2 и 3 плашкой */
+    /* 4. Круглая кнопка справа по центру блока */
     #toggle-btn.floating-btn {
         display: flex !important;
         position: absolute !important;
-        top: 360px !important; /* Точное положение по высоте между 2-й и 3-й карточкой */
-        right: 10px !important;
+        top: 50% !important;
+        right: 0px !important;
         transform: translateY(-50%) !important;
         width: 44px !important;
         height: 44px !important;
@@ -1413,7 +1410,6 @@ ul.features { list-style: none; margin-bottom: 40px; }
         padding: 0 !important;
         margin: 0 !important;
     }
-
     
 
 
