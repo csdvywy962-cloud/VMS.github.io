@@ -1280,7 +1280,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         flex-direction: column !important;
         align-items: flex-start !important;
         width: 100% !important;
-        padding: 20px 20px !important;
+        padding: 50px 20px !important;
         box-sizing: border-box !important;
     }
 
