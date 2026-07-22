@@ -1276,7 +1276,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
      
 
     .catalog-header h2 {
-        font-size: 44px !important;
+        font-size: 40px !important;
         line-height: 1.1 !important;
         white-space: normal !important; /* Разрешаем заголовку переноситься на мобильных */
     }
