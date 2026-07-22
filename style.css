@@ -1415,72 +1415,39 @@ ul.features { list-style: none; margin-bottom: 40px; }
         transition: transform 0.3s ease !important;
     }
 
-     /* 1. Сам блок контактов/консультации */
-    #contacts.consultation-block {
+    /* 1. Задаем отступы не только секции, но и внутреннему контенту */
+    #contacts.consultation-block,
+    #contacts .consultation-content {
         width: 100% !important;
         max-width: 100% !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
         box-sizing: border-box !important;
-        margin: 0 !important;
     }
 
-    /* 2. Текстовая часть */
+    /* 2. На всякий случай убираем возможные внешние отступы, мешающие выравниванию */
     #contacts .consultation-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
+        margin: 0 !important;
         text-align: left !important;
         align-items: flex-start !important;
-        box-sizing: border-box !important;
     }
 
-    /* Заголовок с учетом ваших тегов 
- */
-    #contacts .consultation-content h2 {
-        font-size: 40px !important;
-        line-height: 0.9 !important;
-        word-wrap: break-word !important;
-        white-space: normal !important;
-        text-align: left !important;
-    }
-
-    /* Описание */
-    #contacts .consultation-content p {
-        font-size: 15px !important;
-        line-height: 1.4 !important;
-        text-align: left !important;
-    }
-
-    /* 3. Блок с кнопками «Позвонить» и «Написать» */
-    #contacts .consultation-actions {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-top: 24px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Сами кнопки на полную ширину */
-    #contacts .consultation-actions .btn-call,
-    #contacts .consultation-actions .btn-whatsapp {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        margin: 0 !important;
-    }
-
+    /* Плашка «Готовы помочь» */
     #contacts .consultation-content .badge2,
     #contacts .consultation-content [class*="badge"] {
         margin-left: 0 !important;
-        margin-right: auto !important;
         display: inline-block !important;
+    }
+
+    /* Заголовок: 40px и межстрочный 0.9 */
+    #contacts .consultation-content h2 {
+        font-size: 40px !important;
+        line-height: 0.9 !important;
+        text-align: left !important;
+    }
+
+    #contacts .consultation-content p {
+        text-align: left !important;
     }
     
 
