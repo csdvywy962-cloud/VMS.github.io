@@ -1452,6 +1452,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     #contacts .consultation-content p {
         text-align: left !important;
+        font-size: 12px !important;
     }
     
 
