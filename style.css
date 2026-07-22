@@ -1393,7 +1393,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         min-height: 44px !important;
         border-radius: 50% !important;
         background: #000 !important;
-        color: #fff !important;
+        color: #ffd700 !important;
         border: none !important;
         align-items: center !important;
         justify-content: center !important;
@@ -1402,6 +1402,17 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
         padding: 0 !important;
         margin: 0 !important;
+    }
+
+    /* Плавный поворот кнопки на 180 градусов при наличии класса rotated */
+    #toggle-btn.floating-btn.rotated {
+        transform: translateY(-50%) rotate(180deg) !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    /* Чтобы сам переход трансформации был плавным в обе стороны */
+    #toggle-btn.floating-btn {
+        transition: transform 0.3s ease !important;
     }
     
 
