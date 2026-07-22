@@ -1331,7 +1331,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin: 0 !important;
     }
 
-    /* 1. Общие отступы секции и относительное позиционирование */
+    /* 1. Отступы всей секции */
     #services.usage-section {
         position: relative !important;
         width: 100% !important;
@@ -1357,9 +1357,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
     }
 
-    /* 3. Страницы слайдера: по умолчанию видна только первая, вторая скрыта */
+    /* 3. Оставляем ваши страницы (.slider-page), но на мобилке делаем их вертикальными блоками */
     #services .slider-page {
-        display: none !important;
+        display: none !important; /* По умолчанию все страницы скрыты */
         flex-direction: column !important;
         gap: 12px !important;
         width: 100% !important;
@@ -1367,19 +1367,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
         padding: 0 !important;
     }
 
-    #services .slider-page:first-of-type {
+    /* Когда страница получает класс active от вашего скрипта — она показывается */
+    #services .slider-page.active {
         display: flex !important;
     }
 
-    /* Когда активна вторая страница — показываем её, а первую скрываем */
-    #services .slider-wrapper.page-2-active .slider-page:first-of-type {
-        display: none !important;
-    }
-    #services .slider-wrapper.page-2-active .slider-page:last-of-type {
-        display: flex !important;
-    }
-
-    /* Карточки внутри страниц */
+    /* Карточки внутри страниц на всю ширину */
     #services .tech-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -1387,7 +1380,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin: 0 !important;
     }
 
-    /* 4. Круглая кнопка справа по центру блока */
+    /* 4. Круглая кнопка справа ровно по центру блока */
     #toggle-btn.floating-btn {
         display: flex !important;
         position: absolute !important;
