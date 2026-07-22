@@ -1273,6 +1273,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: fit-content !important;
     }
 
+     #catalog h2, .catalog-section h2 {
+        font-size: 44px !important;
+        line-height: 1.1 !important;
+        margin-top: 8px !important;
+        margin-bottom: 12px !important;
+    }
+
 
     
     /* Сетка и секции */
