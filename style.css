@@ -1267,6 +1267,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
         
     }
 
+    .badge-mini {
+        font-size: 11px !important;
+        padding: 4px 10px !important;
+        width: fit-content !important;
+    }
+
 
     
     /* Сетка и секции */
