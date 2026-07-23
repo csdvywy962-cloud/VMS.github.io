@@ -1528,12 +1528,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
     /* 1. Отступы 20px слева и справа для всей секции */
     #advantages.advantages-section {
-        width: 100% !important;
+        width: auto !important;
         max-width: 100% !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
         margin-left: 20px !important;
         margin-right: 20px !important;
+        padding: 40px 16px !important;
         box-sizing: border-box !important;
     }
 
@@ -1559,7 +1558,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     /* Подзаголовок и текст в шапке секции */
     #advantages .subtitle {
         font-size: 15px !important;
-        line-height: 1.4 !important;
+        line-height: 1.3 !important;
         text-align: left !important;
         margin-bottom: 20px !important;
     }
@@ -1581,7 +1580,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     /* 3. Текст внутри карточек p: 15px */
     #advantages .card p {
         font-size: 15px !important;
-        line-height: 1.4 !important;
+        line-height: 1.3 !important;
         text-align: left !important;
     }
     
