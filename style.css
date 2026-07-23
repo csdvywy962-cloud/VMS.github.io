@@ -1590,8 +1590,6 @@ ul.features { list-style: none; margin-bottom: 40px; }
         max-width: 100% !important;
         box-sizing: border-box !important;
         margin: 0 !important;
-        align-items: flex-start !important; /* Это прижмет текст и список влево */
-        padding-left: 40px !important; /* Отступ от левого края */
     }
     
 
@@ -1644,6 +1642,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
         background-color: #ffd200 !important; /* Убедитесь, что цвет желтый */
         border-radius: 0 0 24px 24px !important;
+        margin-left: 40px !important;
+        margin-right: 20px !important;
     }
 
     .catalog-hero .catalog-content {
