@@ -1461,6 +1461,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
         max-width: 100% !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
         box-sizing: border-box !important;
         margin: 0 !important;
     }
