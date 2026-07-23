@@ -104,29 +104,32 @@ window.showRandomPhone = function(btn) {
 };
 
 window.toggleMessengers = function(btn) {
-    event.stopPropagation();
-    const parent = btn.parentElement;
-    const popup = parent.querySelector('.messenger-popup');
+    console.log("Кнопка нажата!"); // Проверяем, доходит ли клик
     
-    // Закрываем остальные открытые меню на странице
+    const parent = btn.closest('.consultation-actions');
+    if (!parent) {
+        console.log("Родительский элемент .consultation-actions не найден!");
+        return;
+    }
+    
+    const popup = parent.querySelector('.messenger-popup');
+    if (!popup) {
+        console.log("Элемент .messenger-popup не найден!");
+        return;
+    }
+    
+    // Закрываем остальные
     document.querySelectorAll('.messenger-popup').forEach(m => {
         if (m !== popup) m.style.display = 'none';
     });
     
-    // Переключаем отображение (flex вместо block, чтобы иконки встали в ряд)
+    // Переключаем показ
     if (popup.style.display === 'flex') {
         popup.style.display = 'none';
     } else {
         popup.style.display = 'flex';
     }
 };
-
-// Клик вне меню закрывает его
-document.addEventListener('click', function() {
-    document.querySelectorAll('.messenger-popup').forEach(m => {
-        m.style.display = 'none';
-    });
-});
 
 const toggleBtn = document.getElementById('toggle-btn');
 const pages = document.querySelectorAll('.slider-page');
