@@ -104,32 +104,39 @@ window.showRandomPhone = function(btn) {
 };
 
 window.toggleMessengers = function(btn) {
-    console.log("Кнопка нажата!"); // Проверяем, доходит ли клик
+    // Предотвращаем всплытие события
+    if (typeof event !== 'undefined') event.stopPropagation();
     
-    const parent = btn.closest('.consultation-actions');
-    if (!parent) {
-        console.log("Родительский элемент .consultation-actions не найден!");
-        return;
-    }
+    // Ищем блок с иконками, который лежит сразу после кнопки
+    const popup = btn.nextElementSibling;
+    if (!popup || !popup.classList.contains('messenger-popup')) return;
     
-    const popup = parent.querySelector('.messenger-popup');
-    if (!popup) {
-        console.log("Элемент .messenger-popup не найден!");
-        return;
-    }
-    
-    // Закрываем остальные
+    // Закрываем остальные меню
     document.querySelectorAll('.messenger-popup').forEach(m => {
         if (m !== popup) m.style.display = 'none';
     });
     
-    // Переключаем показ
+    // Переключаем: скрываем текст кнопки и показываем блок с иконками
     if (popup.style.display === 'flex') {
         popup.style.display = 'none';
+        btn.style.opacity = '1';
     } else {
         popup.style.display = 'flex';
+        // Делаем саму кнопку фоном для иконок или скрываем текст
+        btn.style.color = 'transparent'; // прячем текст кнопки, оставляя саму кнопку рамкой/фоном
     }
 };
+
+// Клик вне блока возвращает всё на место
+document.addEventListener('click', function(e) {
+    document.querySelectorAll('.messenger-popup').forEach(popup => {
+        const btn = popup.previousElementSibling;
+        if (!popup.contains(e.target) && btn && !btn.contains(e.target)) {
+            popup.style.display = 'none';
+            if (btn) btn.style.color = '';
+        }
+    });
+});
 
 const toggleBtn = document.getElementById('toggle-btn');
 const pages = document.querySelectorAll('.slider-page');
