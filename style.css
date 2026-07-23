@@ -1644,7 +1644,57 @@ ul.features { list-style: none; margin-bottom: 40px; }
         line-height: 1.4 !important;
         text-align: left !important;
     }
-    
+
+    /* 2. Контент внутри желтого блока */
+    .catalog-hero .catalog-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Ссылка «На главную» */
+    .catalog-hero .back-link {
+        display: inline-block !important;
+        margin-bottom: 12px !important;
+        font-size: 14px !important;
+    }
+
+    /* 4. Бейдж «Каталог техники» */
+    .catalog-hero .badge {
+        display: inline-flex !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* 5. Заголовок H1: строго 40px и межстрочный 0.9 */
+    .catalog-hero h1 {
+        font-size: 40px !important;
+        line-height: 0.9 !important;
+        text-align: left !important;
+        margin-bottom: 16px !important;
+        word-wrap: break-word !important;
+    }
+
+    /* 6. Описание p */
+    .catalog-hero p {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        margin: 0 !important;
+    }
+
+    /* 7. Блок с кнопками фильтров ниже желтого блока — с отступами по 20px по бокам */
+    .filter-bar {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin-top: 20px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
 
 
     
