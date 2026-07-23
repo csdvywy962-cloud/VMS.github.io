@@ -1454,6 +1454,59 @@ ul.features { list-style: none; margin-bottom: 40px; }
         text-align: left !important;
         font-size: 15px !important;
     }
+
+    /* 1. Общий блок секции с отступами по 20px слева и справа */
+    #about.about-company {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* 2. Настройка текстовых блоков для сохранения колонок/порядка */
+    #about .about-text,
+    #about .about-description {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 0 20px 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Заголовок H2: строго 40px и межстрочный интервал 0.9 */
+    #about .about-text h2 {
+        font-size: 40px !important;
+        line-height: 0.9 !important;
+        text-align: left !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+    }
+
+    /* 4. Весь текст p (и в описании, и в заглавном блоке): строго 15px */
+    #about p,
+    #about .about-text p,
+    #about .about-description p {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
+
+    /* 5. Картинка в блоке "about" на мобилке */
+    #about .about-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    #about .about-image img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 16px !important;
+    }
     
 
 
