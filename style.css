@@ -1637,26 +1637,17 @@ ul.features { list-style: none; margin-bottom: 40px; }
         text-align: left !important;
     }
 
-    /* 1. Желтый блок на всю ширину экрана (прилегает к краям), с внутренними отступами для текста */
+   /* Сбрасываем разрывы и делаем желтый блок единым целым от края до края */
     .catalog-hero {
         width: 100% !important;
         max-width: 100% !important;
-        margin-left: 20px !important;
-        margin-right: 20px !important;
-        padding: 24px 20px !important; /* Отступы сверху/снизу 24px, слева/справа по 20px для текста */
+        margin: 0 !important;
+        padding: 20px 20px 40px 20px !important; /* Внутренние отступы: слева и справа ровно по 20px */
         box-sizing: border-box !important;
-        border-radius: 0 0 24px 24px !important; /* Скругление только снизу */
+        background-color: #ffd200 !important; /* Убедитесь, что цвет желтый */
+        border-radius: 0 0 24px 24px !important;
     }
 
-    footer.footer p,
-    footer.footer a,
-    footer.footer li a {
-        font-size: 15px !important;
-        line-height: 1.3 !important;
-        text-align: left !important;
-    }
-
-    /* 2. Контент внутри желтого блока */
     .catalog-hero .catalog-content {
         width: 100% !important;
         max-width: 100% !important;
@@ -1665,29 +1656,15 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
     }
 
-    /* 3. Ссылка «На главную» */
-    .catalog-hero .back-link {
-        display: inline-block !important;
-        margin-bottom: 12px !important;
-        font-size: 14px !important;
-    }
-
-    /* 4. Бейдж «Каталог техники» */
-    .catalog-hero .badge {
-        display: inline-flex !important;
-        margin-bottom: 12px !important;
-    }
-
-    /* 5. Заголовок H1: строго 40px и межстрочный 0.9 */
+    /* Заголовок H1: 40px и межстрочный 0.9 */
     .catalog-hero h1 {
         font-size: 44px !important;
         line-height: 0.9 !important;
         text-align: left !important;
         margin-bottom: 16px !important;
-        word-wrap: break-word !important;
     }
 
-    /* 6. Описание p */
+    /* Текст описания p */
     .catalog-hero p {
         font-size: 15px !important;
         line-height: 1.4 !important;
@@ -1695,7 +1672,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin: 0 !important;
     }
 
-    /* 7. Блок с кнопками фильтров ниже желтого блока — с отступами по 20px по бокам */
+    /* Кнопки фильтров сразу под желтым блоком с отступами по бокам */
     .filter-bar {
         width: 100% !important;
         max-width: 100% !important;
