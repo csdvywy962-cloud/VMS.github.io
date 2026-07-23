@@ -1680,6 +1680,29 @@ ul.features { list-style: none; margin-bottom: 40px; }
         gap: 8px !important;
     }
 
+    /* 1. Контейнер карточек техники: отступы слева и справа по 20px */
+    #cranes-container.cards-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    /* 2. Каждая отдельная карточка техники */
+    #cranes-container .card,
+    .cards-grid .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
 
     
     /* Сетка и секции */
