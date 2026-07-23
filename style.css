@@ -1095,6 +1095,57 @@ ul.features { list-style: none; margin-bottom: 40px; }
     height: 32px;
     object-fit: contain;
 }
+
+/* Базовое состояние кнопки */
+.btn-whatsapp {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Состояние при клике: разъезжается вширь, ввысь и показывает иконки внутри */
+.btn-whatsapp.active {
+    width: 260px !important; /* Становится шире */
+    min-height: 54px !important; /* Становится немного длиннее */
+    padding: 0 15px !important;
+    background-color: #111 !important; /* Можете поменять цвет фона при раскрытии */
+    border-color: #333 !important;
+    cursor: default;
+}
+
+/* Контейнер иконок внутри кнопки */
+.messenger-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.messenger-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.messenger-icons a:hover {
+    transform: scale(1.15);
+}
+
+.messenger-icons img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
 /* По умолчанию скрываем мобильное меню */
 .mobile-menu { display: none; }
 
