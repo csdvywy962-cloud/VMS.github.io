@@ -1583,6 +1583,67 @@ ul.features { list-style: none; margin-bottom: 40px; }
         line-height: 1.3 !important;
         text-align: left !important;
     }
+
+     /* 1. Сам черный блок растягивается на всю ширину экрана без внешних отступов */
+    footer.footer,
+    .footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        /* Задаем внутренние отступы: сверху/снизу 40px, а слева/справа те самые 20px для текста */
+        padding: 40px 20px !important;
+        box-sizing: border-box !important;
+        border-radius: 0 !important; /* Если на мобилке нужны острые края у блока во всю ширину */
+    }
+
+    /* 2. Внутренняя сетка футера выстраивается колонкой */
+    footer.footer .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+
+    /* 3. Колонки футера */
+    footer.footer .footer-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 4. Списки меню */
+    footer.footer .footer-col ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+
+    footer.footer .footer-col ul li {
+        margin-bottom: 8px !important;
+    }
+
+    /* 5. Текст, заголовки и ссылки */
+    footer.footer h4 {
+        font-size: 18px !important;
+        margin-bottom: 12px !important;
+        text-align: left !important;
+    }
+
+    footer.footer p,
+    footer.footer a,
+    footer.footer li a {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
     
 
 
