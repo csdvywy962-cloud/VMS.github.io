@@ -1490,10 +1490,14 @@ ul.features { list-style: none; margin-bottom: 40px; }
     #about .about-text p,
     #about .about-description p {
         font-size: 15px !important;
-        line-height: 1.3 !important;
+        line-height: 1.1 !important;
         text-align: left !important;
         margin-top: 0 !important;
         margin-bottom: 10px !important; /* Компактный отступ между абзацами */
+    }
+
+    #about .about-description p:not(:last-child) {
+        margin-bottom: 8px !important; /* Укажите нужное значение, например, 8px или 4px */
     }
 
     /* Картинка */
