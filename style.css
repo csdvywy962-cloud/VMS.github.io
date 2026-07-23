@@ -1591,7 +1591,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
         margin: 0 !important;
         align-items: flex-start !important; /* Это прижмет текст и список влево */
-        padding-left: 20px !important; /* Отступ от левого края */
+        padding-left: 40px !important; /* Отступ от левого края */
     }
     
 
