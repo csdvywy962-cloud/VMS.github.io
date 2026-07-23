@@ -1500,6 +1500,18 @@ ul.features { list-style: none; margin-bottom: 40px; }
         margin-bottom: 8px !important; /* Укажите нужное значение, например, 8px или 4px */
     }
 
+    /* Жестко фиксируем блок второго столбца */
+    #about .about-description {
+        display: block !important;
+        margin-top: 20px !important; /* Укажите нужный отступ от первого столбца */
+    }
+
+    /* Убираем лишние внешние отступы у абзацев внутри второго столбца */
+    #about .about-description p {
+        margin-top: 0 !important;
+        margin-bottom: 8px !important; /* Можете поставить 4px или 0, чтобы сблизить их максимально */
+    }
+
     /* Картинка */
     #about .about-image {
         width: 100% !important;
