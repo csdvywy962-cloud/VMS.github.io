@@ -1638,7 +1638,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding: 24px 20px !important; /* Внутренние отступы: слева и справа ровно по 20px */
+        padding: 40px 20px !important; /* Внутренние отступы: слева и справа ровно по 20px */
         box-sizing: border-box !important;
         background-color: #ffd600 !important; /* Убедитесь, что цвет желтый */
         border-radius: 0 0 24px 24px !important;
