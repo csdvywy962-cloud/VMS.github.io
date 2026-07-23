@@ -68,7 +68,7 @@ export async function renderCranes(containerId, filterOnlyFeatured, category = n
                     <div class="divider"></div>
                     <div class="price-row">
                         <span class="price">от ${crane.price} руб./час</span>
-                        <button class="btn-red-small">Заказать</button>
+                        <button class="btn-red-small" onclick="showRandomPhone(this)">Заказать</button>
                     </div>
                 </div>
             </div>
@@ -77,6 +77,31 @@ export async function renderCranes(containerId, filterOnlyFeatured, category = n
         count++;
     });
 }
+
+window.showRandomPhone = function(btn) {
+    const phones = [
+        "+7 (915) 909-06-07",
+        "+7 (920) 384-55-55",
+        "+7 (910) 806-88-48"
+    ];
+    // Выбираем случайный номер
+    const randomPhone = phones[Math.floor(Math.random() * phones.length)];
+    
+    // Создаем или находим элемент с номером под кнопкой
+    let parent = btn.parentElement;
+    let popup = parent.querySelector('.phone-popup');
+    
+    if (!popup) {
+        popup = document.createElement('div');
+        popup.className = 'phone-popup';
+        popup.style.cssText = 'position: absolute; bottom: 100%; right: 0; margin-bottom: 8px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 100; text-align: center;';
+        parent.style.position = 'relative';
+        parent.appendChild(popup);
+    }
+    
+    popup.innerHTML = `<a href="tel:${randomPhone.replace(/[^\d+]/g, '')}" style="color: #111; font-weight: 600; font-size: 14px; text-decoration: none; display: block;">${randomPhone}</a>`;
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+};
 
 const toggleBtn = document.getElementById('toggle-btn');
 const pages = document.querySelectorAll('.slider-page');
