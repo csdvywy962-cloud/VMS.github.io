@@ -1525,6 +1525,63 @@ ul.features { list-style: none; margin-bottom: 40px; }
         height: auto !important;
         border-radius: 16px !important;
     }
+
+    /* 1. Отступы 20px слева и справа для всей секции */
+    #advantages.advantages-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Контейнеры внутри секции */
+    #advantages .container,
+    #advantages .container-2,
+    #advantages .cards-grid2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Заголовок H2: 40px и межстрочный интервал 0.9 */
+    #advantages h2 {
+        font-size: 40px !important;
+        line-height: 0.9 !important;
+        text-align: left !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* Подзаголовок и текст в шапке секции */
+    #advantages .subtitle {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Сетка карточек */
+    #advantages .cards-grid2 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    /* Каждая отдельная карточка */
+    #advantages .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Текст внутри карточек p: 15px */
+    #advantages .card p {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
     
 
 
