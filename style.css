@@ -1111,7 +1111,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     width: 260px !important; /* Становится шире */
     min-height: 54px !important; /* Становится немного длиннее */
     padding: 0 15px !important;
-    background-color: #111 !important; /* Можете поменять цвет фона при раскрытии */
+    background-color: #fff !important; /* Можете поменять цвет фона при раскрытии */
     border-color: #333 !important;
     cursor: default;
 }
