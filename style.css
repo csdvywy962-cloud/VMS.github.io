@@ -1112,7 +1112,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     min-height: 54px !important; /* Становится немного длиннее */
     padding: 0 15px !important;
     background-color: #fff !important; /* Можете поменять цвет фона при раскрытии */
-    border-color: #333 !important;
+    border: 1px solid #e5e7eb !important;
     cursor: default;
 }
 
