@@ -103,6 +103,31 @@ window.showRandomPhone = function(btn) {
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 };
 
+window.toggleMessengers = function(btn) {
+    event.stopPropagation();
+    const parent = btn.parentElement;
+    const popup = parent.querySelector('.messenger-popup');
+    
+    // Закрываем остальные открытые меню на странице
+    document.querySelectorAll('.messenger-popup').forEach(m => {
+        if (m !== popup) m.style.display = 'none';
+    });
+    
+    // Переключаем отображение (flex вместо block, чтобы иконки встали в ряд)
+    if (popup.style.display === 'flex') {
+        popup.style.display = 'none';
+    } else {
+        popup.style.display = 'flex';
+    }
+};
+
+// Клик вне меню закрывает его
+document.addEventListener('click', function() {
+    document.querySelectorAll('.messenger-popup').forEach(m => {
+        m.style.display = 'none';
+    });
+});
+
 const toggleBtn = document.getElementById('toggle-btn');
 const pages = document.querySelectorAll('.slider-page');
 let currentPage = 0;
