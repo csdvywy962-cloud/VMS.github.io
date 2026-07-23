@@ -1591,7 +1591,16 @@ ul.features { list-style: none; margin-bottom: 40px; }
         box-sizing: border-box !important;
         margin: 0 !important;
     }
-    
+
+    .footer.footer,
+    .footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 40px 20px !important;
+        box-sizing: border-box !important;
+        
+    }
 
     /* 2. Внутренняя сетка футера выстраивается колонкой */
     footer.footer .footer-grid {
