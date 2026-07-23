@@ -102,31 +102,37 @@ window.showRandomPhone = function(btn) {
     popup.innerHTML = `<a href="tel:${randomPhone.replace(/[^\d+]/g, '')}" style="color: #111; font-weight: 600; font-size: 14px; text-decoration: none; display: block;">${randomPhone}</a>`;
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 };
-
-window.toggleMessengers = function(btn) {
-    // Предотвращаем всплытие события
+window.expandMessengerBtn = function(btn) {
     if (typeof event !== 'undefined') event.stopPropagation();
     
-    // Ищем блок с иконками, который лежит сразу после кнопки
-    const popup = btn.nextElementSibling;
-    if (!popup || !popup.classList.contains('messenger-popup')) return;
+    const textSpan = btn.querySelector('.btn-text');
+    const iconsSpan = btn.querySelector('.messenger-icons');
     
-    // Закрываем остальные меню
-    document.querySelectorAll('.messenger-popup').forEach(m => {
-        if (m !== popup) m.style.display = 'none';
+    // Если уже открыта — ничего не делаем
+    if (btn.classList.contains('active')) return;
+    
+    // Закрываем другие, если есть
+    document.querySelectorAll('.btn-whatsapp.active').forEach(b => {
+        b.classList.remove('active');
+        b.querySelector('.btn-text').style.display = 'inline';
+        b.querySelector('.messenger-icons').style.display = 'none';
     });
     
-    // Переключаем: скрываем текст кнопки и показываем блок с иконками
-    if (popup.style.display === 'flex') {
-        popup.style.display = 'none';
-        btn.style.opacity = '1';
-    } else {
-        popup.style.display = 'flex';
-        // Делаем саму кнопку фоном для иконок или скрываем текст
-        btn.style.color = 'transparent'; // прячем текст кнопки, оставляя саму кнопку рамкой/фоном
-    }
+    // Раскрываем текущую
+    btn.classList.add('active');
+    textSpan.style.display = 'none';
+    iconsSpan.style.display = 'flex';
 };
 
+// Клик вне кнопки возвращает её в исходное состояние
+document.addEventListener('click', function(e) {
+    const activeBtn = document.querySelector('.btn-whatsapp.active');
+    if (activeBtn && !activeBtn.contains(e.target)) {
+        activeBtn.classList.remove('active');
+        activeBtn.querySelector('.btn-text').style.display = 'inline';
+        activeBtn.querySelector('.messenger-icons').style.display = 'none';
+    }
+});
 // Клик вне блока возвращает всё на место
 document.addEventListener('click', function(e) {
     document.querySelectorAll('.messenger-popup').forEach(popup => {
