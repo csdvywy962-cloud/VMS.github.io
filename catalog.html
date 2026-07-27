@@ -149,7 +149,53 @@
         });
     });
 </script>
+<script>
+    window.showRandomPhone = function(btn) {
+        const phones = [
+            "+7 (915) 909-06-07",
+            "+7 (920) 384-55-55",
+            "+7 (910) 806-88-48"
+        ];
+        const randomPhone = phones[Math.floor(Math.random() * phones.length)];
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+        if (isMobile) {
+            window.location.href = `tel:${randomPhone.replace(/[^\d+]/g, '')}`;
+        } else {
+            navigator.clipboard.writeText(randomPhone).then(() => {
+                alert(`Номер скопирован в буфер обмена: ${randomPhone}`);
+            }).catch(() => {
+                prompt("Скопируйте номер телефона:", randomPhone);
+            });
+        }
+    };
+
+    window.expandMessengerBtn = function(btn) {
+        if (typeof event !== 'undefined') event.stopPropagation();
+        const textSpan = btn.querySelector('.btn-text');
+        const iconsSpan = btn.querySelector('.messenger-icons');
+        if (btn.classList.contains('active')) return;
+        
+        document.querySelectorAll('.btn-whatsapp.active').forEach(b => {
+            b.classList.remove('active');
+            b.querySelector('.btn-text').style.display = 'inline';
+            b.querySelector('.messenger-icons').style.display = 'none';
+        });
+        
+        btn.classList.add('active');
+        textSpan.style.display = 'none';
+        iconsSpan.style.display = 'flex';
+    };
+
+    document.addEventListener('click', function(e) {
+        const activeBtn = document.querySelector('.btn-whatsapp.active');
+        if (activeBtn && !activeBtn.contains(e.target)) {
+            activeBtn.classList.remove('active');
+            activeBtn.querySelector('.btn-text').style.display = 'inline';
+            activeBtn.querySelector('.messenger-icons').style.display = 'none';
+        }
+    });
+</script>
 <script>
 function togglePhone() {
     document.querySelector('.phone-dropdown').classList.toggle('active');
