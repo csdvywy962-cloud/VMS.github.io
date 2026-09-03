@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+import { initializeApp } from "https://cdn.jsdelivr.net/npm/firebase@12.16.0/firebase-app.js+esm";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,5 +14,5 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/fireba
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
- import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+ import { getFirestore } from "https://cdn.jsdelivr.net/npm/firebase@12.16.0/firebase-app.js+esm";
  export const db = getFirestore(app);
