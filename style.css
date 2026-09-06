@@ -338,7 +338,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Карточка нового типа */
 .crane-card2 {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     margin: 10px;
     background: #ffffff;
     border-radius: 20px; /* Более мягкие, современные углы */
