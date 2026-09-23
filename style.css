@@ -963,10 +963,10 @@ ul.features { list-style: none; margin-bottom: 40px; }
     display: inline-block;
     background: #e53935; /* Ярко-красный цвет */
     color: #fff;
-    padding: 12px 24px;  /* Увеличенные отступы, чтобы кнопка стала больше */
-    border-radius: 50px;  /* Аккуратное закругление */
+    padding: 12px 30px;  /* Увеличенные отступы, чтобы кнопка стала больше */
+    border-radius: 30px;  /* Аккуратное закругление */
     text-decoration: none;
-    font-size: 15px;     /* Увеличенный шрифт */
+    font-size: 13px;     /* Увеличенный шрифт */
     font-weight: 600;
     border: none;
     cursor: pointer;
