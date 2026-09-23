@@ -25,58 +25,6 @@ const cranes = [
     }
 ];
 
-import { db } from './firebase-init.js'; // Убедись, что путь к файлу верный
-import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-
-export async function renderCranes(containerId, filterOnlyFeatured, category = null, limit = null)  {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    container.innerHTML = "Загрузка...";
-
-    const querySnapshot = await getDocs(collection(db, "tech"));
-    container.innerHTML = "";
-
-    let count = 0;
-
-    querySnapshot.forEach((doc) => {
-        const crane = doc.data();
-
-        // 1. Фильтр для главной
-        if (filterOnlyFeatured && !crane.showOnHome) return;
-
-        // 2. Фильтр по категории (если мы указали категорию)
-        if (category && crane.type.toLowerCase() !== category.toLowerCase()) return;
-
-        if (category && (crane.type || '').toLowerCase() !== category.toLowerCase()) return;
-
-        if (limit && count >= limit) return;
-
-        // 3. Создание HTML-карточки
-        const cardHTML = `
-            <div class="crane-card2">
-                <div class="card-header2">
-                    <span class="category-badge">${crane.type || 'ТЕХНИКА'}</span>
-                    <div class="image-box">
-                        <img src="${crane.image || 'default-crane.jpg'}" alt="${crane.name}">
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3>${crane.name}</h3>
-                    <ul class="specs">
-                        <li>${crane.desc || 'Описание отсутствует'}</li>
-                    </ul>
-                    <div class="divider"></div>
-                    <div class="price-row">
-                        <span class="price">от ${crane.price} руб./час</span>
-                        <button class="btn-red-small" onclick="showRandomPhone(this)">Заказать</button>
-                    </div>
-                </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', cardHTML);
-        count++;
-    });
-}
 
 window.showRandomPhone = function(btn) {
     const phones = [
@@ -162,31 +110,4 @@ if (toggleBtn) {
         toggleBtn.classList.toggle('rotated');
     };
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const craneCards = document.querySelectorAll('.crane-card2');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Убираем класс active у всех кнопок и ставим на нажатую
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            craneCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-
-                if (filterValue === 'all' || category === filterValue) {
-                    card.style.display = 'flex'; // Показываем карточку
-                } else {
-                    card.style.display = 'none';  // Скрываем неподходящие
-                }
-            });
-        });
-    });
-});
-
-
 
