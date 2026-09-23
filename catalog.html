@@ -62,23 +62,29 @@
     </div>
 
     <!-- Сюда JS выведет карточки -->
-    <div class="crane-cards2">
+    <div class="cards-grid" id="cranes-container">
+
+    <!-- Карточка 1: Автокран -->
+    <div class="crane-card2" data-category="cranes">
         <div class="card-header2">
-            <span class=category-badge">АВТОКРАН</span>
+            <span class="category-badge">Автокраны</span>
             <div class="image-box">
-                <img src="images/crane1.jpg" alt="Автокран KC-55729-5K">
+                <img src="path/to/crane1.png" alt="Автокран 25 тонн">
             </div>
         </div>
         <div class="card-body">
-            <h3>Автокран KC-55729-5K</h3>
-            <ul class="specs">
-                <li>Грузоподъемность - 32 тонн</li>
-                <li>Длина стрелы - 31 метр</li>
-            </ul>
-            <div class="divider"></div>
+            <div>
+                <h3>Автокран 25 т</h3>
+                <ul class="specs">
+                    <li>Грузоподъемность: 25 тонн</li>
+                    <li>Длина стрелы: 28 метров</li>
+                    <li>База: КамАЗ</li>
+                </ul>
+                <div class="divider"></div>
+            </div>
             <div class="price-row">
-                <span class="price">от 3500 ₽/час</span>
-                <button class="btn-red-small" onclick="showRandomPhone(this)">Заказать</button>
+                <span class="price">от 2 500 ₽/ч</span>
+                <a href="#order" class="btn-outline">Заказать</a>
             </div>
         </div>
     </div>
