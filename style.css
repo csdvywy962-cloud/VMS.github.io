@@ -966,7 +966,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     padding: 12px 30px;  /* Увеличенные отступы, чтобы кнопка стала больше */
     border-radius: 30px;  /* Аккуратное закругление */
     text-decoration: none;
-    font-size: 13px;     /* Увеличенный шрифт */
+    font-size: 16px;     /* Увеличенный шрифт */
     font-weight: 600;
     border: none;
     cursor: pointer;
