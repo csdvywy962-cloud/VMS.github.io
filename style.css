@@ -961,13 +961,22 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 .btn-red {
     display: inline-block;
-    background: #e62e2e;
+    background: #e53935; /* Ярко-красный цвет */
     color: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 12px 24px;  /* Увеличенные отступы, чтобы кнопка стала больше */
+    border-radius: 8px;  /* Аккуратное закругление */
     text-decoration: none;
-    font-size: 13px;
-    margin-top: 5px;
+    font-size: 15px;     /* Увеличенный шрифт */
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap; /* Запрещает длинному номеру телефона переноситься на новую строку */
+    transition: background 0.2s ease;
+}
+
+.btn-red:hover {
+    background: #c62828; /* Темно-красный при наведении */
 }
 
 .phone-dropdown {
