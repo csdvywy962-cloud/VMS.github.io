@@ -342,9 +342,9 @@
 let activeOrderBtn = null;
 
 window.showRandomPhone = function(btn) {
-    if (activeOrderBtn === btn) return;
+    if (typeof event !== 'undefined') event.stopPropagation();
 
-    // Если была открыта другая кнопка, возвращаем ей текст «Заказать»
+    // Если до этого была открыта ДРУГАЯ кнопка — возвращаем ей исходный вид
     if (activeOrderBtn && activeOrderBtn !== btn) {
         activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
     }
@@ -357,10 +357,18 @@ window.showRandomPhone = function(btn) {
     
     const randomPhone = phones[Math.floor(Math.random() * phones.length)];
     
-    // Вставляем номер с классом phone-number, у которого свой размер шрифта
+    // Вставляем номер телефона
     btn.innerHTML = `<span class="phone-number">${randomPhone}</span>`;
     activeOrderBtn = btn;
 };
+
+// Клик вне активной кнопки сбрасывает её
+document.addEventListener('click', function(e) {
+    if (activeOrderBtn && !activeOrderBtn.contains(e.target)) {
+        activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
+        activeOrderBtn = null;
+    }
+});
 
 // Клик вне активной кнопки возвращает её в исходное состояние
 document.addEventListener('click', function(e) {
