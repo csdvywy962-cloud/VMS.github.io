@@ -203,27 +203,7 @@
 
 
 
-<script type="module">
-    import { renderCranes } from './data.js';
 
-    const containerId = 'cranes-container';
-
-    // 1. Загружаем всё при открытии страницы
-    renderCranes(containerId);
-
-    // 2. Вешаем слушатели на все кнопки
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filterValue = btn.getAttribute('data-filter');
-            const category = (filterValue === 'all') ? null : filterValue;
-            
-            // Вызываем рендер с выбранной категорией
-            renderCranes(containerId, false, category);
-        });
-    });
-</script>
 <script>
     window.showRandomPhone = function(btn) {
         const phones = [
@@ -275,6 +255,33 @@
 function togglePhone() {
     document.querySelector('.phone-dropdown').classList.toggle('active');
 }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const craneCards = document.querySelectorAll('.crane-card2');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Убираем класс active у всех кнопок и ставим на нажатую
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                craneCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'flex'; // Показываем карточку
+                    } else {
+                        card.style.display = 'none';  // Скрываем неподходящие
+                    }
+                });
+            });
+        });
+    });
 </script>
 </body>
 </html>
