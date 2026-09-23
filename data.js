@@ -35,20 +35,7 @@ window.showRandomPhone = function(btn) {
     // Выбираем случайный номер
     const randomPhone = phones[Math.floor(Math.random() * phones.length)];
     
-    // Создаем или находим элемент с номером под кнопкой
-    let parent = btn.parentElement;
-    let popup = parent.querySelector('.phone-popup');
-    
-    if (!popup) {
-        popup = document.createElement('div');
-        popup.className = 'phone-popup';
-        popup.style.cssText = 'position: absolute; bottom: 100%; right: 0; margin-bottom: 8px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 100; text-align: center;';
-        parent.style.position = 'relative';
-        parent.appendChild(popup);
-    }
-    
-    popup.innerHTML = `<a href="tel:${randomPhone.replace(/[^\d+]/g, '')}" style="color: #111; font-weight: 600; font-size: 14px; text-decoration: none; display: block;">${randomPhone}</a>`;
-    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+   btn.innerText = randomPhone;
 };
 window.expandMessengerBtn = function(btn) {
     if (typeof event !== 'undefined') event.stopPropagation();
