@@ -338,25 +338,6 @@
 
 
 <script>
-    window.showRandomPhone = function(btn) {
-        const phones = [
-            "+7 (915) 909-06-07",
-            "+7 (920) 384-55-55",
-            "+7 (910) 806-88-48"
-        ];
-        const randomPhone = phones[Math.floor(Math.random() * phones.length)];
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-        if (isMobile) {
-            window.location.href = `tel:${randomPhone.replace(/[^\d+]/g, '')}`;
-        } else {
-            navigator.clipboard.writeText(randomPhone).then(() => {
-                alert(`Номер скопирован в буфер обмена: ${randomPhone}`);
-            }).catch(() => {
-                prompt("Скопируйте номер телефона:", randomPhone);
-            });
-        }
-    };
 
     window.expandMessengerBtn = function(btn) {
         if (typeof event !== 'undefined') event.stopPropagation();
