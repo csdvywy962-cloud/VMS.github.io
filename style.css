@@ -715,9 +715,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
     /* Важно добавить overflow, чтобы круги не вылезали за скругленные углы блока */
     overflow: hidden; 
     text-align: left;
-    width: auto;
-    margin-left: 100px;
-    margin-right: 115px;
+    width: 100%;
+    max-width: 1370px;
+    margin:40px auto;
 
 }
 
