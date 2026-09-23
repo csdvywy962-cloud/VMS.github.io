@@ -979,7 +979,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Размер для появившегося номера телефона */
 .btn-red .phone-number {
-    font-size: 10px; /* Можешь поставить любой другой размер, например 15px */
+    font-size: 12px; /* Можешь поставить любой другой размер, например 15px */
     font-weight: 500;
 }
 
