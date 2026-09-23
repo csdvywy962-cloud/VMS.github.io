@@ -910,14 +910,19 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .footer {
     background-color: #0d0d0d;
     color: #fff;
-    padding: 40px 0;
+    padding: 40px 20px;
     margin-top: 100px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    max-width: 1370px;
+    margin: 0 auto;
+    
 }
 
 .footer-logo-box {
