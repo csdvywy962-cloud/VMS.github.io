@@ -338,19 +338,38 @@
 
 
 <script>
-    window.showRandomPhone = function(btn) {
+    // Активная кнопка, у которой сейчас показан номер
+let activeOrderBtn = null;
+
+window.showRandomPhone = function(btn) {
+    // Если кликнули на другую кнопку, которая уже открыта — ничего не делаем
+    if (activeOrderBtn === btn) return;
+
+    // Если до этого была открыта какая-то другая кнопка — возвращаем ей текст «Заказать»
+    if (activeOrderBtn && activeOrderBtn !== btn) {
+        activeOrderBtn.innerText = "Заказать";
+    }
+
     const phones = [
         "+7 (910) 808-88-48",
         "+7 (953) 666-07-99",
         "+7 (915) 909-06-07"
     ];
     
-    // Выбираем случайный номер
     const randomPhone = phones[Math.floor(Math.random() * phones.length)];
     
-    // Меняем текст самой кнопки на номер телефона
+    // Меняем текст текущей кнопки на номер
     btn.innerText = randomPhone;
+    activeOrderBtn = btn; // Запоминаем её как активную
 };
+
+// Клик в любое место страницы (кроме активной кнопки) возвращает её в исходное состояние
+document.addEventListener('click', function(e) {
+    if (activeOrderBtn && !activeOrderBtn.contains(e.target)) {
+        activeOrderBtn.innerText = "Заказать";
+        activeOrderBtn = null;
+    }
+});
 
     window.expandMessengerBtn = function(btn) {
         if (typeof event !== 'undefined') event.stopPropagation();
