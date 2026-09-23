@@ -162,3 +162,31 @@ if (toggleBtn) {
         toggleBtn.classList.toggle('rotated');
     };
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const craneCards = document.querySelectorAll('.crane-card2');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Убираем класс active у всех кнопок и ставим на нажатую
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            craneCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'flex'; // Показываем карточку
+                } else {
+                    card.style.display = 'none';  // Скрываем неподходящие
+                }
+            });
+        });
+    });
+});
+
+
+
