@@ -974,7 +974,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Размер для текста «Заказать» */
 .btn-red .btn-text {
-    font-size: 13px; 
+    font-size: 16px; 
 }
 
 /* Размер для появившегося номера телефона */
