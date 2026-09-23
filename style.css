@@ -961,18 +961,26 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 .btn-red {
     display: inline-block;
-    background: #e53935; /* Ярко-красный цвет */
+    background: #e53935;
     color: #fff;
-    padding: 12px 30px;  /* Увеличенные отступы, чтобы кнопка стала больше */
-    border-radius: 30px;  /* Аккуратное закругление */
-    text-decoration: none;
-    font-size: 13px;     /* Увеличенный шрифт */
-    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
     text-align: center;
-    white-space: nowrap; /* Запрещает длинному номеру телефона переноситься на новую строку */
-    transition: background 0.2s ease;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* Размер для текста «Заказать» */
+.btn-red .btn-text {
+    font-size: 16px; 
+}
+
+/* Размер для появившегося номера телефона */
+.btn-red .phone-number {
+    font-size: 14px; /* Можешь поставить любой другой размер, например 15px */
+    font-weight: 500;
 }
 
 .btn-red:hover {
