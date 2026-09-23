@@ -28,14 +28,16 @@ const cranes = [
 
 window.showRandomPhone = function(btn) {
     const phones = [
-        "+7 (915) 909-06-07",
-        "+7 (920) 384-55-55",
-        "+7 (910) 806-88-48"
+        "+7 (910) 808-88-48",
+        "+7 (953) 666-07-99",
+        "+7 (915) 909-06-07"
     ];
+    
     // Выбираем случайный номер
     const randomPhone = phones[Math.floor(Math.random() * phones.length)];
     
-   btn.innerText = randomPhone;
+    // Меняем текст самой кнопки на номер телефона
+    btn.innerText = randomPhone;
 };
 window.expandMessengerBtn = function(btn) {
     if (typeof event !== 'undefined') event.stopPropagation();
