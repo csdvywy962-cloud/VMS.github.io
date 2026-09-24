@@ -49,7 +49,7 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
  }
 /* 2. Контейнер, который держит элементы вместе */
 .header-container {
-    max-width: 1370px;
+    max-width: 100%;
     margin: 0 auto; /* Центрирует плашку на экране */
     display: flex;
     justify-content: space-between; /* Раскидывает лого и телефон по краям */
@@ -90,7 +90,7 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
     display: flex;
     justify-content: space-between;
     padding: 50px 20px 0;
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -331,7 +331,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     gap: 20px; 
-    max-width: 1420px;
+    max-width: 100%;
     padding: 0 20px;
     margin: 0 auto;
 }
@@ -533,7 +533,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     justify-content: space-between;
     align-items: center;
     margin: 60px 20px 0 20px;
-    max-width: 1370px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -577,7 +577,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 .usage-section {
     padding: 50px 20px;
-    max-width: 1355px;
+    max-width: 100%;
     margin: 0 auto;
     text-align: left; /* Текст слева */
 }
@@ -716,7 +716,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     overflow: hidden; 
     text-align: left;
     width: 100%;
-    max-width: 1370px;
+    max-width: 100%;
     margin:40px auto;
 
 }
@@ -820,7 +820,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Общий контейнер для выравнивания */
 .container {
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 40px;
     
@@ -920,7 +920,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1370px;
+    max-width: 100%;
     margin: 0 auto;
     
 }
