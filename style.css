@@ -760,16 +760,15 @@ ul.features { list-style: none; margin-bottom: 40px; }
 .btn-whatsapp { background: #fff; color: #000; }
 
 .about-company {
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.6fr;
-  gap: 40px;
-  align-items: start;
-  padding: 60px 40px;
-  width: auto;
-  max-width: 1370px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.6fr; /* Три колонки: текст, описание, картинка */
+    gap: 40px;
+    align-items: start;
+    padding: 60px 0;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 115px;
 }
-
 
 .about-description {
     display: grid;
@@ -809,11 +808,14 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Основной контейнер блока */
 .advantages-section {
-  background: #ffcc00;
-  padding: 60px 40px;
-  border-radius: 40px;
-  max-width: 1370px;
-  margin: 10px auto 0;
+    background: #ffcc00;
+    padding: 60px 0;
+    border-radius: 40px;
+    margin: -50px;
+    margin-left: 100px;
+    margin-right: 115px;
+    margin-top: 10px !important;
+
 }
 
 /* Общий контейнер для выравнивания */
@@ -833,9 +835,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* Чтобы текст не упирался в самый край желтого блока, 
    добавь отступ для самого контейнера-2 */
 .advantages-section .container-2 {
-  margin-left: 0;
-  margin-top: -20px;
-  max-width: 600px;
+    margin-left: -100px; /* Это сдвинет текст от левого края желтой секции */
+    margin-top: -20px;
+    max-width: 600px;  /* Ограничиваем ширину, чтобы текст не растягивался */
 }
 /* Текстовые элементы */
 .badge-black {
@@ -857,11 +859,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 /* Сетка карточек */
 .cards-grid2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* было repeat(4, minmax(293px, 1fr)) */
-  gap: 15px;
-  margin-left: 0;   /* было -100px */
-  margin-top: -10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(293px, 1fr));
+    gap: 15px;
+    margin-left: -100px;
+    margin-top: -10px;
 }
 
 /* Стили карточки */
@@ -1862,106 +1864,3 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .about-company, .advantages-section { margin: 20px !important; padding: 20px !important; }
     .consultation-block { flex-direction: column; text-align: center; }
 }
-
-@media (min-width: 1921px) {
-  body {
-    overflow-x: hidden;
-  }
-}
-/* ---------- 2. Средние ноутбуки (1201px–1600px) ---------- */
-@media (max-width: 1600px) {
-  .catalog-hero {
-    padding: 11.5px 80px 10px 80px;
-  }
-  .catalog-hero > * {
-    margin-left: 40px !important;
-  }
-  .about-company {
-    margin-left: 40px;
-    margin-right: 40px;
-    gap: 24px;
-  }
-  .advantages-section {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-  .advantages-section .container-2 {
-    margin-left: -40px;
-  }
-  .cards-grid2 {
-    margin-left: -40px;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-  }
-}
-/* ---------- 3. Малые ноутбуки / планшеты (992px–1200px) ---------- */
-@media (max-width: 1200px) {
-  .header-container,
-  .content-container,
-  .stats-white,
-  .consultation-block,
-  .footer-grid {
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
-  .catalog-hero {
-    padding: 11.5px 30px 10px 30px;
-  }
-  .catalog-hero > * {
-    margin-left: 0 !important;
-  }
-  .content-container {
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  .hero-left,
-  .crane-card {
-    width: 100%;
-    max-width: 100%;
-  }
-  .filter-bar {
-    padding-left: 20px;
-  }
-  .about-company {
-    grid-template-columns: 1fr 1fr;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .about-company > *:nth-child(3) {
-    grid-column: 1 / -1; /* картинка на всю ширину, если 3-я колонка не влезает */
-  }
-  .advantages-section {
-    margin: 20px;
-    padding: 40px 20px;
-  }
-  .advantages-section .container-2 {
-  }
-    margin-left: 0;
-    max-width: 100%;
-  .cards-grid2 {
-    margin-left: 0;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .consultation-content {
-    max-width: 60%;
-  }
-  .catalog-header h2,
-  .usage-title,
-  .about-text h2,
-  .advantages-section h2,
-  .consultation-content h2 {
-    font-size: clamp(28px, 4vw, 48px);
-    white-space: normal;
-  }
-}
-/* ---------- 4. Общая рекомендация: гибкая типографика ---------- */
-/* Замените фиксированные font-size на всех крупных заголовках на clamp(),
-чтобы они плавно уменьшались между разрешениями, а не скачками
-по брейкпоинтам. Пример (можно вставить вместо строк в основном файле): */
-h1 { font-size: clamp(32px, 4vw + 1rem, 50px); }
-.usage-title { font-size: clamp(28px, 3vw + 1rem, 48px); }
-.about-text h2 { font-size: clamp(28px, 3vw + 1rem, 48px); }
-.advantages-section h2 { font-size: clamp(28px, 3vw + 1rem, 48px); }
-.consultation-content h2 { font-size: clamp(28px, 3vw + 1rem, 48px); }
-.catalog-header h2 { font-size: clamp(28px, 3vw + 1rem, 48px); white-space: normal;
