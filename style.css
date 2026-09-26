@@ -259,7 +259,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     display: flex; 
     max-width: 600px;
     gap: 40px;
-    margin: 40 px 0 0 0;
+    margin: 40 px 0 0 20px;
     justify-content: flex-start;
     
 }
