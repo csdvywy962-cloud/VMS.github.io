@@ -258,9 +258,9 @@ ul.features { list-style: none; margin-bottom: 40px; }
     z-index: 1; /* Тоже поверх желтого фона */
     display: flex; 
     max-width: 600px;
-    padding: 40px 0px 50px;
-    gap: 60px;
-    margin-left: 0;
+    gap: 40px;
+    margin: 40 px 0 0 0;
+    justify-content: flex-start;
     
 }
 
