@@ -257,11 +257,10 @@ ul.features { list-style: none; margin-bottom: 40px; }
     position: relative;
     z-index: 1; /* Тоже поверх желтого фона */
     display: flex; 
-    justify-content: space-between;
-    max-width: 1370px;
-    margin: 0 auto;
+    max-width: 600px;
     padding: 40px 0px 50px;
-    box-sizing: border-box;
+    gap: 60px;
+    margin-left: 0;
     
 }
 
