@@ -257,8 +257,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
     position: relative;
     z-index: 1; /* Тоже поверх желтого фона */
     display: flex; 
-    gap: 80px; 
-    padding: 40px 5% 50px; /* Верхний паддинг 80px отодвигает текст от кнопок */
+    justify-content: space-between;
+    max-width: 1370px;
+    margin: 0 auto;
+    padding: 40px 20px 50px;
+    box-sizing: border-box;
+    
 }
 
 .stat-item { line-height: 1.4; color: #555; font-size: 12px; }
