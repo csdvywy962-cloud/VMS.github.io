@@ -257,11 +257,13 @@ ul.features { list-style: none; margin-bottom: 40px; }
     position: relative;
     z-index: 1; /* Тоже поверх желтого фона */
     display: flex; 
-    max-width: 600px;
-    gap: 40px;
+    max-width: 1370px;
+    width: 100%;
     margin-top: 40px;
-    margin-left: 40px;
-    justify-content: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    box-sizing: border-box;
     
 }
 
