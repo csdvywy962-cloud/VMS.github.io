@@ -67,7 +67,7 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
 /* -------------------------------------- */
 
 .hero-wrapper {
-    align-items: flex-start !important;
+    position: relative;
 }
 
 /* Это просто желтый прямоугольник на заднем плане */
