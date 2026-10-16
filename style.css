@@ -87,7 +87,9 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
 .content-container {
     position: relative;
     z-index: 1; /* Контент всегда поверх желтого фона */
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 45%;
+    grid-template-rows: auto auto;
     justify-content: space-between;
     padding: 50px 20px 0;
     max-width: 1400px;
@@ -115,7 +117,8 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
 }
 
 .hero-left {
-    width: 50%;
+    grid-column: 1;
+    grid-row: 1;
     display: flex;
     flex-direction: column;
 }
@@ -198,18 +201,24 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* -------------------------------------- */
 
 .crane-card {
-    width: 45%;
+    grid-column: 2;
+    grid-row: 1; /* только 1-я строка: карточка заканчивается на уровне кнопок */
+    justify-self: end;
+    width: 100%;
     max-width: 450px;
     background: white;
     border-radius: 30px;
     padding: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    align-selt: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .photo-placeholder { 
     background: #f4f4f4; /* Чуть серый для видимости */
-    height: 300px; 
+    flex: 1 1 auto; /* фото занимает всё свободное место внутри карточки */
+    min-height: 300px; 
     border-radius: 20px; 
     margin-bottom: 20px; 
     width: 100%;
@@ -328,7 +337,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 }
 
 .catalog-header h2 {
-    font-size: 48px;
+    font-size: clamp(26px, 3.6vw, 48px); /* масштабируется от ширины экрана, максимум 48px */
     line-height: 1;
     color: #000;
     margin: 0;
@@ -423,7 +432,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     padding: 6px 12px;
     background: rgba(255, 215, 0, 0.4); /* Полупрозрачный желтый */
     border-radius: 20px;
-    font-size: 12px;
+    font-size: clamp(10px, 0.9vw, 12px); /* масштабируется вместе с заголовком */
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -1348,6 +1357,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .photo-placeholder {
         width: 100%;
         height: 220px;
+        min-height: 0;
+        flex: none;
         position: relative
         border-radius: 20px 20px 0 0;
         display: flex;
@@ -1393,7 +1404,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         gap: 0px !important;
         
         /* Никаких лишних padding, чтобы не раздувать блок */
-        padding: 20px !important; 
+        padding: 20px 40px !important; 
         box-sizing: border-box !important;
     }
 
