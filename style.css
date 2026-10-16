@@ -254,7 +254,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* -------------------------------------- */
 
 .stats-white { 
-    position: relative;
+    position: absolute;
     z-index: 1; /* Тоже поверх желтого фона */
     display: flex; 
     max-width: 1370px;
