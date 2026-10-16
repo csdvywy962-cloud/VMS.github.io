@@ -92,7 +92,7 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
     grid-template-rows: auto auto;
     justify-content: space-between;
     padding: 50px 20px 0;
-    max-width: 1400px;
+    max-width: 1420px; /* та же рамка, что у каталога */
     margin: 0 auto;
 }
 
@@ -274,7 +274,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
+    padding-left: 0;
     box-sizing: border-box;
     
 }
@@ -297,19 +297,22 @@ ul.features { list-style: none; margin-bottom: 40px; }
     filter: brightness(0) saturate(100%);
 }
 
-.catalog-section { padding: 80px 5%; background: #ffffff; }
+.catalog-section { padding: 80px 0; background: #ffffff; } /* боковые отступы задаёт рамка 1420px + 20px у шапки и сетки */
 
 /* Родителю задаем выравнивание по нижней линии */
 .catalog-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end; /* Кнопка и заголовок прижимаются к одной линии низа */
+    /* Та же рамка, что у .cards-grid и hero: max-width 1420px по центру + 20px по бокам */
+    max-width: 1420px;
+    margin: 0 auto 40px;
     padding: 0 20px;
-    margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
 .header-right {
-    margin-right: 15px;
+    margin-right: 0;
 }
 
 /* Левому блоку запрещаем растягиваться */
@@ -352,6 +355,12 @@ ul.features { list-style: none; margin-bottom: 40px; }
     max-width: 1420px;
     padding: 0 20px;
     margin: 0 auto;
+}
+
+/* Карточки главной: заполняют ячейку сетки и не выступают за неё, чтобы края совпадали с заголовком */
+#cranes-container > .crane-card2 {
+    max-width: none;
+    margin: 10px 0;
 }
 
 /* Карточка нового типа */
