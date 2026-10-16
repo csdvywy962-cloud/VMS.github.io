@@ -286,7 +286,7 @@
     <span class="messenger-icons" style="display: none;">
         <a href="https://t.me/ваш_логин" target="_blank" onclick="event.stopPropagation()"><img src="telegram.png" alt="Telegram"></a>
         <a href="https://wa.me/79108068848" target="_blank" onclick="event.stopPropagation()"><img src="whatsapp.png" alt="WhatsApp"></a>
-        <a href="https://max.ru/u/f9LHodD0cOJeoCu4LSkR77kqCf6zDIHCZ37q5xrNGKQjky0Es3diOzEpsqI" target="_blank" onclick="event.stopPropagation()"><img src="Max.png" alt="MAX"></a>
+        <a href="#" onclick="openRandomMax(event)"><img src="Max.png" alt="MAX"></a>
         <a href="mailto:vms.vms007@yandex.ru" onclick="event.stopPropagation()"><img src="gmail.png" alt="Почта"></a>
     </span>
 </button>
@@ -377,6 +377,18 @@ document.addEventListener('click', function(e) {
         activeOrderBtn = null;
     }
 });
+
+    window.openRandomMax = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const maxLinks = [
+            "https://max.ru/u/f9LHodD0cOKzZ6-X1vXIXBrXHQwBXsnqmPpOrvUpjvLQ9N_4FYIgZZ4Wgtc",
+            "https://max.ru/u/f9LHodD0cOJJoPCZc4ARcIq2Pm2oxrpqZvGgE0m2vVG1RsZvdVeyN4i2Ego",
+            "https://max.ru/u/f9LHodD0cOLerulxPDPmJ1OySBlSOTvyrPUBeR6IyYpnlVfQMat3VZhQwcE"
+        ];
+        const link = maxLinks[Math.floor(Math.random() * maxLinks.length)];
+        window.open(link, '_blank', 'noopener');
+    };
 
     window.expandMessengerBtn = function(btn) {
         if (typeof event !== 'undefined') event.stopPropagation();
