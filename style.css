@@ -1899,3 +1899,140 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .about-company, .advantages-section { margin: 20px !important; padding: 20px !important; }
     .consultation-block { flex-direction: column; text-align: center; }
 }
+
+
+/* ====================================================================== */
+/* МАСШТАБИРОВАНИЕ ТЕКСТА И ЭЛЕМЕНТОВ ОТ ШИРИНЫ ЭКРАНА (только десктоп)    */
+/* Формула: clamp(минимум, значение в vw, исходный размер).                */
+/* Исходный размер достигается на ширине ~1333px и выше, ниже — плавно     */
+/* уменьшается, при расширении окна — так же плавно растёт обратно.        */
+/* Мобильная версия (до 768px) не затрагивается.                           */
+/* ====================================================================== */
+@media (min-width: 769px) {
+
+    /* ---------- ШАПКА ---------- */
+    .header-container {
+        max-width: 1420px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .logo-container { gap: clamp(6px, 0.75vw, 10px); }
+    .logo-container img { height: clamp(34px, 3.75vw, 50px); }
+    .logo-text { font-size: clamp(13px, 1.5vw, 20px); }
+    .nav-links { gap: clamp(12px, 2.25vw, 30px); }
+    .nav-links a { font-size: clamp(12px, 1.2vw, 16px); white-space: nowrap; }
+    .phone-dropdown {
+        width: clamp(190px, 18.75vw, 250px);
+        padding: clamp(7px, 0.75vw, 10px) clamp(10px, 1.5vw, 20px);
+    }
+    .phone-header { gap: clamp(6px, 0.75vw, 10px); }
+    .phone-header strong,
+    .phone-list div { font-size: clamp(12px, 1.2vw, 16px); }
+
+    /* ---------- HERO ---------- */
+    /* линия желтого фона идёт по тому же месту относительно кнопок на любой ширине */
+    .hero-yellow-bg { height: clamp(314px, calc(115px + 25.9vw), 460px); }
+    .content-container { padding-top: clamp(30px, 3.75vw, 50px); }
+    .badge {
+        font-size: clamp(10px, 0.9vw, 12px);
+        padding: clamp(4px, 0.4vw, 5px) clamp(10px, 1.1vw, 15px);
+        margin-bottom: clamp(12px, 1.5vw, 20px);
+    }
+    h1 {
+        font-size: clamp(28px, 3.75vw, 50px);
+        margin-bottom: clamp(16px, 2.25vw, 30px);
+    }
+    ul.features { margin-bottom: clamp(20px, 3vw, 40px); }
+    .features li {
+        font-size: clamp(12px, 1.2vw, 16px);
+        margin-bottom: clamp(6px, 0.75vw, 10px);
+    }
+    .buttons a,
+    .buttons .btn-red,
+    .buttons .btn-white {
+        font-size: clamp(11px, 1.05vw, 14px);
+        padding: clamp(10px, 1.1vw, 15px) clamp(18px, 2.25vw, 30px);
+    }
+    .crane-card { padding: clamp(12px, 1.5vw, 20px); }
+    .photo-placeholder { min-height: clamp(180px, 22.5vw, 300px); }
+    .crane-card .separator { margin: clamp(12px, 1.5vw, 20px) 0; }
+    .text-info h3 { font-size: clamp(14px, 1.5vw, 20px); }
+    .text-info p { font-size: clamp(11px, 1.05vw, 14px); }
+    .price-btn {
+        font-size: clamp(11px, 1vw, 13.33px);
+        padding: clamp(8px, 0.9vw, 12px) clamp(14px, 1.9vw, 25px);
+    }
+    .stats-white {
+        margin-top: clamp(20px, 3vw, 40px);
+        gap: clamp(16px, 3.5vw, 48px);
+    }
+    .stat-item { font-size: clamp(10px, 0.9vw, 12px); }
+    .stat-item strong { font-size: clamp(20px, 2.25vw, 30px); }
+
+    /* ---------- КАТАЛОГ (карточки техники) ---------- */
+    .crane-card2 { height: clamp(470px, 45vw, 600px); }
+    .card-header2 { height: clamp(250px, 24.4vw, 325px); padding: clamp(12px, 1.5vw, 20px); }
+    .card-body { padding: clamp(16px, 1.9vw, 25px); }
+    .category-badge { font-size: clamp(9px, 0.75vw, 10px); }
+    .card-body h3 { font-size: clamp(15px, 1.65vw, 22px); }
+    .specs li { font-size: clamp(11.5px, 1.05vw, 14px); }
+    .price { font-size: clamp(14px, 1.35vw, 18px); }
+    .btn-red { padding: clamp(9px, 0.9vw, 12px) clamp(16px, 1.8vw, 24px); }
+    .btn-red .btn-text { font-size: clamp(12px, 1.2vw, 16px); }
+    .btn-red .phone-number { font-size: clamp(11px, 0.975vw, 13px); }
+
+    /* ---------- «ГДЕ МЫ РАБОТАЕМ» ---------- */
+    .usage-title { font-size: clamp(26px, 3.6vw, 48px); }
+    .usage-desc {
+        font-size: clamp(13px, 1.35vw, 18px);
+        margin-bottom: clamp(18px, 2.25vw, 30px);
+    }
+    .tech-card {
+        padding: clamp(14px, 1.9vw, 25px);
+        height: clamp(100px, 10.5vw, 140px);
+        border-radius: clamp(20px, 2.25vw, 30px);
+    }
+    .icon-box {
+        width: clamp(36px, 3.75vw, 50px);
+        height: clamp(36px, 3.75vw, 50px);
+        margin-right: clamp(12px, 1.5vw, 20px);
+    }
+    .icon-box img { width: clamp(18px, 1.9vw, 25px); height: clamp(18px, 1.9vw, 25px); }
+    .text-box h3 { font-size: clamp(13px, 1.35vw, 18px); }
+    .text-box p { font-size: clamp(11px, 1.05vw, 14px); }
+
+    /* ---------- КОНТАКТЫ (чёрный блок) ---------- */
+    .consultation-block {
+        padding: clamp(20px, 2.25vw, 30px) clamp(20px, 3vw, 40px);
+        border-radius: clamp(22px, 2.25vw, 30px);
+    }
+    .badge2 { font-size: clamp(10px, 0.9vw, 12px); }
+    .consultation-content h2 { font-size: clamp(26px, 3.6vw, 48px); }
+    .consultation-content p { font-size: clamp(13px, 1.2vw, 16px); }
+    .btn-call, .btn-whatsapp {
+        font-size: clamp(11px, 1vw, 13.33px);
+        padding: clamp(10px, 1.1vw, 15px) clamp(20px, 2.25vw, 30px);
+    }
+
+    /* ---------- О КОМПАНИИ ---------- */
+    .about-company {
+        gap: clamp(20px, 3vw, 40px);
+        padding: clamp(36px, 4.5vw, 60px) 20px;
+    }
+    .about-text h2 { font-size: clamp(26px, 3.6vw, 48px); }
+    .about-text p,
+    .about-description p { font-size: clamp(12px, 1.2vw, 16px); }
+    .about-description,
+    .about-image { margin-top: clamp(30px, 3.7vw, 49px); }
+    .image-label { font-size: clamp(11px, 1.05vw, 14px); bottom: clamp(10px, 1.5vw, 20px); left: clamp(10px, 1.5vw, 20px); }
+
+    /* ---------- ФУТЕР ---------- */
+    .footer {
+        padding: clamp(28px, 3vw, 40px) 20px;
+        margin-top: clamp(60px, 7.5vw, 100px);
+    }
+    .footer-logo-box h3 { font-size: clamp(14px, 1.4vw, 18.72px); }
+    .footer-col h4 { font-size: clamp(13px, 1.2vw, 16px); }
+    .footer-col ul li a,
+    .footer-col p { font-size: clamp(11px, 0.975vw, 13px); }
+}
