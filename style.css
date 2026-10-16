@@ -835,8 +835,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* Основной контейнер блока */
 .advantages-section {
     background: #ffcc00;
-    padding: 60px 40px;
-    border-radius: 40px;
+    padding: clamp(32px, 4vw, 60px) clamp(16px, 2.8vw, 40px); /* масштабируется от ширины экрана */
+    border-radius: clamp(28px, 2.8vw, 40px);
     max-width: 1370px;
     margin: 40px auto;
     box-sizing: border-box;
@@ -858,6 +858,11 @@ ul.features { list-style: none; margin-bottom: 40px; }
     padding-left: 0;  /* Убираем внутренние отступы */
 }
 
+/* Внутренний контейнер блока: боковой отступ тоже масштабируется */
+.advantages-section .container {
+    padding: 0 clamp(0px, 2.8vw, 40px);
+}
+
 /* Чтобы текст не упирался в самый край желтого блока, 
    добавь отступ для самого контейнера-2 */
 .advantages-section .container-2 {
@@ -871,23 +876,23 @@ ul.features { list-style: none; margin-bottom: 40px; }
     color: #fff;
     padding: 5px 15px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: clamp(10px, 0.9vw, 12px);
     text-transform: uppercase;
 }
 
 .advantages-section h2 { 
-    font-size: 48px; 
+    font-size: clamp(26px, 3.6vw, 48px); /* как у заголовка каталога */
     margin: 15px 0; 
     line-height: 1.1;
 }
 
-.subtitle { margin-bottom: 40px; max-width: 500px; }
+.subtitle { margin-bottom: clamp(24px, 3vw, 40px); max-width: 500px; font-size: clamp(13px, 1.15vw, 16px); }
 
 /* Сетка карточек */
 .cards-grid2 {
     display: grid;
-    grid-template-columns: repeat(4, minmax(293px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* minmax(0,…): колонки сжимаются и не уезжают за экран */
+    gap: clamp(8px, 1.1vw, 15px);
     margin-left: 0;
     margin-top: 20px;
 }
@@ -895,40 +900,42 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* Стили карточки */
 .card {
     background: #fff;
-    padding: 30px;
-    border-radius: 25px;
+    padding: clamp(16px, 2.1vw, 30px);
+    border-radius: clamp(18px, 1.8vw, 25px);
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
 
 /* Стили для кружка-контейнера */
 .card .icon {
-    width: 50px;
-    height: 50px;
+    width: clamp(38px, 3.5vw, 50px);
+    height: clamp(38px, 3.5vw, 50px);
     background-color: #fdf5b0; /* Светло-желтый цвет фона кружка */
     border-radius: 50%;        /* Делает блок идеально круглым */
     display: flex;             /* Включаем flex, чтобы отцентрировать иконку */
     align-items: center;       /* Центрирование по вертикали */
     justify-content: center;   /* Центрирование по горизонтали */
-    margin-bottom: 20px;
+    margin-bottom: clamp(12px, 1.4vw, 20px);
 }
 
 /* Стили для самой картинки внутри кружка */
 .card .icon img {
-    width: 24px;   /* Размер самой иконки (сделай чуть меньше кружка) */
-    height: 24px;
+    width: clamp(18px, 1.7vw, 24px);   /* Размер самой иконки (сделай чуть меньше кружка) */
+    height: clamp(18px, 1.7vw, 24px);
     object-fit: contain;
 }
 
 .card h3 {
-    font-size: 18px;
+    font-size: clamp(12px, 1.45vw, 18px);
     margin: 0 0 10px;
     line-height: 1.2;
 }
 
 .card p {
-    font-size: 14px;
+    font-size: clamp(12px, 1vw, 14px);
     color: #333;
     line-height: 1.4;
 }
