@@ -68,6 +68,7 @@ body { font-family: 'Arial', sans-serif; background: #ffffff; margin: 0;, width:
 
 .hero-wrapper {
     position: relative;
+    overflow-x: clip; /* картинка крана (120% ширины) не создаёт горизонтальную прокрутку страницы */
 }
 
 /* Это просто желтый прямоугольник на заднем плане */
@@ -217,7 +218,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 
 .photo-placeholder { 
     background: #f4f4f4; /* Чуть серый для видимости */
-    flex: 1 1 auto; /* фото занимает всё свободное место внутри карточки */
+    flex: 1 1 0; /* фото занимает свободное место карточки, но высота самой картинки на неё не влияет */
     min-height: 300px; 
     border-radius: 20px; 
     margin-bottom: 20px; 
@@ -1963,7 +1964,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         padding: clamp(8px, 0.9vw, 12px) clamp(14px, 1.9vw, 25px);
     }
     .stats-white {
-        margin-top: clamp(20px, 3vw, 40px);
+        margin-top: clamp(10px, 1.5vw, 20px); /* зазор между кнопками и статистикой */
         gap: clamp(16px, 3.5vw, 48px);
     }
     .stat-item { font-size: clamp(10px, 0.9vw, 12px); }
