@@ -529,6 +529,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* Фильтры */
 .filter-bar { 
     display: flex; 
+    flex-wrap: wrap; /* кнопки, которые не влезают, переносятся на следующую строку */
     gap: 15px; 
     margin-top: 20px;
     margin-bottom: 20px;
@@ -544,6 +545,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     transition: 0.3s;
     cursor: pointer; 
     box-sizing: border-box;
+    flex: 0 0 auto; /* кнопка не сжимается, а целиком уходит на новую строку */
+    max-width: 100%;
 }
 
 .filter-btn.active { 
