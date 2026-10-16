@@ -255,6 +255,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
 /* -------------------------------------- */
 
 .stats-white { 
+    grid-column: 1;
+    grid-row: 2;
     position: relative;
     z-index: 1; /* Тоже поверх желтого фона */
     display: flex; 
