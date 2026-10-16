@@ -204,6 +204,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
     border-radius: 30px;
     padding: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    align-selt: flex-start;
 }
 
 .photo-placeholder { 
