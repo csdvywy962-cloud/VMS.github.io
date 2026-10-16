@@ -2036,3 +2036,46 @@ ul.features { list-style: none; margin-bottom: 40px; }
     .footer-col ul li a,
     .footer-col p { font-size: clamp(11px, 0.975vw, 13px); }
 }
+
+
+/* ====================================================================== */
+/* СТРАНИЦА КАТАЛОГА (catalog.html): та же «линейка» и масштабирование     */
+/* ====================================================================== */
+@media (min-width: 769px) {
+
+    /* Жёлтый блок остаётся на всю ширину, а содержимое встаёт в рамку 1420px (+20px по бокам),
+       как у шапки, карточек и главной страницы */
+    .catalog-hero {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: clamp(8px, 0.9vw, 12px);
+        padding-bottom: clamp(18px, 2vw, 28px);
+        border-radius: 0 0 clamp(36px, 4.5vw, 60px) clamp(36px, 4.5vw, 60px);
+    }
+    .catalog-hero > .catalog-content {
+        max-width: 1420px;
+        margin: 0 auto !important;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .back-link {
+        font-size: clamp(12px, 1.2vw, 16px);
+        margin-bottom: clamp(12px, 1.5vw, 20px);
+    }
+    .catalog-hero p {
+        font-size: clamp(12px, 1.2vw, 16px);
+    }
+
+    /* Фильтры: та же рамка, переносятся на новую строку, если не помещаются */
+    .filter-bar {
+        max-width: 1420px;
+        margin: clamp(14px, 1.5vw, 20px) auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: clamp(8px, 1.1vw, 15px);
+    }
+    .filter-btn {
+        font-size: clamp(11px, 1vw, 13.33px);
+        padding: clamp(7px, 0.75vw, 10px) clamp(12px, 1.5vw, 20px);
+    }
+}
