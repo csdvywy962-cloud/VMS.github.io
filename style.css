@@ -1859,6 +1859,7 @@ ul.features { list-style: none; margin-bottom: 40px; }
         line-height: 1.4 !important;
         text-align: left !important;
         margin: 0 !important;
+        text-wrap: pretty;
     }
 
     /* Кнопки фильтров сразу под желтым блоком с отступами по бокам */
@@ -2068,6 +2069,8 @@ ul.features { list-style: none; margin-bottom: 40px; }
     }
     .catalog-hero p {
         font-size: clamp(12px, 1.2vw, 16px);
+        max-width: 26em; /* текст не заходит правее пункта меню «Техника»; em масштабируется вместе со шрифтом */
+        text-wrap: pretty; /* аккуратные переносы без одиноких слов в конце */
     }
 
     /* Фильтры: та же рамка, переносятся на новую строку, если не помещаются */
