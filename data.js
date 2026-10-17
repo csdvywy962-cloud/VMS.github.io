@@ -26,68 +26,6 @@ const cranes = [
 ];
 
 
-// Активная кнопка, у которой сейчас показан номер
-let activeOrderBtn = null;
-
-window.showRandomPhone = function(btn) {
-    if (activeOrderBtn === btn) return;
-
-    // Если была открыта другая кнопка, возвращаем ей текст «Заказать»
-    if (activeOrderBtn && activeOrderBtn !== btn) {
-        activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
-    }
-
-    const phones = [
-        "+7 (910) 808-88-48",
-        "+7 (953) 666-07-99",
-        "+7 (915) 909-06-07"
-    ];
-    
-    const randomPhone = phones[Math.floor(Math.random() * phones.length)];
-    
-    // Вставляем номер с классом phone-number, у которого свой размер шрифта
-    btn.innerHTML = `<span class="phone-number">${randomPhone}</span>`;
-    activeOrderBtn = btn;
-};
-
-// Клик вне активной кнопки возвращает её в исходное состояние
-document.addEventListener('click', function(e) {
-    if (activeOrderBtn && !activeOrderBtn.contains(e.target)) {
-        activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
-        activeOrderBtn = null;
-    }
-});
-window.expandMessengerBtn = function(btn) {
-    if (typeof event !== 'undefined') event.stopPropagation();
-    
-    const textSpan = btn.querySelector('.btn-text');
-    const iconsSpan = btn.querySelector('.messenger-icons');
-    
-    // Если уже открыта — ничего не делаем
-    if (btn.classList.contains('active')) return;
-    
-    // Закрываем другие, если есть
-    document.querySelectorAll('.btn-whatsapp.active').forEach(b => {
-        b.classList.remove('active');
-        b.querySelector('.btn-text').style.display = 'inline';
-        b.querySelector('.messenger-icons').style.display = 'none';
-    });
-    
-    // Раскрываем текущую
-    btn.classList.add('active');
-    textSpan.style.display = 'none';
-    iconsSpan.style.display = 'flex';
-};
-
-// Клик вне кнопки возвращает её в исходное состояние
-document.addEventListener('click', function(e) {
-    const activeBtn = document.querySelector('.btn-whatsapp.active');
-    if (activeBtn && !activeBtn.contains(e.target)) {
-        activeBtn.classList.remove('active');
-        activeBtn.querySelector('.btn-text').style.display = 'inline';
-        activeBtn.querySelector('.messenger-icons').style.display = 'none';
-    }
-});
 // Клик вне блока возвращает всё на место
 document.addEventListener('click', function(e) {
     document.querySelectorAll('.messenger-popup').forEach(popup => {
