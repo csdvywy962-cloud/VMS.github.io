@@ -510,14 +510,23 @@ function togglePhone() {
         const rect = box.getBoundingClientRect();
         box.style.width = box.offsetWidth + 'px';                         // ширина блока остаётся прежней
         btn.style.setProperty('min-height', btn.offsetHeight + 'px', 'important'); // высота не растёт
-        // если раскрытая кнопка не помещается вправо — раскрываем её влево, прижав к правому краю
-        if (rect.left + 260 > window.innerWidth - 10) btn.style.alignSelf = 'flex-end';
+        // Раскрытая кнопка не должна выходить за края цветного блока (он обрезает всё лишнее)
+        const area = (btn.closest('.consultation-block') || document.documentElement).getBoundingClientRect();
+        const roomRight = area.right - rect.left - 20;   // места вправо от левого края кнопок
+        const roomLeft = rect.right - area.left - 20;    // места влево от правого края кнопок
+        let width = 260;
+        if (roomRight < width) {
+            if (roomLeft > roomRight) btn.style.alignSelf = 'flex-end'; // раскрываем влево
+            width = Math.min(width, Math.max(roomRight, roomLeft));
+        }
+        btn.style.setProperty('width', Math.max(width, box.offsetWidth) + 'px', 'important');
     }
 
     function unlockCallBtn(btn) {
         const box = btn.parentElement;
         box.style.width = '';
         btn.style.removeProperty('min-height');
+        btn.style.removeProperty('width');
         btn.style.alignSelf = '';
     }
 
