@@ -430,6 +430,12 @@ function togglePhone() {
 
     function resetOrderBtn(btn) {
         btn.innerHTML = btn.dataset.originalHtml;
+        // Возвращаем кнопке «Позвонить» её обычный размер
+        btn.style.width = '';
+        btn.style.height = '';
+        btn.style.paddingLeft = '';
+        btn.style.paddingRight = '';
+        btn.style.whiteSpace = '';
     }
 
     window.showRandomPhone = function(btn) {
@@ -452,9 +458,30 @@ function togglePhone() {
         ];
         const randomPhone = phones[Math.floor(Math.random() * phones.length)];
 
+        // «Позвонить» остаётся того же размера, номер вписывается внутрь, соседние кнопки не двигаются
+        const isCallBtn = btn.classList.contains('btn-call');
+        if (isCallBtn) {
+            btn.style.width = btn.offsetWidth + 'px';
+            btn.style.height = btn.offsetHeight + 'px';
+            btn.style.paddingLeft = '4px';
+            btn.style.paddingRight = '4px';
+            btn.style.whiteSpace = 'nowrap';
+        }
+
         // Вместо текста в самой кнопке появляется номер
         btn.innerHTML = `<span class="phone-number">${randomPhone}</span>`;
         activeOrderBtn = btn;
+
+        if (isCallBtn) {
+            // Если номер шире кнопки — немного уменьшаем шрифт, пока не поместится
+            const span = btn.querySelector('.phone-number');
+            span.style.display = 'inline-block';
+            let size = parseFloat(getComputedStyle(span).fontSize);
+            while (span.getBoundingClientRect().width > btn.clientWidth - 8 && size > 8) {
+                size -= 0.5;
+                span.style.fontSize = size + 'px';
+            }
+        }
     };
 
     // Клик вне активной кнопки возвращает её в исходное состояние
@@ -477,21 +504,21 @@ function togglePhone() {
         window.open(link, '_blank', 'noopener');
     };
 
-    // Кнопка «Позвонить» рядом с «Написать в ...» не должна менять ширину, когда та раскрывается
+    // Блок кнопок не должен менять размер и сдвигаться, когда «Написать в ...» раскрывается
     function lockCallBtn(btn) {
-        const call = btn.parentElement.querySelector('.btn-call');
-        if (call) {
-            call.style.width = call.offsetWidth + 'px';
-            call.style.alignSelf = 'flex-start';
-        }
+        const box = btn.parentElement;
+        const rect = box.getBoundingClientRect();
+        box.style.width = box.offsetWidth + 'px';                         // ширина блока остаётся прежней
+        btn.style.setProperty('min-height', btn.offsetHeight + 'px', 'important'); // высота не растёт
+        // если раскрытая кнопка не помещается вправо — раскрываем её влево, прижав к правому краю
+        if (rect.left + 260 > window.innerWidth - 10) btn.style.alignSelf = 'flex-end';
     }
 
     function unlockCallBtn(btn) {
-        const call = btn.parentElement.querySelector('.btn-call');
-        if (call) {
-            call.style.width = '';
-            call.style.alignSelf = '';
-        }
+        const box = btn.parentElement;
+        box.style.width = '';
+        btn.style.removeProperty('min-height');
+        btn.style.alignSelf = '';
     }
 
     function collapseMessengerBtn(btn) {
