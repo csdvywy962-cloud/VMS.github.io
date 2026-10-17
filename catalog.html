@@ -299,7 +299,7 @@
         <div class="footer-col">
             <div class="footer-logo-box">
                 <img src="logo.png" alt="Лого" class="footer-logo">
-                <h3>Автокран-Профи</h3>
+                <h3>ООО «ВМС-груп»</h3>
             </div>
             <p>Аренда автокранов и спецтехники. Работаем с 2014 года.</p>
         </div>
@@ -428,7 +428,12 @@
         const roomRight = area.right - rect.left - 20;   // места вправо от левого края кнопок
         const roomLeft = rect.right - area.left - 20;    // места влево от правого края кнопок
         let width = 260;
-        if (roomRight < width) {
+        // Кнопки стоят по центру блока (мобильная версия) — раскрываем симметрично, и вправо, и влево
+        const isCentered = window.innerWidth <= 768 && Math.abs((rect.left + rect.right) / 2 - (area.left + area.right) / 2) < 6;
+        if (isCentered) {
+            btn.style.alignSelf = 'center';
+            width = Math.min(width, area.width - 40);
+        } else if (roomRight < width) {
             if (roomLeft > roomRight) btn.style.alignSelf = 'flex-end'; // раскрываем влево
             width = Math.min(width, Math.max(roomRight, roomLeft));
         }
