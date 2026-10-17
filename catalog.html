@@ -338,45 +338,45 @@
 
 
 <script>
-    // Активная кнопка, у которой сейчас показан номер
-let activeOrderBtn = null;
+    // Кнопка, в которой сейчас показан номер
+    let activeOrderBtn = null;
 
-window.showRandomPhone = function(btn) {
-    if (typeof event !== 'undefined') event.stopPropagation();
-
-    // Если до этого была открыта ДРУГАЯ кнопка — возвращаем ей исходный вид
-    if (activeOrderBtn && activeOrderBtn !== btn) {
-        activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
+    function resetOrderBtn(btn) {
+        btn.innerHTML = btn.dataset.originalHtml;
     }
 
-    const phones = [
-        "+7 (910) 808-88-48",
-        "+7 (953) 666-07-99",
-        "+7 (915) 909-06-07"
-    ];
-    
-    const randomPhone = phones[Math.floor(Math.random() * phones.length)];
-    
-    // Вставляем номер телефона
-    btn.innerHTML = `<span class="phone-number">${randomPhone}</span>`;
-    activeOrderBtn = btn;
-};
+    window.showRandomPhone = function(btn) {
+        // Клик не должен «всплывать» до обработчика на document, иначе он сразу сбросит кнопку
+        if (window.event) window.event.stopPropagation();
 
-// Клик вне активной кнопки сбрасывает её
-document.addEventListener('click', function(e) {
-    if (activeOrderBtn && !activeOrderBtn.contains(e.target)) {
-        activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
-        activeOrderBtn = null;
-    }
-});
+        // Номер уже показан в этой кнопке — ничего не меняем
+        if (activeOrderBtn === btn) return;
 
-// Клик вне активной кнопки возвращает её в исходное состояние
-document.addEventListener('click', function(e) {
-    if (activeOrderBtn && !activeOrderBtn.contains(e.target)) {
-        activeOrderBtn.innerHTML = '<span class="btn-text">Заказать</span>';
-        activeOrderBtn = null;
-    }
-});
+        // Запоминаем исходный вид кнопки («Заказать» / «Позвонить»)
+        if (!btn.dataset.originalHtml) btn.dataset.originalHtml = btn.innerHTML;
+
+        // Предыдущая кнопка возвращается в исходное состояние
+        if (activeOrderBtn) resetOrderBtn(activeOrderBtn);
+
+        const phones = [
+            "+7 (910) 808-88-48",
+            "+7 (953) 666-07-99",
+            "+7 (915) 909-06-07"
+        ];
+        const randomPhone = phones[Math.floor(Math.random() * phones.length)];
+
+        // Вместо текста в самой кнопке появляется номер
+        btn.innerHTML = `<span class="phone-number">${randomPhone}</span>`;
+        activeOrderBtn = btn;
+    };
+
+    // Клик вне активной кнопки возвращает её в исходное состояние
+    document.addEventListener('click', function(e) {
+        if (activeOrderBtn && !activeOrderBtn.contains(e.target)) {
+            resetOrderBtn(activeOrderBtn);
+            activeOrderBtn = null;
+        }
+    });
 
     window.openRandomMax = function(e) {
         e.preventDefault();
@@ -390,18 +390,39 @@ document.addEventListener('click', function(e) {
         window.open(link, '_blank', 'noopener');
     };
 
+    // Кнопка «Позвонить» рядом с «Написать в ...» не должна менять ширину, когда та раскрывается
+    function lockCallBtn(btn) {
+        const call = btn.parentElement.querySelector('.btn-call');
+        if (call) {
+            call.style.width = call.offsetWidth + 'px';
+            call.style.alignSelf = 'flex-start';
+        }
+    }
+
+    function unlockCallBtn(btn) {
+        const call = btn.parentElement.querySelector('.btn-call');
+        if (call) {
+            call.style.width = '';
+            call.style.alignSelf = '';
+        }
+    }
+
+    function collapseMessengerBtn(btn) {
+        btn.classList.remove('active');
+        btn.querySelector('.btn-text').style.display = 'inline';
+        btn.querySelector('.messenger-icons').style.display = 'none';
+        unlockCallBtn(btn);
+    }
+
     window.expandMessengerBtn = function(btn) {
         if (typeof event !== 'undefined') event.stopPropagation();
         const textSpan = btn.querySelector('.btn-text');
         const iconsSpan = btn.querySelector('.messenger-icons');
         if (btn.classList.contains('active')) return;
-        
-        document.querySelectorAll('.btn-whatsapp.active').forEach(b => {
-            b.classList.remove('active');
-            b.querySelector('.btn-text').style.display = 'inline';
-            b.querySelector('.messenger-icons').style.display = 'none';
-        });
-        
+
+        document.querySelectorAll('.btn-whatsapp.active').forEach(collapseMessengerBtn);
+
+        lockCallBtn(btn); // фиксируем ширину «Позвонить» до раскрытия
         btn.classList.add('active');
         textSpan.style.display = 'none';
         iconsSpan.style.display = 'flex';
@@ -410,9 +431,7 @@ document.addEventListener('click', function(e) {
     document.addEventListener('click', function(e) {
         const activeBtn = document.querySelector('.btn-whatsapp.active');
         if (activeBtn && !activeBtn.contains(e.target)) {
-            activeBtn.classList.remove('active');
-            activeBtn.querySelector('.btn-text').style.display = 'inline';
-            activeBtn.querySelector('.messenger-icons').style.display = 'none';
+            collapseMessengerBtn(activeBtn);
         }
     });
 </script>
