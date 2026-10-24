@@ -8,4 +8,8 @@
     <loc>https://your-domain.ru/catalog.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://your-domain.ru/privacy.html</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>
