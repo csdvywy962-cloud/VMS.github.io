@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFD600" media="(max-width: 768px)">
     <title>Каталог спецтехники: автокраны, экскаваторы, автовышки | ВМС-Груп</title>
     <meta name="description" content="Весь парк техники в аренду: автокраны, экскаваторы, сваебойные и бурильные установки, автовышки, самосвалы. Работаем по всей России. Расчёт стоимости и подбор техники под вашу задачу.">
     <link rel="canonical" href="https://your-domain.ru/catalog.html">
@@ -295,7 +296,7 @@
     <span class="btn-text">Написать в ...</span>
     <span class="messenger-icons" style="display: none;">
         <a href="https://t.me/ваш_логин" target="_blank" onclick="event.stopPropagation()"><img src="telegram.png" alt="Telegram"></a>
-        <a href="https://wa.me/79108068848" target="_blank" onclick="event.stopPropagation()"><img src="whatsapp.png" alt="WhatsApp"></a>
+        <a href="#" onclick="openRandomWhatsApp(event)"><img src="whatsapp.png" alt="WhatsApp"></a>
         <a href="#" onclick="openRandomMax(event)"><img src="Max.png" alt="MAX"></a>
         <a href="mailto:vms.vms007@yandex.ru" onclick="event.stopPropagation()"><img src="gmail.png" alt="Почта"></a>
     </span>
@@ -333,7 +334,6 @@
             <p><a href="tel:+79203845555">+7 (920) 384 55-55</a></p>
             <p><a href="tel:+79108068848">+7 (910) 806 88-48</a></p>
             <p><a href="mailto:vms.vms007@yandex.ru">vms.vms007@yandex.ru</a></p>
-            <p class="footer-address">г. Кострома, ул. Свердлова, 40А</p>
         </div>
 
         <!-- Заявка и мессенджеры -->
@@ -342,7 +342,7 @@
             <a href="#contacts" class="btn-red">Написать нам →</a>
             <div class="footer-socials">
                 <a href="https://t.me/ваш_логин" target="_blank" rel="noopener" aria-label="Telegram"><img src="telegram.png" alt="Telegram"></a>
-                <a href="https://wa.me/79108068848" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="whatsapp.png" alt="WhatsApp"></a>
+                <a href="#" onclick="openRandomWhatsApp(event)" aria-label="WhatsApp"><img src="whatsapp.png" alt="WhatsApp"></a>
                 <a href="#" onclick="openRandomMax(event)" aria-label="MAX"><img src="Max.png" alt="MAX"></a>
                 <a href="mailto:vms.vms007@yandex.ru" aria-label="Почта"><img src="gmail.png" alt="Почта"></a>
             </div>
@@ -426,6 +426,17 @@
             activeOrderBtn = null;
         }
     });
+
+    window.openRandomWhatsApp = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const waLinks = [
+            "https://wa.me/79108068848",
+            "https://wa.me/qr/SNNUA4A7JJ7HG1"
+        ];
+        const link = waLinks[Math.floor(Math.random() * waLinks.length)];
+        window.open(link, '_blank', 'noopener');
+    };
 
     window.openRandomMax = function(e) {
         e.preventDefault();
