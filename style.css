@@ -2134,3 +2134,20 @@ ul.features { list-style: none; margin-bottom: 40px; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 h1, h2, h3 { overflow-wrap: break-word; }
 img { max-width: 100%; }
+
+/* ---------- Кнопки на главной: положение относительно жёлтого блока ---------- */
+/* Компьютер: обе кнопки чуть ниже, чтобы почти касались жёлтого блока, но стояли на белом */
+@media (min-width: 769px) {
+    .hero-left .buttons {
+        position: relative;
+        top: clamp(6px, 0.8vw, 12px); /* масштабируется вместе с шириной экрана */
+    }
+}
+
+/* Телефон: «Оставить заявку» остаётся на жёлтом, «Смотреть технику» опущена на белый фон */
+@media (max-width: 768px) {
+    .hero-left .buttons .btn-white {
+        position: relative;
+        top: 18px;
+    }
+}
