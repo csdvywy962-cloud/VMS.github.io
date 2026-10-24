@@ -2234,11 +2234,9 @@ h1 span.and-mobile { display: none; }
     }
 }
 
-/* Телефон, «О компании»: текст абзацев крупнее (было 15px) */
+/* Телефон, «О компании»: заголовок «Надёжная техника — точный результат.» крупнее (было до 40px) */
 @media (max-width: 768px) {
-    #about p,
-    #about .about-text p,
-    #about .about-description p {
-        font-size: clamp(16px, 4.4vw, 18px) !important;
+    #about .about-text h2 {
+        font-size: clamp(34px, 13vw, 52px) !important;
     }
 }
