@@ -2233,3 +2233,12 @@ h1 span.and-mobile { display: none; }
         display: none !important;
     }
 }
+
+/* Телефон, «О компании»: текст абзацев крупнее (было 15px) */
+@media (max-width: 768px) {
+    #about p,
+    #about .about-text p,
+    #about .about-description p {
+        font-size: clamp(16px, 4.4vw, 18px) !important;
+    }
+}
