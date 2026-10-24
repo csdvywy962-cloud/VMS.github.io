@@ -2208,3 +2208,28 @@ h1 span.and-mobile { display: none; }
         color: #555; /* описание спокойнее, чтобы заголовок выделялся */
     }
 }
+
+/* ---------- «О компании» ---------- */
+/* Компьютер: колонка 1 — заголовок, колонка 2 — весь текст, колонка 3 — фото крана */
+@media (min-width: 769px) {
+    .about-description { gap: clamp(16px, 1.8vw, 24px); }
+}
+
+/* Телефон: одна колонка обычным текстом, фото крана скрыто */
+@media (max-width: 768px) {
+    #about.about-company {
+        display: block !important;
+    }
+    #about .about-description {
+        display: block !important;
+        margin-top: 0 !important;
+    }
+    #about .about-description p,
+    #about .about-text p {
+        line-height: 1.3 !important;
+        margin-bottom: 12px !important;
+    }
+    #about .about-image {
+        display: none !important;
+    }
+}
