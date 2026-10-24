@@ -2144,11 +2144,10 @@ img { max-width: 100%; }
     }
 }
 
-/* Телефон: «Оставить заявку» остаётся на жёлтом, «Смотреть технику» опущена на белый фон */
+/* Телефон: обе кнопки внутри жёлтого блока, расстояние между ними небольшое */
 @media (max-width: 768px) {
-    .hero-left .buttons .btn-white {
-        position: relative;
-        top: 18px;
+    .hero-left .buttons {
+        gap: 12px !important;
     }
 }
 
@@ -2164,4 +2163,22 @@ h1 span.and-mobile { display: none; }
 @media (max-width: 768px) {
     h1 span.and-mobile { display: inline; }
     h1 span.and-desktop { display: none; }
+}
+
+/* Телефон: жёлтый блок главной опущен ниже, чтобы обе кнопки целиком были на жёлтом фоне */
+@media (max-width: 768px) {
+    .hero-yellow-bg { height: 505px; } /* было 460px; меняйте число, чтобы поднять или опустить нижнюю линию */
+}
+
+/* Галочки в списке: кружок не сжимается, когда текст переносится на вторую строку */
+.yellow-dot {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+}
+@media (max-width: 768px) {
+    .yellow-dot {
+        flex: 0 0 20px;
+        min-width: 20px;
+        min-height: 20px;
+    }
 }
