@@ -2151,3 +2151,17 @@ img { max-width: 100%; }
         top: 18px;
     }
 }
+
+/* ---------- Заголовок главной: союз «и» ---------- */
+/* Компьютер: «автокранов» / «и спецтехники». Телефон: «автокранов и» / «спецтехники» */
+h1 span.and-mobile,
+h1 span.and-desktop {
+    border-bottom: none;
+    display: inline;
+}
+h1 span.and-mobile { display: none; }
+
+@media (max-width: 768px) {
+    h1 span.and-mobile { display: inline; }
+    h1 span.and-desktop { display: none; }
+}
