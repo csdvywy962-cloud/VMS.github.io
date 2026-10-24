@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#FFD600" media="(max-width: 768px)">
     <title>Каталог спецтехники: автокраны, экскаваторы, автовышки | ВМС-Групп</title>
     <meta name="description" content="Весь парк техники в аренду: автокраны, экскаваторы, сваебойные и бурильные установки, автовышки, самосвалы. Работаем по всей России. Расчёт стоимости и подбор техники под вашу задачу.">
@@ -15,7 +16,7 @@
     <meta property="og:description" content="Весь парк техники в аренду: автокраны, экскаваторы, сваебойные и бурильные установки, автовышки, самосвалы. Работаем по всей России. Расчёт стоимости и подбор техники под вашу задачу.">
     <meta property="og:url" content="https://your-domain.ru/catalog.html">
     <meta property="og:image" content="https://your-domain.ru/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
 </head>
 <body>
@@ -23,7 +24,7 @@
    <header class="header">
     <div class="header-container"> <div class="logo-container">
             <img src="logo.png" alt="ООО «ВМС-Групп» — аренда автокранов и спецтехники">
-            <span class="logo-text">ООО «ВМС-групп»</span>
+            <span class="logo-text">ООО «ВМС-Групп»</span>
         </div>
         <nav class="nav-links">
             <a href="index.html">Главная</a>
@@ -43,8 +44,8 @@
     <div class="separator"></div>
     
       <div class="phone-list">
-        <div style="margin: 5px 0;">+7 (920) 384 55-55</div>
-        <div style="margin: 5px 0;">+7 (910) 806 88-48</div>
+        <div style="margin: 5px 0;"><a href="tel:+79203845555">+7 (920) 384 55-55</a></div>
+        <div style="margin: 5px 0;"><a href="tel:+79108068848">+7 (910) 806 88-48</a></div>
     </div>
 </div>
     </div>
@@ -341,7 +342,7 @@
             <h4>Заявка</h4>
             <a href="#contacts" class="btn-red">Написать нам →</a>
             <div class="footer-socials">
-                <a href="https://t.me/ваш_логин" target="_blank" rel="noopener" aria-label="Telegram"><img src="telegram.png" alt="Telegram"></a>
+                <a href="https://t.me/vmsgrup" target="_blank" rel="noopener" aria-label="Telegram"><img src="telegram.png" alt="Telegram"></a>
                 <a href="#" onclick="openRandomWhatsApp(event)" aria-label="WhatsApp"><img src="whatsapp.png" alt="WhatsApp"></a>
                 <a href="#" onclick="openRandomMax(event)" aria-label="MAX"><img src="Max.png" alt="MAX"></a>
                 <a href="mailto:vms.vms007@yandex.ru" aria-label="Почта"><img src="gmail.png" alt="Почта"></a>
@@ -352,6 +353,7 @@
     <div class="footer-bottom">
         <span>© 2026 ООО «ВМС-Групп»</span>
         <span>ИНН 4401157528 · ОГРН 1144401011028</span>
+        <a href="privacy.html">Политика конфиденциальности</a>
     </div>
 </footer>
 </main>
@@ -378,7 +380,10 @@
         if (window.event) window.event.stopPropagation();
 
         // Номер уже показан в этой кнопке — ничего не меняем
-        if (activeOrderBtn === btn) return;
+        if (activeOrderBtn === btn) {
+            if (btn.dataset.phone) window.location.href = 'tel:' + btn.dataset.phone;
+            return;
+        }
 
         // Запоминаем исходный вид кнопки («Заказать» / «Позвонить»)
         if (!btn.dataset.originalHtml) btn.dataset.originalHtml = btn.innerHTML;
@@ -392,6 +397,7 @@
             "+7 (915) 909-06-07"
         ];
         const randomPhone = phones[Math.floor(Math.random() * phones.length)];
+        btn.dataset.phone = randomPhone.replace(/[^\d+]/g, '');
 
         // «Позвонить» остаётся того же размера, номер вписывается внутрь, соседние кнопки не двигаются
         const isCallBtn = btn.classList.contains('btn-call');
@@ -540,6 +546,56 @@ function togglePhone() {
             });
         });
     });
+</script>
+<!-- Кнопка «Наверх» -->
+<button class="to-top" id="toTop" type="button" aria-label="Наверх">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Уведомление об использовании файлов cookie -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Файлы cookie" hidden>
+    <p>Мы используем файлы cookie, чтобы сайт работал корректно. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">Политикой конфиденциальности</a>.</p>
+    <button type="button" id="cookieAccept">Понятно</button>
+</div>
+
+<script>
+(function () {
+    var KEY = 'vms_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    var toTop = document.getElementById('toTop');
+
+    function isAccepted() {
+        try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; }
+    }
+    function setBannerHeight() {
+        var h = banner.hidden ? 0 : banner.offsetHeight + 16;
+        document.documentElement.style.setProperty('--cookie-h', h + 'px');
+    }
+
+    // Окно cookie появляется при загрузке страницы, пока посетитель не нажмёт «Понятно»
+    if (!isAccepted()) {
+        setTimeout(function () {
+            banner.hidden = false;
+            setBannerHeight();
+        }, 500);
+    }
+    document.getElementById('cookieAccept').addEventListener('click', function () {
+        try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        banner.hidden = true;
+        setBannerHeight();
+    });
+    window.addEventListener('resize', setBannerHeight);
+
+    // Кнопка «Наверх» появляется после прокрутки вниз
+    function onScroll() {
+        toTop.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 400);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
 </script>
 </body>
 </html>
