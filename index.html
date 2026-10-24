@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#FFD600" media="(max-width: 768px)">
-    <link rel="stylesheet" href="style.css">
-    <title>Аренда автокранов и спецтехники по всей России | ООО «ВМС-Групп»</title>
+    <link rel="stylesheet" href="style.css?v=7">
+    <title>Аренда автокранов и спецтехники по всей России | ООО «ВМС-Груп»</title>
     <meta name="description" content="Аренда автокранов, экскаваторов, сваебойных и бурильных установок, автовышек и самосвалов по всей России. Бесплатная консультация, подбор техники за 15 минут. Звоните: +7 (915) 909-06-07.">
     <link rel="canonical" href="https://your-domain.ru/">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:site_name" content="ООО «ВМС-Групп»">
+    <meta property="og:site_name" content="ООО «ВМС-Груп»">
     <meta property="og:title" content="Аренда автокранов и спецтехники по всей России">
     <meta property="og:description" content="Аренда автокранов, экскаваторов, сваебойных и бурильных установок, автовышек и самосвалов по всей России. Бесплатная консультация, подбор техники за 15 минут. Звоните: +7 (915) 909-06-07.">
     <meta property="og:url" content="https://your-domain.ru/">
@@ -20,7 +21,7 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "ООО «ВМС-Групп»",
+  "name": "ООО «ВМС-Груп»",
   "description": "Аренда автокранов, экскаваторов, сваебойных и бурильных установок, автовышек и самосвалов.",
   "url": "https://your-domain.ru/",
   "logo": "https://your-domain.ru/logo.png",
@@ -50,8 +51,8 @@
 <body>
 <header class="header">
     <div class="header-container"> <div class="logo-container">
-            <img src="logo.png" alt="ООО «ВМС-Групп» — аренда автокранов и спецтехники">
-            <span class="logo-text">ООО «ВМС-групп»</span>
+            <img src="logo.png" alt="ООО «ВМС-Груп» — аренда автокранов и спецтехники">
+            <span class="logo-text">ООО «ВМС-груп»</span>
         </div>
         <div class="desktop-menu">
         <nav class="nav-links">
@@ -74,8 +75,8 @@
     <div class="separator"></div>
     
       <div class="phone-list">
-        <div style="margin: 5px 0;">+7 (920) 384 55-55</div>
-        <div style="margin: 5px 0;">+7 (910) 806 88-48</div>
+        <div style="margin: 5px 0;"><a href="tel:+79203845555">+7 (920) 384 55-55</a></div>
+        <div style="margin: 5px 0;"><a href="tel:+79108068848">+7 (910) 806 88-48</a></div>
     </div>
 </div>
 
@@ -348,7 +349,7 @@
 <section id="about" class="about-company">
     <div class="about-text">
         <span class="badge-mini">О КОМПАНИИ</span>
-        <h2>Надёжная <br>техника — <br><span class="text-red">точный <br>результат</span></h2>
+        <h2>Надёжная <br>техника — <br><span class="text-red">точный <br>результат.</span></h2>
     </div>
     <div class="about-description">
         <p>Наша задача — предоставить в аренду надёжные краны и спецтехнику, обеспечивая безопасность, оперативность и высокое качество работ на вашем объекте.</p>
@@ -412,7 +413,7 @@
         <div class="footer-col">
             <div class="footer-logo-box">
                 <img src="logo.png" alt="Лого" class="footer-logo">
-                <h3>ООО «ВМС-Групп»</h3>
+                <h3>ООО «ВМС-Груп»</h3>
             </div>
             <p>Аренда автокранов и спецтехники. Работаем с 2014 года.</p>
         </div>
@@ -452,8 +453,9 @@
     </div>
 
     <div class="footer-bottom">
-        <span>© 2026 ООО «ВМС-Групп»</span>
+        <span>© 2026 ООО «ВМС-Груп»</span>
         <span>ИНН 4401157528 · ОГРН 1144401011028</span>
+        <a href="privacy.html">Политика конфиденциальности</a>
     </div>
 </footer>
 <script>
@@ -494,7 +496,10 @@ function togglePhone() {
         if (window.event) window.event.stopPropagation();
 
         // Номер уже показан в этой кнопке — ничего не меняем
-        if (activeOrderBtn === btn) return;
+        if (activeOrderBtn === btn) {
+            if (btn.dataset.phone) window.location.href = 'tel:' + btn.dataset.phone;
+            return;
+        }
 
         // Запоминаем исходный вид кнопки («Заказать» / «Позвонить»)
         if (!btn.dataset.originalHtml) btn.dataset.originalHtml = btn.innerHTML;
@@ -504,10 +509,11 @@ function togglePhone() {
 
         const phones = [
             "+7 (910) 806-88-48",
-            "+7 (920) 384-55-55",
+            "+7 (920) 385-55-55",
             "+7 (915) 909-06-07"
         ];
         const randomPhone = phones[Math.floor(Math.random() * phones.length)];
+        btn.dataset.phone = randomPhone.replace(/[^\d+]/g, '');
 
         // «Позвонить» остаётся того же размера, номер вписывается внутрь, соседние кнопки не двигаются
         const isCallBtn = btn.classList.contains('btn-call');
@@ -624,6 +630,56 @@ function togglePhone() {
             collapseMessengerBtn(activeBtn);
         }
     });
+</script>
+<!-- Кнопка «Наверх» -->
+<button class="to-top" id="toTop" type="button" aria-label="Наверх">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Уведомление об использовании файлов cookie -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Файлы cookie" hidden>
+    <p>Мы используем файлы cookie, чтобы сайт работал корректно. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">Политикой конфиденциальности</a>.</p>
+    <button type="button" id="cookieAccept">Понятно</button>
+</div>
+
+<script>
+(function () {
+    var KEY = 'vms_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    var toTop = document.getElementById('toTop');
+
+    function isAccepted() {
+        try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; }
+    }
+    function setBannerHeight() {
+        var h = banner.hidden ? 0 : banner.offsetHeight + 16;
+        document.documentElement.style.setProperty('--cookie-h', h + 'px');
+    }
+
+    // Окно cookie появляется при загрузке страницы, пока посетитель не нажмёт «Понятно»
+    if (!isAccepted()) {
+        setTimeout(function () {
+            banner.hidden = false;
+            setBannerHeight();
+        }, 500);
+    }
+    document.getElementById('cookieAccept').addEventListener('click', function () {
+        try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        banner.hidden = true;
+        setBannerHeight();
+    });
+    window.addEventListener('resize', setBannerHeight);
+
+    // Кнопка «Наверх» появляется после прокрутки вниз
+    function onScroll() {
+        toTop.classList.toggle('visible', (window.pageYOffset || document.documentElement.scrollTop) > 400);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
 </script>
 </body>
 </html>
