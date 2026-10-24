@@ -2182,3 +2182,29 @@ h1 span.and-mobile { display: none; }
         min-height: 20px;
     }
 }
+
+/* Телефон, «Почему выбирают нас»: заголовок карточки в одной строке с иконкой, текст крупнее */
+@media (max-width: 768px) {
+    #advantages .card {
+        display: grid !important;
+        grid-template-columns: auto 1fr;
+        column-gap: 14px;
+        align-items: center;
+    }
+    #advantages .card .icon {
+        margin-bottom: 0;
+    }
+    #advantages .card h3 {
+        margin: 0;
+        font-size: clamp(18px, 5.6vw, 23px) !important; /* было около 12px — теперь заголовок хорошо виден */
+        font-weight: 800 !important;
+        line-height: 1.15;
+        color: #000;
+    }
+    #advantages .card p {
+        grid-column: 1 / -1; /* описание на всю ширину под иконкой и заголовком */
+        margin: 14px 0 0;
+        font-weight: 400;
+        color: #555; /* описание спокойнее, чтобы заголовок выделялся */
+    }
+}
